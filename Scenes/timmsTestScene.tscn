@@ -1,3 +1,58 @@
-[gd_scene format=3 uid="uid://csnbgngwaa3fk"]
+[gd_scene load_steps=12 format=3 uid="uid://csnbgngwaa3fk"]
+
+[ext_resource type="PackedScene" uid="uid://46otlkp1cilp" path="res://Nodes/testNode.tscn" id="1_a4i3d"]
+[ext_resource type="Texture2D" uid="uid://ddc6n6qwy0u2q" path="res://Sprites/LeftArm/LeftArmTest.png" id="2_65lhq"]
+[ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="3_083yb"]
+[ext_resource type="Texture2D" uid="uid://d07o35qvj427b" path="res://Sprites/LeftFoot/LeftFootTest.png" id="4_blbfn"]
+[ext_resource type="Texture2D" uid="uid://bpdc3tka7g6lp" path="res://Sprites/LeftHand/LeftHandTest.png" id="5_kngtr"]
+[ext_resource type="Texture2D" uid="uid://bj8n4l56a762a" path="res://Sprites/LeftLeg/LeftLegTest.png" id="6_ifr5v"]
+[ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="7_afbq6"]
+[ext_resource type="Texture2D" uid="uid://d15075vtjnv5v" path="res://Sprites/RightFoot/RightFootTest.png" id="8_56a6t"]
+[ext_resource type="Texture2D" uid="uid://cu720wnosq5uu" path="res://Sprites/RightHand/RightHandTest.png" id="9_4kpf5"]
+[ext_resource type="Texture2D" uid="uid://b13xcdnp6mhms" path="res://Sprites/RightLeg/RightLegTest.png" id="10_7t4qv"]
+[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="11_d01yc"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(131, -101)
+
+[node name="Node" parent="." instance=ExtResource("1_a4i3d")]
+
+[node name="LeftArmTest" type="Sprite2D" parent="."]
+position = Vector2(120, 282)
+texture = ExtResource("2_65lhq")
+
+[node name="HeadTest" type="Sprite2D" parent="."]
+position = Vector2(256, 169)
+texture = ExtResource("3_083yb")
+
+[node name="LeftFootTest" type="Sprite2D" parent="."]
+position = Vector2(238, 705)
+texture = ExtResource("4_blbfn")
+
+[node name="LeftHandTest" type="Sprite2D" parent="."]
+position = Vector2(-28, 284)
+texture = ExtResource("5_kngtr")
+
+[node name="LeftLegTest" type="Sprite2D" parent="."]
+position = Vector2(236, 566)
+texture = ExtResource("6_ifr5v")
+
+[node name="RightArmTest" type="Sprite2D" parent="."]
+position = Vector2(407, 276)
+texture = ExtResource("7_afbq6")
+
+[node name="RightFootTest" type="Sprite2D" parent="."]
+position = Vector2(287, 704)
+texture = ExtResource("8_56a6t")
+
+[node name="RightHandTest" type="Sprite2D" parent="."]
+position = Vector2(558, 280)
+texture = ExtResource("9_4kpf5")
+
+[node name="RightLegTest" type="Sprite2D" parent="."]
+position = Vector2(286, 566)
+texture = ExtResource("10_7t4qv")
+
+[node name="TorsoTest" type="Sprite2D" parent="."]
+position = Vector2(264, 340)
+texture = ExtResource("11_d01yc")
