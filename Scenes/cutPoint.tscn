@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://be28jgkvl7uxj"]
+
+[ext_resource type="Texture2D" uid="uid://dfqevfeeb0uo3" path="res://Sprites/char.png" id="1_qvwd3"]
+[ext_resource type="Script" path="res://Scripts/cutPoint.gd" id="2_ldh72"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8vbtk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Char" type="Sprite2D" parent="."]
+position = Vector2(530, 309)
+texture = ExtResource("1_qvwd3")
+
+[node name="Node2D" type="Node2D" parent="Char"]
+position = Vector2(-47, -103)
+script = ExtResource("2_ldh72")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Char/Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Char/Node2D/CharacterBody2D"]
+shape = SubResource("CircleShape2D_8vbtk")
+
+[connection signal="input_event" from="Char/Node2D/CharacterBody2D" to="Char/Node2D" method="_on_character_body_2d_input_event"]
