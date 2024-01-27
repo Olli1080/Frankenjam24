@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://0q26momgabqi"]
+
+[ext_resource type="Script" path="res://Scenes/credits.gd" id="1_5bsds"]
+[ext_resource type="Texture2D" uid="uid://rpm7ebnwj36b" path="res://Sprites/BackgroundImages/credits_lower_part.png" id="1_8w6sd"]
+[ext_resource type="Texture2D" uid="uid://cmv37aubvetwv" path="res://Sprites/BackgroundImages/credits_upper_part.png" id="2_ipxei"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5bsds")
+
+[node name="CreditsLowerPart" type="Sprite2D" parent="."]
+position = Vector2(575.813, 324.01)
+scale = Vector2(0.925, 0.807)
+texture = ExtResource("1_8w6sd")
+
+[node name="CreditsUpperPart" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(576, 325)
+scale = Vector2(0.925, 0.807)
+texture = ExtResource("2_ipxei")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 445.0
+offset_top = 600.0
+offset_right = 705.0
+offset_bottom = 603.0
+text = "Veronika \"FalloutOwl\" Gasser
+David
+Dennis \"Stennsen\" Streicher
+Timon \"Tütimon\" Bendl
+Chris \"Zerotac\" Schuster
+Oliver \"Schrödingers Hund\" Zahn
+Markus \"Inkompetencia\" Dennstedt
+Timmm* \"Mario Gourmet\" Bugla
+Betty \"blorbo\" Feibel
+
+Kategorien:
+
+Code Crafters
+Creative Chaos Crafters
+Pixel Magicians
+User Experience Unicorns
+Meme God
+Best Boi
+Emotional Support
+Sleepwalking Energy Devourer
+Furry Forger"
+scroll_active = false
