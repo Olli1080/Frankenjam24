@@ -1,9 +1,10 @@
 extends Node
 
-@export var bodySprite : Sprite2D
+@export var bodySprite : Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	bodySprite.notesLabel = self
 	pass # Replace with function body.
 
 
@@ -13,12 +14,12 @@ func _process(delta):
 
 
 func _on_mouse_entered():
-	bodySprite.modulate = Color.YELLOW
+	bodySprite.highlighting = true
 
 
 
 func _on_mouse_exited():
-	bodySprite.modulate = Color.WHITE
+	bodySprite.highlighting = false
 
 
 

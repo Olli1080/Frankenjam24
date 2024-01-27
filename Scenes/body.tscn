@@ -1,17 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://cectf7qkms7hr"]
+[gd_scene load_steps=16 format=3 uid="uid://cectf7qkms7hr"]
 
-[ext_resource type="PackedScene" uid="uid://iqxp1reu6lte" path="res://Scenes/markusTestScene.tscn" id="1_hm8le"]
 [ext_resource type="Script" path="res://Scripts/NoteScript.gd" id="2_f2s22"]
+[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="3_8imtf"]
+[ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/left_arm.tscn" id="5_6s35a"]
+[ext_resource type="PackedScene" uid="uid://bc33ftl5ljeu8" path="res://Scenes/cutPoints.tscn" id="5_ygfg4"]
+[ext_resource type="PackedScene" uid="uid://bsfqce3b6t3dq" path="res://Scenes/BodyParts/head.tscn" id="6_hihs6"]
+[ext_resource type="PackedScene" uid="uid://d1fwh58bk2sgd" path="res://Scenes/BodyParts/left_hand.tscn" id="7_gr5eo"]
+[ext_resource type="PackedScene" uid="uid://qpma3icuof4i" path="res://Scenes/BodyParts/right_arm.tscn" id="8_kb20x"]
+[ext_resource type="PackedScene" uid="uid://cesxkvwkssn7c" path="res://Scenes/BodyParts/right_hand.tscn" id="9_h00fm"]
+[ext_resource type="PackedScene" uid="uid://cob2bpvkgpytq" path="res://Scenes/BodyParts/left_leg.tscn" id="10_t1nkm"]
+[ext_resource type="PackedScene" uid="uid://cdskxifacaj32" path="res://Scenes/BodyParts/left_foot.tscn" id="11_4pek4"]
+[ext_resource type="PackedScene" uid="uid://bjdltiududoxk" path="res://Scenes/BodyParts/right_leg.tscn" id="12_mywsa"]
+[ext_resource type="PackedScene" uid="uid://c5o3jeiljvx43" path="res://Scenes/BodyParts/right_foot.tscn" id="13_ppxuc"]
 
-[node name="Body" instance=ExtResource("1_hm8le")]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7rj24"]
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jrx88"]
+normal = Vector2(0.99985, 0.0173134)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqsta"]
+normal = Vector2(-0.999949, -0.0100497)
+
+[node name="Body" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
 offset_left = 14.0
 offset_top = 306.0
 offset_right = 299.0
 offset_bottom = 640.0
 
-[node name="Label" type="Label" parent="ColorRect" index="0"]
+[node name="Label" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_top = 12.0
 offset_right = 285.0
@@ -20,7 +38,7 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Notes: "
 horizontal_alignment = 1
 
-[node name="head" type="Label" parent="ColorRect" index="1" node_paths=PackedStringArray("bodySprite")]
+[node name="head" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 64.0
@@ -33,9 +51,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../head/HeadTest")
+bodySprite = NodePath("../../DonorBody/head")
 
-[node name="LH" type="Label" parent="ColorRect" index="2" node_paths=PackedStringArray("bodySprite")]
+[node name="LH" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 116.0
 offset_top = 64.0
@@ -48,9 +66,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../leftHand/LeftHandTest")
+bodySprite = NodePath("../../DonorBody/leftArm")
 
-[node name="LA" type="Label" parent="ColorRect" index="3" node_paths=PackedStringArray("bodySprite")]
+[node name="LA" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 205.0
 offset_top = 64.0
@@ -63,9 +81,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../leftArm/LeftArmSprite")
+bodySprite = NodePath("../../DonorBody/leftHand")
 
-[node name="RH" type="Label" parent="ColorRect" index="4" node_paths=PackedStringArray("bodySprite")]
+[node name="RH" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 21.0
 offset_top = 124.0
@@ -78,9 +96,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../rightHand/RightHandTest")
+bodySprite = NodePath("../../DonorBody/rightArm")
 
-[node name="RA" type="Label" parent="ColorRect" index="5" node_paths=PackedStringArray("bodySprite")]
+[node name="RA" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 115.0
 offset_top = 124.0
@@ -93,9 +111,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../rightArm/RightArmTest")
+bodySprite = NodePath("../../DonorBody/rightHand")
 
-[node name="LL" type="Label" parent="ColorRect" index="6" node_paths=PackedStringArray("bodySprite")]
+[node name="LL" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 204.0
 offset_top = 124.0
@@ -108,9 +126,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../leftLeg/LeftLegTest")
+bodySprite = NodePath("../../DonorBody/leftLeg")
 
-[node name="LF" type="Label" parent="ColorRect" index="7" node_paths=PackedStringArray("bodySprite")]
+[node name="LF" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 22.0
 offset_top = 188.0
@@ -123,9 +141,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../leftFoot/LeftFootTest")
+bodySprite = NodePath("../../DonorBody/leftFoot")
 
-[node name="RL" type="Label" parent="ColorRect" index="8" node_paths=PackedStringArray("bodySprite")]
+[node name="RL" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 116.0
 offset_top = 188.0
@@ -138,9 +156,9 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../rightLeg/RightLegTest")
+bodySprite = NodePath("../../DonorBody/rightLeg")
 
-[node name="RF" type="Label" parent="ColorRect" index="9" node_paths=PackedStringArray("bodySprite")]
+[node name="RF" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
 layout_mode = 0
 offset_left = 205.0
 offset_top = 188.0
@@ -153,45 +171,94 @@ text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../rightFoot/RightFootTest")
+bodySprite = NodePath("../../DonorBody/rightFoot")
 
-[node name="leftArm" parent="." index="1" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../ColorRect/LA")
-notesCharacteristicsText = "Banane"
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(139, 666)
 
-[node name="head" parent="." index="2" node_paths=PackedStringArray("notesLabel")]
-position = Vector2(533, 83)
-notesLabel = NodePath("../ColorRect/head")
-notesCharacteristicsText = "koks"
+[node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_7rj24")
 
-[node name="leftHand" parent="." index="3" node_paths=PackedStringArray("notesLabel")]
-position = Vector2(600, 187)
-notesLabel = NodePath("../ColorRect/LH")
-notesCharacteristicsText = "Nutten"
+[node name="CollisionShape2D_Bottom2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_7rj24")
 
-[node name="rightArm" parent="." index="4" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../ColorRect/RA")
-notesCharacteristicsText = "Redbull"
+[node name="CollisionShape2D_Right" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_jrx88")
 
-[node name="rightHand" parent="." index="5" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../ColorRect/RH")
-notesCharacteristicsText = "gdh"
+[node name="CollisionShape2D_Left" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1153, 0)
+shape = SubResource("WorldBoundaryShape2D_iqsta")
 
-[node name="leftLeg" parent="." index="6" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../ColorRect/LL")
-notesCharacteristicsText = "dsaffdag"
+[node name="CutPoints" parent="." instance=ExtResource("5_ygfg4")]
+position = Vector2(9, 28)
 
-[node name="leftFoot" parent="." index="7" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../ColorRect/LF")
-notesCharacteristicsText = "dsfad"
+[node name="DonorBody" type="Node2D" parent="."]
+position = Vector2(54, 15)
 
-[node name="rightLeg" parent="." index="8" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../ColorRect/RL")
-notesCharacteristicsText = "dfadsaf"
+[node name="leftArm" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("5_6s35a")]
+position = Vector2(204, 200)
+input_pickable = false
+notesCharacteristicsText = "Taschen"
+attached_cut_points = [NodePath("../../CutPoints/LeftArmTest"), NodePath("../../CutPoints/LeftHandTest")]
 
-[node name="rightFoot" parent="." index="9" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../ColorRect/RF")
-notesCharacteristicsText = "sdafsad"
+[node name="head" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("6_hihs6")]
+position = Vector2(352, 83)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/HeadTest")]
+
+[node name="leftHand" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("7_gr5eo")]
+position = Vector2(69, 201)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/LeftHandTest")]
+
+[node name="rightArm" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("8_kb20x")]
+position = Vector2(500, 186)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/RightArmTest"), NodePath("../../CutPoints/RightHandTest")]
+
+[node name="rightHand" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("9_h00fm")]
+position = Vector2(594, 193)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/RightHandTest")]
+
+[node name="leftLeg" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("10_t1nkm")]
+position = Vector2(326, 471)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/LeftLegTest"), NodePath("../../CutPoints/LeftFootTest")]
+
+[node name="leftFoot" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("11_4pek4")]
+position = Vector2(324, 603)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/LeftFootTest")]
+
+[node name="rightLeg" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("12_mywsa")]
+position = Vector2(375, 480)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/RightLegTest"), NodePath("../../CutPoints/RightFootTest")]
+
+[node name="rightFoot" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("13_ppxuc")]
+position = Vector2(373, 625)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+attached_cut_points = [NodePath("../../CutPoints/RightFootTest")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DonorBody"]
+position = Vector2(347, 255)
+collision_layer = 4
+collision_mask = 4
+
+[node name="TorsoTest" type="Sprite2D" parent="DonorBody/StaticBody2D"]
+texture = ExtResource("3_8imtf")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DonorBody/StaticBody2D"]
+polygon = PackedVector2Array(-44, 96, -46, 69, -38, 18, -51, -36, -50, -87, 49, -84, 49, -38, 36, -21, 34, 19, 41, 72, 43, 100)
 
 [connection signal="mouse_entered" from="ColorRect/head" to="ColorRect/head" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ColorRect/head" to="ColorRect/head" method="_on_mouse_exited"]
@@ -212,12 +279,4 @@ notesCharacteristicsText = "sdafsad"
 [connection signal="mouse_entered" from="ColorRect/RF" to="ColorRect/RF" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ColorRect/RF" to="ColorRect/RF" method="_on_mouse_exited"]
 
-[editable path="leftArm"]
-[editable path="head"]
-[editable path="leftHand"]
-[editable path="rightArm"]
-[editable path="rightHand"]
-[editable path="leftLeg"]
-[editable path="leftFoot"]
-[editable path="rightLeg"]
-[editable path="rightFoot"]
+[editable path="CutPoints"]
