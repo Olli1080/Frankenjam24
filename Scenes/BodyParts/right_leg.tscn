@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bjdltiududoxk"]
+[gd_scene load_steps=5 format=3 uid="uid://bjdltiududoxk"]
 
 [ext_resource type="Texture2D" uid="uid://b13xcdnp6mhms" path="res://Sprites/RightLeg/RightLegTest.png" id="1_0e8t3"]
 [ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_x30k5"]
 [ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_r06jp"]
+[ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_qbj3x"]
 
 [node name="rightLeg" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1", "particleSystem2")]
 position = Vector2(270, -86)
@@ -30,6 +31,12 @@ emitting = false
 [node name="GPUParticles2D2" parent="." instance=ExtResource("3_r06jp")]
 position = Vector2(289, 685)
 emitting = false
+
+[node name="DockNode" parent="." instance=ExtResource("4_qbj3x")]
+position = Vector2(289, 688)
+
+[node name="DockNode2" parent="." instance=ExtResource("4_qbj3x")]
+position = Vector2(285, 444)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

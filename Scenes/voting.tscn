@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=2 format=3 uid="uid://dyywga2i4f0ie"]
+=======
+[gd_scene load_steps=2 format=3 uid="uid://8jtoou6tx4f7"]
+>>>>>>> dev_timm
 
 [ext_resource type="Script" path="res://Scripts/voting.gd" id="1_ts1ca"]
 
