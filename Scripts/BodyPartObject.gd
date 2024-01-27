@@ -6,7 +6,7 @@ signal released(this : RigidBody2D)
 @export var sprite : Sprite2D
 @export var rotation_sensitivity : float = 0.15
 @export var particle_vel_threshold : float = 0.1
-@export var notesLabel : Label
+var notesLabel : Label
 @export var notesCharacteristicsText : String
 
 var dock_points : Array[Area2D]
@@ -15,6 +15,16 @@ var offset_held = Vector2(0, 0);
 
 var upper_angle_limit : float = 30
 var lower_angle_limit : float = -30
+
+@export var highlighting : bool :
+	get:
+		return highlighting
+	set(value):
+		highlighting = value
+		if (highlighting):
+			sprite.modulate = Color.YELLOW
+		else:
+			sprite.modulate = Color.WHITE
 
 @export var attached_cut_points : Array[Node2D]
 
@@ -72,11 +82,11 @@ func _ready():
 	# Attach to dock
 	input_pickable = attached_cut_points.size() == 0
 	for dp in attached_cut_points:
-		dp.finished.connect(_finished_dock_point)
+		dp.get_child(0).finished.connect(_finished_dock_point)
 
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	print("APPEND!!")
-	reparent(get_parent())
+	reparent(dock_point.get_parent().get_parent())
 	dock_point.monitorable = false
 	freeze = false
 	input_pickable = false
@@ -176,5 +186,6 @@ func _on_dock_node_area_exited(other_area : Area2D, own_child : Area2D):
 	
 func _finished_dock_point(dock_point : Node2D):
 	print("Finished")
-	attached_cut_points.erase(dock_point)
+	attached_cut_points.erase(dock_point.get_parent())
 	input_pickable = attached_cut_points.size() == 0
+	
