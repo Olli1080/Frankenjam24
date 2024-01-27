@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 [gd_scene load_steps=3 format=3 uid="uid://fsq2uoidyas8"]
 
 [ext_resource type="Texture2D" uid="uid://dfqevfeeb0uo3" path="res://Sprites/char.png" id="1_qshsg"]
 [ext_resource type="PackedScene" uid="uid://be28jgkvl7uxj" path="res://Scenes/cutPoint.tscn" id="2_oidh7"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://boje4yc5wlbue"]
+
+[ext_resource type="Texture2D" uid="uid://dfqevfeeb0uo3" path="res://Sprites/char.png" id="1_qshsg"]
+[ext_resource type="PackedScene" uid="uid://ddkjllvvrktop" path="res://Scenes/cutPoint.tscn" id="2_oidh7"]
+>>>>>>> dev_timm
 
 [node name="OllisTestScene" type="Node2D"]
 

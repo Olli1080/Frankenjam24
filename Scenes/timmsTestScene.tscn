@@ -23,7 +23,7 @@ normal = Vector2(0.99985, 0.0173134)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yoyet"]
 normal = Vector2(-0.999949, -0.0100497)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(245, 181)

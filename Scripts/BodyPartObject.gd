@@ -4,10 +4,18 @@ signal clicked(this : RigidBody2D)
 signal released(this : RigidBody2D)
 
 @export var sprite : Sprite2D
+<<<<<<< HEAD
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
 var offset_held = Vector2(0, 0);
+=======
+@export var rotation_sensitivity : float = 0.15
+
+var dock_points : Array[Area2D]
+var dock_points_contact : Array[PairArea2D]
+var offset_held = Vector2(0, 0)
+>>>>>>> dev_timm
 
 var held = false : 
 	get:
@@ -62,6 +70,10 @@ func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position() + offset_held
 
+func rotate_around_point(rotate : float):
+	offset_held = offset_held.rotated(rotate)
+	rotate(rotate)
+
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
@@ -71,6 +83,12 @@ func _on_input_event(viewport, event, shape_idx):
 		elif event.is_released():
 			held = false
 		viewport.set_input_as_handled();
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+		if held:
+			rotate_around_point(rotation_sensitivity)
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_WHEEL_UP:
+		if held:
+			rotate_around_point(-rotation_sensitivity)
 
 func _unhandled_input(event):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
