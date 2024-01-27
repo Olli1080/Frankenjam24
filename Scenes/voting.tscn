@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://8jtoou6tx4f7"]
+
+[ext_resource type="Script" path="res://Scripts/voting.gd" id="1_ts1ca"]
+
+[node name="Voting" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ts1ca")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_right = 1154.0
+offset_bottom = 647.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Host Game"
+
+[node name="local_ip_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Join Game"
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer"]
+custom_minimum_size = Vector2(20, 40)
+layout_mode = 2
+placeholder_text = "Type ip of host"
+
+[node name="connect_status_label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_hosting_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_join_hosted_pressed"]
