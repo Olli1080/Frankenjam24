@@ -124,6 +124,7 @@ func handle_shared_click(parent, rotation: float):
 	to_saw_transition = true
 	positionIndex = 0
 	current_cut_point.visible = false
+	current_cut_point.get_node("CharacterBody2D").input_pickable = false
 	
 
 func _on_right_arm_clicked(parent):
@@ -137,7 +138,7 @@ func _on_left_arm_clicked(parent):
 	handle_shared_click(parent, -19.7 * PI / 180.0)
 
 func _on_left_hand_clicked(parent):
-	handle_shared_click(parent, 42.0 * PI / 180.0)
+	handle_shared_click(parent, 42.2 * PI / 180.0)
 
 func _on_right_hand_clicked(parent):
 	handle_shared_click(parent, 62.2 * PI / 180.0)

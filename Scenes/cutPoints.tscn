@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bc33ftl5ljeu8"]
 
-[ext_resource type="Script" path="res://Scripts/timmsTestSceneWipOlli.gd" id="1_w60ir"]
+[ext_resource type="Script" path="res://Scripts/sawManager.gd" id="1_w60ir"]
 [ext_resource type="PackedScene" uid="uid://be28jgkvl7uxj" path="res://Scenes/cutPoint.tscn" id="2_rsgnd"]
 [ext_resource type="PackedScene" uid="uid://b51tywbqq0bb3" path="res://Nodes/Handsaw.tscn" id="4_xbijs"]
 

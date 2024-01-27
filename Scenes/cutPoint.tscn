@@ -9,8 +9,9 @@ radius = 25.0
 z_index = 5
 script = ExtResource("2_ldh72")
 
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-input_pickable = true
+[node name="CharacterBody2D" type="Area2D" parent="."]
+monitoring = false
+monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CircleShape2D_8vbtk")
