@@ -22,3 +22,4 @@ image={}
 [layer_names]
 
 2d_physics/layer_2="Drag&Drop-Layer"
+2d_physics/layer_3="Recipient"

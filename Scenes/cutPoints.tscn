@@ -1,0 +1,123 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc33ftl5ljeu8"]
+
+[ext_resource type="Script" path="res://Scripts/sawManager.gd" id="1_w60ir"]
+[ext_resource type="PackedScene" uid="uid://be28jgkvl7uxj" path="res://Scenes/cutPoint.tscn" id="2_rsgnd"]
+[ext_resource type="PackedScene" uid="uid://b51tywbqq0bb3" path="res://Nodes/Handsaw.tscn" id="4_xbijs"]
+
+[node name="cutPoints" type="Node2D"]
+script = ExtResource("1_w60ir")
+tool_idle_position = Vector2(807, 457)
+tool_idle_rotation = 90.0
+
+[node name="LeftArmTest" type="Node2D" parent="."]
+position = Vector2(245, 181)
+
+[node name="Node2D" parent="LeftArmTest" instance=ExtResource("2_rsgnd")]
+z_index = 1
+position = Vector2(93, 6)
+
+[node name="Line2D" type="Line2D" parent="LeftArmTest"]
+position = Vector2(39.7809, 66.4028)
+points = PackedVector2Array(54.2191, -90.4028, 49.2191, -83.4028, 53.2191, -78.4028, 49.2191, -74.4028, 53.2191, -68.4028, 49.2191, -63.4028, 54.2191, -59.4028, 48.2191, -53.4028, 54.2191, -50.4028, 49.2191, -43.4028, 52.2191, -40.4028, 49.2191, -34.4028, 54.2191, -31.4028)
+default_color = Color(1, 1, 1, 0)
+
+[node name="HeadTest" type="Node2D" parent="."]
+position = Vector2(381, 68)
+
+[node name="Node2D" parent="HeadTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(5, 79)
+
+[node name="Line2D" type="Line2D" parent="HeadTest"]
+points = PackedVector2Array(-8, 75, -5, 81, 2, 85, 10, 82, 16, 77)
+default_color = Color(1, 1, 1, 0)
+
+[node name="LeftFootTest" type="Node2D" parent="."]
+position = Vector2(363, 604)
+
+[node name="Node2D" parent="LeftFootTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(-1, -14)
+
+[node name="Line2D" type="Line2D" parent="LeftFootTest"]
+position = Vector2(-159, -50.5)
+points = PackedVector2Array(147, 34.5, 156, 32.5, 164, 38.5, 165, 32.5, 170, 37.5)
+default_color = Color(1, 1, 1, 0)
+
+[node name="LeftHandTest" type="Node2D" parent="."]
+position = Vector2(97, 183)
+
+[node name="Node2D" parent="LeftHandTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(49, 3)
+
+[node name="Line2D" type="Line2D" parent="LeftHandTest"]
+position = Vector2(-0.295181, 55.0599)
+points = PackedVector2Array(51.2952, -67.0599, 47.2952, -60.0599, 52.2952, -55.0599, 47.2952, -52.0599, 51.2952, -47.0599, 46.2952, -43.0599, 52.2952, -36.0599)
+default_color = Color(1, 1, 1, 0)
+
+[node name="LeftLegTest" type="Node2D" parent="."]
+position = Vector2(361, 465)
+
+[node name="Node2D" parent="LeftLegTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(2, -103)
+
+[node name="Line2D" type="Line2D" parent="LeftLegTest"]
+position = Vector2(-106, -99.5)
+points = PackedVector2Array(87, -29.5, 96, -27.5, 93, -14.5, 103, -11.5, 101, -0.5, 113, 4.5, 118, 13.5, 124, 17.5, 128, 27.5)
+default_color = Color(1, 1, 1, 0)
+
+[node name="RightArmTest" type="Node2D" parent="."]
+position = Vector2(532, 175)
+
+[node name="Node2D" parent="RightArmTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(-84, 1)
+
+[node name="Line2D" type="Line2D" parent="RightArmTest"]
+points = PackedVector2Array(-84, -23, -84, -12, -84, 0, -85, 11, -86, 23, -86, 34)
+default_color = Color(1, 1, 1, 0)
+
+[node name="RightFootTest" type="Node2D" parent="."]
+position = Vector2(412, 603)
+
+[node name="Node2D" parent="RightFootTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(0, -16)
+
+[node name="Line2D" type="Line2D" parent="RightFootTest"]
+position = Vector2(-119.5, -50)
+points = PackedVector2Array(108.5, 36, 115.5, 34, 123.5, 32, 128.5, 36, 133.5, 34)
+default_color = Color(1, 1, 1, 0)
+
+[node name="RightHandTest" type="Node2D" parent="."]
+position = Vector2(683, 179)
+
+[node name="Node2D" parent="RightHandTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(-51, 2)
+
+[node name="Line2D" type="Line2D" parent="RightHandTest"]
+position = Vector2(-83.5867, 75.4389)
+points = PackedVector2Array(28.5867, -90.4389, 35.5867, -83.4389, 30.5867, -76.4389, 33.5867, -72.4389, 30.5867, -66.4389, 32.5867, -61.4389)
+default_color = Color(1, 1, 1, 0)
+
+[node name="RightLegTest" type="Node2D" parent="."]
+position = Vector2(411, 465)
+
+[node name="Node2D" parent="RightLegTest" instance=ExtResource("2_rsgnd")]
+position = Vector2(0, -105)
+
+[node name="Line2D" type="Line2D" parent="RightLegTest"]
+position = Vector2(89.5, -96)
+points = PackedVector2Array(-69.5, -30, -77.5, -25, -74.5, -17, -84.5, -16, -84.5, -10, -97.5, -5, -97.5, 2, -107.5, 7, -106.5, 13, -111.5, 20, -111.5, 24)
+default_color = Color(1, 1, 1, 0)
+
+[node name="Handsaw" parent="." instance=ExtResource("4_xbijs")]
+position = Vector2(673, 495)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+
+[connection signal="clicked" from="LeftArmTest/Node2D" to="." method="_on_left_arm_clicked"]
+[connection signal="clicked" from="HeadTest/Node2D" to="." method="_on_head_clicked"]
+[connection signal="clicked" from="LeftFootTest/Node2D" to="." method="_on_left_foot_clicked"]
+[connection signal="clicked" from="LeftHandTest/Node2D" to="." method="_on_left_hand_clicked"]
+[connection signal="clicked" from="LeftLegTest/Node2D" to="." method="_on_left_leg_clicked"]
+[connection signal="clicked" from="RightArmTest/Node2D" to="." method="_on_right_arm_clicked"]
+[connection signal="clicked" from="RightFootTest/Node2D" to="." method="_on_right_foot_clicked"]
+[connection signal="clicked" from="RightHandTest/Node2D" to="." method="_on_right_hand_clicked"]
+[connection signal="clicked" from="RightLegTest/Node2D" to="." method="_on_right_leg_clicked"]
