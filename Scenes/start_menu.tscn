@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://cjmsgu5nvesn8"]
+
+[ext_resource type="Script" path="res://Scenes/start_menu.gd" id="1_h3evx"]
+[ext_resource type="Texture2D" uid="uid://drahm3vm3t7ot" path="res://Sprites/BackgroundImages/GGJ 2024 - Game Start Menu.jpg" id="1_yjjfg"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3evx")
+
+[node name="Ggj2024-GameStartMenu" type="Sprite2D" parent="."]
+position = Vector2(575.5, 324)
+scale = Vector2(0.924498, 0.806974)
+texture = ExtResource("1_yjjfg")
+
+[node name="start_game_button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 436.0
+offset_top = 334.0
+offset_right = 715.0
+offset_bottom = 415.0
+
+[node name="credits_button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 436.0
+offset_top = 414.0
+offset_right = 715.0
+offset_bottom = 484.0
+
+[node name="quit_button" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 437.0
+offset_top = 485.0
+offset_right = 716.0
+offset_bottom = 555.0
+
+[connection signal="mouse_entered" from="start_game_button" to="." method="_on_start_game_button_mouse_entered"]
+[connection signal="mouse_exited" from="start_game_button" to="." method="_on_start_game_button_mouse_exited"]
+[connection signal="mouse_entered" from="credits_button" to="." method="_on_credits_button_mouse_entered"]
+[connection signal="mouse_exited" from="credits_button" to="." method="_on_credits_button_mouse_exited"]
+[connection signal="mouse_entered" from="quit_button" to="." method="_on_quit_button_mouse_entered"]
+[connection signal="mouse_exited" from="quit_button" to="." method="_on_quit_button_mouse_exited"]
+[connection signal="pressed" from="quit_button" to="." method="_on_quit_button_pressed"]
