@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://0yu4kfu1b585"
-=======
-uid="uid://ohe6ajn3516h"
->>>>>>> origin/main
-path="res://.godot/imported/tape_v1.png-2c08c96d1ee9ad7fe18446b01e522fff.ctex"
+uid="uid://cx2fukuteuny4"
+path="res://.godot/imported/GGJ 2024 - Credits.jpg-25cb2f52b94fc052d859bf9c508f033e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tools/tape_v1.png"
-dest_files=["res://.godot/imported/tape_v1.png-2c08c96d1ee9ad7fe18446b01e522fff.ctex"]
+source_file="res://Sprites/BackgroundImages/GGJ 2024 - Credits.jpg"
+dest_files=["res://.godot/imported/GGJ 2024 - Credits.jpg-25cb2f52b94fc052d859bf9c508f033e.ctex"]
 
 [params]
 
