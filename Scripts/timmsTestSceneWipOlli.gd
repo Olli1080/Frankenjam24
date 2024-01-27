@@ -8,11 +8,15 @@ extends Node2D
 @export var tool_idle_position: Vector2
 
 var sawing: bool = false
+var to_saw_transition: bool = true
 
 var positionIndex: int = 0
 var relativeProgress: float = 0.0
 
 var CurrentNode = null
+
+var lerp_target
+var lerp_t = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +24,16 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if lerp_target == Handsaw.global_position:
+		lerp_target = null
+		if to_saw_transition:
+			sawing = true
+		
+		to_saw_transition = false
+	
+	if lerp_target != null:
+		lerp_t += 0.4 * delta
+		Handsaw.global_position = Handsaw.global_position.lerp(lerp_target, lerp_t)
 
 func get_saw_local_offset():
 	return Handsaw.global_position - SawMid.global_position
@@ -49,11 +62,13 @@ func _on_right_arm_clicked(parent):
 	#print(get_node("Handsaw/MidPoint").position)
 	move_idle_tool(saw_position_with_offset(startPos))
 	#Handsaw.global_position = startPos + local_offset
-	sawing = true
+	to_saw_transition = true
 	positionIndex = 0
 	
 func move_idle_tool(target: Vector2):
-	Handsaw.global_position = target
+	lerp_t = 0
+	lerp_target = target
+#	Handsaw.global_position = target
 
 func _input(event):
 	if sawing and event is InputEventMouseMotion:
