@@ -7,6 +7,7 @@ var sprite : Sprite2D
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
+var offset_held = Vector2(0, 0);
 
 var held = false : 
 	get:
@@ -57,11 +58,13 @@ func _process(delta):
 	
 func _physics_process(delta):
 	if held:
-		global_transform.origin = get_global_mouse_position()
+		global_transform.origin = get_global_mouse_position() + offset_held
 
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
+			print("Press")
+			offset_held = self.global_position - event.position
 			held = true
 		elif event.is_released():
 			held = false

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://fsq2uoidyas8"]
+
+[ext_resource type="Texture2D" uid="uid://dfqevfeeb0uo3" path="res://Sprites/char.png" id="1_qshsg"]
+[ext_resource type="PackedScene" uid="uid://be28jgkvl7uxj" path="res://Scenes/cutPoint.tscn" id="2_oidh7"]
+
+[node name="OllisTestScene" type="Node2D"]
+
+[node name="Char" type="Sprite2D" parent="."]
+position = Vector2(397, 316)
+texture = ExtResource("1_qshsg")
+
+[node name="Node2D" parent="Char" instance=ExtResource("2_oidh7")]
+position = Vector2(-45, -103)
