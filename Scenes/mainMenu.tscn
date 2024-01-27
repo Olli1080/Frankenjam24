@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0dyds53oregy"]
+
+[ext_resource type="Script" path="res://Scripts/mainMenu.gd" id="1_40ql5"]
+[ext_resource type="Texture2D" uid="uid://bp8miym3p743g" path="res://Sprites/BackgroundImages/surgeon-simulator-2-scaled.jpg" id="1_v8mh1"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_40ql5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground"]
+position = Vector2(576.5, 324)
+scale = Vector2(0.449609, 0.45)
+texture = ExtResource("1_v8mh1")
+
+[node name="QuitButton" type="Button" parent="."]
+offset_left = 84.0
+offset_top = 117.0
+offset_right = 206.0
+offset_bottom = 165.0
+text = "Quit"
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 84.0
+offset_top = 54.0
+offset_right = 206.0
+offset_bottom = 102.0
+text = "Start Game"
+
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]

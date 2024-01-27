@@ -3,7 +3,7 @@ extends RigidBody2D
 signal clicked(this : RigidBody2D)
 signal released(this : RigidBody2D)
 
-var sprite : Sprite2D
+@export var sprite : Sprite2D
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
@@ -31,12 +31,14 @@ var held = false :
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite = $LeftArmTest
+	sprite = get_child(0)
 	for child in get_children():
 		if child.is_in_group("DockPoint"):
 			dock_points.append(child)
 			child.area_entered.connect(_on_dock_node_area_entered.bind(child))
 			child.area_exited.connect(_on_dock_node_area_exited.bind(child))
+			child.monitorable = false
+			child.monitoring = false
 
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	print("APPEND!!")
