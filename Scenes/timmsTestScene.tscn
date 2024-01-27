@@ -1,3 +1,93 @@
-[gd_scene format=3 uid="uid://csnbgngwaa3fk"]
+[gd_scene load_steps=15 format=3 uid="uid://csnbgngwaa3fk"]
+
+[ext_resource type="Texture2D" uid="uid://ddc6n6qwy0u2q" path="res://Sprites/LeftArm/LeftArmTest.png" id="2_65lhq"]
+[ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="2_tecr8"]
+[ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="3_083yb"]
+[ext_resource type="Texture2D" uid="uid://d07o35qvj427b" path="res://Sprites/LeftFoot/LeftFootTest.png" id="4_blbfn"]
+[ext_resource type="Texture2D" uid="uid://bpdc3tka7g6lp" path="res://Sprites/LeftHand/LeftHandTest.png" id="5_kngtr"]
+[ext_resource type="Texture2D" uid="uid://bj8n4l56a762a" path="res://Sprites/LeftLeg/LeftLegTest.png" id="6_ifr5v"]
+[ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="7_afbq6"]
+[ext_resource type="Texture2D" uid="uid://d15075vtjnv5v" path="res://Sprites/RightFoot/RightFootTest.png" id="8_56a6t"]
+[ext_resource type="Texture2D" uid="uid://cu720wnosq5uu" path="res://Sprites/RightHand/RightHandTest.png" id="9_4kpf5"]
+[ext_resource type="Texture2D" uid="uid://b13xcdnp6mhms" path="res://Sprites/RightLeg/RightLegTest.png" id="10_7t4qv"]
+[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="11_d01yc"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_olymo"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vmn1t"]
+normal = Vector2(0.99985, 0.0173134)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yoyet"]
+normal = Vector2(-0.999949, -0.0100497)
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(131, -101)
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(120, 282)
+input_pickable = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("2_tecr8")
+
+[node name="LeftArmTest" type="Sprite2D" parent="RigidBody2D"]
+texture = ExtResource("2_65lhq")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
+polygon = PackedVector2Array(-96, -8, 94, -24, 94, 34, 2, 23, -98, 21)
+
+[node name="HeadTest" type="Sprite2D" parent="."]
+position = Vector2(256, 169)
+texture = ExtResource("3_083yb")
+
+[node name="LeftFootTest" type="Sprite2D" parent="."]
+position = Vector2(238, 705)
+texture = ExtResource("4_blbfn")
+
+[node name="LeftHandTest" type="Sprite2D" parent="."]
+position = Vector2(-28, 284)
+texture = ExtResource("5_kngtr")
+
+[node name="LeftLegTest" type="Sprite2D" parent="."]
+position = Vector2(236, 566)
+texture = ExtResource("6_ifr5v")
+
+[node name="RightArmTest" type="Sprite2D" parent="."]
+position = Vector2(407, 276)
+texture = ExtResource("7_afbq6")
+
+[node name="RightFootTest" type="Sprite2D" parent="."]
+position = Vector2(287, 704)
+texture = ExtResource("8_56a6t")
+
+[node name="RightHandTest" type="Sprite2D" parent="."]
+position = Vector2(558, 280)
+texture = ExtResource("9_4kpf5")
+
+[node name="RightLegTest" type="Sprite2D" parent="."]
+position = Vector2(286, 566)
+texture = ExtResource("10_7t4qv")
+
+[node name="TorsoTest" type="Sprite2D" parent="."]
+position = Vector2(264, 340)
+texture = ExtResource("11_d01yc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(-131, 752)
+
+[node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_olymo")
+
+[node name="CollisionShape2D_Bottom2" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_olymo")
+
+[node name="CollisionShape2D_Right" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_vmn1t")
+
+[node name="CollisionShape2D_Left" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1153, 0)
+shape = SubResource("WorldBoundaryShape2D_yoyet")
+
+[connection signal="input_event" from="RigidBody2D" to="RigidBody2D" method="_on_input_event"]
+[connection signal="mouse_entered" from="RigidBody2D" to="RigidBody2D" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="RigidBody2D" to="RigidBody2D" method="_on_mouse_exited"]
