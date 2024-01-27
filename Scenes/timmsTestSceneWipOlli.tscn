@@ -28,6 +28,7 @@ normal = Vector2(-0.999949, -0.0100497)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_a3sh1")
+tool_idle_position = Vector2(807, 457)
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(245, 181)
@@ -187,7 +188,7 @@ monitoring = false
 shape = SubResource("CircleShape2D_g8nte")
 
 [node name="Handsaw" type="Sprite2D" parent="."]
-position = Vector2(752, 375)
+position = Vector2(661, 423)
 rotation = 1.5708
 scale = Vector2(0.15, 0.15)
 texture = ExtResource("12_6onhc")
