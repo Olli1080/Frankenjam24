@@ -1,6 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://csnbgngwaa3fk"]
 
 [ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/left_arm.tscn" id="2_hh3dy"]
+[ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="2_rb8sg"]
 [ext_resource type="PackedScene" uid="uid://bsfqce3b6t3dq" path="res://Scenes/BodyParts/head.tscn" id="3_bkm6h"]
 [ext_resource type="PackedScene" uid="uid://d1fwh58bk2sgd" path="res://Scenes/BodyParts/left_hand.tscn" id="4_cy3jm"]
 [ext_resource type="PackedScene" uid="uid://qpma3icuof4i" path="res://Scenes/BodyParts/right_arm.tscn" id="5_y08rp"]
@@ -19,13 +20,12 @@ normal = Vector2(0.99985, 0.0173134)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yoyet"]
 normal = Vector2(-0.999949, -0.0100497)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g8nte"]
-radius = 20.0
-
 [node name="Node2D2" type="Node2D"]
 
 [node name="WorldBoundary" type="StaticBody2D" parent="."]
 position = Vector2(-6, 651)
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="WorldBoundary"]
 shape = SubResource("WorldBoundaryShape2D_olymo")
@@ -51,54 +51,25 @@ texture = ExtResource("11_d01yc")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recipent"]
 polygon = PackedVector2Array(-48, 99, -46, 62, -40, 7, -51, -35, -51, -83, -21, -87, 16, -86, 48, -80, 50, -42, 39, -34, 34, 9, 36, 62, 44, 99)
 
-[node name="LeftLegDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(-25, 100)
-rotation = 0.208696
-collision_layer = 2
-collision_mask = 2
-monitoring = false
-
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/LeftLegDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
-
-[node name="RightLegDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(21, 99)
-rotation = -0.189497
-collision_layer = 2
-collision_mask = 2
-monitoring = false
-
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/RightLegDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
-
-[node name="LeftArmDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
+[node name="DockNode" parent="Recipent" instance=ExtResource("2_rb8sg")]
 position = Vector2(-52, -59)
-rotation = 1.55568
-collision_layer = 2
-collision_mask = 2
-monitoring = false
+rotation = -3.12598
 
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/LeftArmDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
+[node name="DockNode2" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(-31, 100)
 
-[node name="RightArmDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(50, -59)
-rotation = -1.53178
-collision_layer = 2
-collision_mask = 2
-monitoring = false
+[node name="DockNode3" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(25, 98)
 
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/RightArmDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
+[node name="DockNode4" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(48, -57)
+rotation = -1.5723
+min_angle = -0.5
+max_angle = 0.5
 
-[node name="NeckDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(-1.99998, -88)
-rotation = -2.96091
-collision_layer = 2
-monitoring = false
-
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/NeckDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
+[node name="DockNode5" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(-3, -88)
+rotation = 3.08585
 
 [node name="leftArm" parent="." instance=ExtResource("2_hh3dy")]
 position = Vector2(204, 200)
@@ -125,7 +96,7 @@ position = Vector2(324, 603)
 
 [node name="rightLeg" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("9_wdstm")]
 position = Vector2(375, 480)
-sprite = NodePath("../Recipent/NeckDockNode/AreaShape2D")
+sprite = NodePath("")
 
 [node name="rightFoot" parent="." instance=ExtResource("10_hvy0a")]
 position = Vector2(373, 625)

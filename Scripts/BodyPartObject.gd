@@ -72,6 +72,9 @@ func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	node.position = own_child.position
 	node.node_a = self.get_path()
 	node.node_b = dock_point.get_parent().get_path()
+	node.set_angular_limit_enabled(true)
+	node.angular_limit_lower = dock_point.min_angle
+	node.angular_limit_upper = dock_point.max_angle
 	# node.disable_collision = false
 	add_child(node)
 	# Enable other dock points for docking
