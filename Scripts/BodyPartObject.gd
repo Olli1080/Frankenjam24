@@ -88,7 +88,7 @@ func _on_mouse_exited():
 
 
 func _on_dock_node_area_entered(other_area : Area2D, own_child : Area2D):
-	if (!other_area.is_in_group("DockPoint") || dock_points_contact.has(other_area)):
+	if (!other_area.is_in_group("DockPoint")):
 		return
 	dock_points_contact.append(PairArea2D.new(own_child, other_area))
 	print("Area {} has entered Dock Point {}".format([own_child.name, other_area.name], "{}"))
