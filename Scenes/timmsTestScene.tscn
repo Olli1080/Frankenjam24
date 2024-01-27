@@ -41,8 +41,9 @@ position = Vector2(1153, 0)
 shape = SubResource("WorldBoundaryShape2D_yoyet")
 
 [node name="Recipent" type="StaticBody2D" parent="."]
-position = Vector2(970, 209)
-collision_layer = 0
+position = Vector2(915, 292)
+collision_layer = 4
+collision_mask = 4
 
 [node name="TorsoTest" type="Sprite2D" parent="Recipent"]
 texture = ExtResource("11_d01yc")
@@ -100,35 +101,46 @@ monitoring = false
 shape = SubResource("CircleShape2D_g8nte")
 
 [node name="leftArm" parent="." instance=ExtResource("2_hh3dy")]
-position = Vector2(390, 196)
+position = Vector2(204, 200)
 
 [node name="head" parent="." instance=ExtResource("3_bkm6h")]
-position = Vector2(270, -86)
+position = Vector2(352, 83)
 
 [node name="leftHand" parent="." instance=ExtResource("4_cy3jm")]
-position = Vector2(270, -86)
+position = Vector2(69, 201)
 
-[node name="rightArm" parent="." instance=ExtResource("5_y08rp")]
-position = Vector2(270, -86)
+[node name="rightArm" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("5_y08rp")]
+position = Vector2(500, 186)
+sprite = NodePath("../leftHand/DockNode/AreaShape2D")
 
-[node name="rightHand" parent="." instance=ExtResource("6_u5k7d")]
-position = Vector2(270, -86)
+[node name="rightHand" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("6_u5k7d")]
+position = Vector2(594, 193)
+sprite = NodePath("../leftArm/LeftArmSprite")
 
 [node name="leftLeg" parent="." instance=ExtResource("7_pwd65")]
-position = Vector2(270, -86)
+position = Vector2(326, 471)
 
 [node name="leftFoot" parent="." instance=ExtResource("8_w8r02")]
-position = Vector2(270, -86)
+position = Vector2(324, 603)
 
-[node name="rightLeg" parent="." instance=ExtResource("9_wdstm")]
+[node name="rightLeg" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("9_wdstm")]
+position = Vector2(375, 480)
+sprite = NodePath("../Recipent/NeckDockNode/AreaShape2D")
 
 [node name="rightFoot" parent="." instance=ExtResource("10_hvy0a")]
+position = Vector2(373, 625)
 
-[node name="TorsoTest" type="Sprite2D" parent="."]
-position = Vector2(531, 261)
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(347, 255)
+collision_layer = 7
+collision_mask = 7
+
+[node name="TorsoTest" type="Sprite2D" parent="StaticBody2D"]
 texture = ExtResource("11_d01yc")
 
-[editable path="leftArm"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-44, 96, -46, 69, -38, 18, -51, -36, -50, -87, 49, -84, 49, -38, 36, -21, 34, 19, 41, 72, 43, 100)
+
 [editable path="head"]
 [editable path="leftHand"]
 [editable path="rightArm"]

@@ -1,42 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://bjdltiududoxk"]
+[gd_scene load_steps=6 format=3 uid="uid://bjdltiududoxk"]
 
 [ext_resource type="Texture2D" uid="uid://b13xcdnp6mhms" path="res://Sprites/RightLeg/RightLegTest.png" id="1_0e8t3"]
 [ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_x30k5"]
 [ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_r06jp"]
+[ext_resource type="Script" path="res://Scripts/particleOnVelocity.gd" id="4_6e2cy"]
 [ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_qbj3x"]
 
-[node name="rightLeg" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1", "particleSystem2")]
-position = Vector2(270, -86)
+[node name="rightLeg" type="RigidBody2D"]
+position = Vector2(-2, 4)
 input_pickable = true
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_x30k5")
-sprite = NodePath("RightLegTest")
-particleSystem1 = NodePath("GPUParticles2D")
-particleSystem2 = NodePath("GPUParticles2D2")
 
 [node name="RightLegTest" type="Sprite2D" parent="."]
-position = Vector2(286, 566)
+position = Vector2(-3.2, -6.60001)
 texture = ExtResource("1_0e8t3")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(287, 537)
+position = Vector2(-2.2, -35.6)
 polygon = PackedVector2Array(-27, -97, 19, -96, 13, 150, -11, 151)
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_r06jp")]
-position = Vector2(283, 445)
+position = Vector2(-6.2, -127.6)
 rotation = 3.14159
 emitting = false
+script = ExtResource("4_6e2cy")
 
 [node name="GPUParticles2D2" parent="." instance=ExtResource("3_r06jp")]
-position = Vector2(289, 685)
+position = Vector2(-0.200001, 112.4)
 emitting = false
+script = ExtResource("4_6e2cy")
 
 [node name="DockNode" parent="." instance=ExtResource("4_qbj3x")]
-position = Vector2(289, 688)
+position = Vector2(-0.200001, 115.4)
 
 [node name="DockNode2" parent="." instance=ExtResource("4_qbj3x")]
-position = Vector2(285, 444)
+position = Vector2(-4.2, -128.6)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

@@ -1,32 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsfqce3b6t3dq"]
+[gd_scene load_steps=6 format=3 uid="uid://bsfqce3b6t3dq"]
 
 [ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_b8f5k"]
 [ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="2_575bb"]
 [ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_5y5rg"]
 [ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_0tkc8"]
+[ext_resource type="Script" path="res://Scripts/particleOnVelocity.gd" id="4_s24i0"]
 
-[node name="head" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1")]
+[node name="head" type="RigidBody2D"]
 input_pickable = true
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_b8f5k")
-sprite = NodePath("HeadTest")
-particleSystem1 = NodePath("GPUParticles2D")
 
 [node name="HeadTest" type="Sprite2D" parent="."]
-position = Vector2(256, 169)
+position = Vector2(-7.10001, -3.60001)
 texture = ExtResource("2_575bb")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(261, 187)
+position = Vector2(-2.10001, 14.4)
 polygon = PackedVector2Array(-26, -75, 0, -92, 27, -77, 41, -16, 10, 55, -14, 56, -42, -18)
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_5y5rg")]
-position = Vector2(259, 248)
+position = Vector2(-4.10001, 75.4)
 emitting = false
+script = ExtResource("4_s24i0")
 
 [node name="DockNode" parent="." instance=ExtResource("4_0tkc8")]
-position = Vector2(261, 244)
+position = Vector2(-2.10001, 71.4)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

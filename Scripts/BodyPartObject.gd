@@ -4,9 +4,8 @@ signal clicked(this : RigidBody2D)
 signal released(this : RigidBody2D)
 
 @export var sprite : Sprite2D
-@export var particleSystem1 : GPUParticles2D
-@export var particleSystem2 : GPUParticles2D
 @export var rotation_sensitivity : float = 0.15
+@export var particle_vel_threshold : float = 0.1
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
@@ -26,12 +25,30 @@ var held = false :
 		held = value
 		freeze = value
 		print(dock_points_contact.size())
-		if dock_points_contact.size() == 1:
+		
+		var glue_together : bool = dock_points_contact.size() >= 1
+		
+		if glue_together:
 			append_to_dock(dock_points_contact[0].first, dock_points_contact[0].second)
+			collision_layer = 4
+		elif value:
+			collision_layer = 2
+		else:
+			collision_layer = 1
+		collision_mask = collision_layer
 		for p in dock_points:
 			p.monitoring = value
 		dock_points_contact.clear()
+		queue_redraw()
+		
 
+func _draw():
+	if held:
+		if dock_points_contact.size() >= 1:
+			if dock_points_contact.size() >= 2:
+				dock_points_contact.sort_custom(PairArea2D.distance_comparator)
+			var dp = dock_points_contact[0]
+			draw_line(dp.first.position, dp.first.position + (dp.second.global_position - dp.first.global_position).rotated(-rotation), Color.GREEN, 5.0, true)
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite = get_child(0)
@@ -49,31 +66,29 @@ func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	dock_point.monitorable = false
 	freeze = false
 	input_pickable = false
+	position += dock_point.global_position - own_child.global_position
 	var node = PinJoint2D.new()
 	node.set_name("PinJoint2D")
 	node.position = own_child.position
 	node.node_a = self.get_path()
 	node.node_b = dock_point.get_parent().get_path()
+	# node.disable_collision = false
 	add_child(node)
+	# Enable other dock points for docking
+	for d in dock_points:
+		if d != own_child:
+			d.monitoring = false
+			d.monitorable = true
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if particleSystem1 and particleSystem2:
-		if linear_velocity.length() >= 0.1:
-			particleSystem1.emitting = true
-			if particleSystem2 != null:
-				particleSystem2.emitting = true
-		else:
-			particleSystem1.emitting = false
-			if particleSystem2 != null:
-				particleSystem2.emitting = false
-
-	#pass
+	pass
 
 func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position() + offset_held
+		queue_redraw()
 
 func rotate_around_point(rotate : float):
 	offset_held = offset_held.rotated(rotate)
@@ -119,6 +134,15 @@ func _on_dock_node_area_entered(other_area : Area2D, own_child : Area2D):
 func _on_dock_node_area_exited(other_area : Area2D, own_child : Area2D):
 	if (!other_area.is_in_group("DockPoint")):
 		return
-	dock_points_contact.erase(PairArea2D.new(own_child, other_area))
+	var i = 0
+	var remove_idx = -1
+	var tmp = PairArea2D.new(own_child, other_area)
+	while i < dock_points_contact.size():
+		if (dock_points_contact[i].is_same(tmp)):
+			remove_idx = i
+			break
+		i += 1
+	if remove_idx >= 0:
+		dock_points_contact.remove_at(remove_idx)
 	print("Area {} has left Dock Point {}".format([own_child.name, other_area.name], "{}"))
 	pass # Replace with function body.

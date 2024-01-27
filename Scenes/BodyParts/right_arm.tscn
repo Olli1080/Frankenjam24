@@ -1,42 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://qpma3icuof4i"]
+[gd_scene load_steps=6 format=3 uid="uid://qpma3icuof4i"]
 
 [ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="1_fg7th"]
 [ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_u11bq"]
 [ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_uaupg"]
+[ext_resource type="Script" path="res://Scripts/particleOnVelocity.gd" id="4_mldne"]
 [ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_s25o4"]
 
-[node name="rightArm" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1", "particleSystem2")]
+[node name="rightArm" type="RigidBody2D"]
 input_pickable = true
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_u11bq")
-sprite = NodePath("RightArmTest")
-particleSystem1 = NodePath("GPUParticles2D")
-particleSystem2 = NodePath("GPUParticles2D2")
 
 [node name="RightArmTest" type="Sprite2D" parent="."]
-position = Vector2(407, 276)
+position = Vector2(-2.39999, 0)
 texture = ExtResource("1_fg7th")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(378, 276)
+position = Vector2(-31.4, 0)
 polygon = PackedVector2Array(130, 19, -70, 39, -72, -26, 129, -10)
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_uaupg")]
-position = Vector2(310, 278)
+position = Vector2(-99.4, 2)
 rotation = 1.5708
 emitting = false
+script = ExtResource("4_mldne")
 
 [node name="GPUParticles2D2" parent="." instance=ExtResource("3_uaupg")]
-position = Vector2(508, 280)
+position = Vector2(98.6, 4)
 rotation = -1.5708
 emitting = false
+script = ExtResource("4_mldne")
 
 [node name="DockNode" parent="." instance=ExtResource("4_s25o4")]
-position = Vector2(308, 279)
+position = Vector2(-101.4, 3)
 
 [node name="DockNode2" parent="." instance=ExtResource("4_s25o4")]
-position = Vector2(507, 278)
+position = Vector2(97.6, 2)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
