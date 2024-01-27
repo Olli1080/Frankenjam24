@@ -17,7 +17,6 @@ var relativeProgress: float = 0.0
 
 var CurrentNode = null
 
-var body_tool_rotation
 var lerp_target_position
 var lerp_target_angle
 var lerp_t = 0
@@ -58,7 +57,8 @@ func get_global_point_pos(point: Vector2):
 func set_along_line(offset: Vector2):
 	var StartPosLineSegment = CurrentNode.get_node("Line2D").get_point_position(positionIndex)
 	var CutAxis: Vector2 = CurrentNode.get_node("Line2D").get_point_position(positionIndex + 1) - StartPosLineSegment
-	set_saw_position_with_offset(get_global_point_pos(StartPosLineSegment + relativeProgress * CutAxis) + offset)
+	#set_saw_position_with_offset(get_global_point_pos(StartPosLineSegment + relativeProgress * CutAxis) + offset)
+	set_saw_position_with_offset(CurrentNode.get_node("Line2D").global_position + StartPosLineSegment + relativeProgress * CutAxis + offset)
 
 func move_idle_tool(target_position: Vector2, target_angle: float):
 	lerp_t = 0
@@ -80,37 +80,29 @@ func _input(event):
 				sawing = false
 				move_idle_tool(tool_idle_position, tool_idle_rotation)
 
-func handle_shared_click(parent):
-	CurrentNode = parent
+func handle_shared_click(parent, rotation: float):
+	if click_active:
+		return
+	click_active = true
 	
-	var targetRotation = body_tool_rotation
+	CurrentNode = parent
+	print(parent.name)
 	
 	var startPos = CurrentNode.get_node("Line2D").get_point_position(0) + parent.global_position
-	var local_offset = get_saw_local_offset().rotated(tool_idle_rotation - targetRotation)
+	var local_offset = get_saw_local_offset().rotated(tool_idle_rotation - rotation)
 	
-	move_idle_tool(startPos + local_offset, targetRotation)
+	move_idle_tool(startPos + local_offset, rotation)
 	#Handsaw.global_position = startPos + local_offset
 	to_saw_transition = true
 	positionIndex = 0
 	parent.get_node("Node2D").queue_free()
 
 func _on_right_arm_clicked(parent):
-	if click_active:
-		return
-	click_active = true
-	body_tool_rotation = tool_idle_rotation
-	handle_shared_click(parent)
+	handle_shared_click(parent, tool_idle_rotation)
 
 func _on_head_clicked(parent):
-	if click_active:
-		return
-	click_active = true
-	body_tool_rotation = -81.4 * PI / 180.0
-	handle_shared_click(parent)
+	
+	handle_shared_click(parent, -81.4 * PI / 180.0)
 	
 func _on_left_arm_clicked(parent):
-	if click_active:
-		return
-	click_active = true
-	body_tool_rotation = -19.7 * PI / 180.0
-	handle_shared_click(parent)
+	handle_shared_click(parent, -19.7 * PI / 180.0)
