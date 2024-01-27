@@ -4,8 +4,11 @@ signal clicked(this : RigidBody2D)
 signal released(this : RigidBody2D)
 
 @export var sprite : Sprite2D
+@export var particleSystem1 : GPUParticles2D
+@export var particleSystem2 : GPUParticles2D
 
 var offset_held = Vector2(0, 0);
+#var tempPosition = Vect
 
 var held = false : 
 	get:
@@ -23,13 +26,28 @@ var held = false :
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+
+
+
+	#else:
+		#particleSystem1.emitting = false
 	#sprite = $HeadTest
 	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	print(linear_velocity)
+	if linear_velocity.length() >= 0.1:
+		particleSystem1.emitting = true
+		if particleSystem2 != null:
+			particleSystem2.emitting = true
+	else:
+		particleSystem1.emitting = false
+		if particleSystem2 != null:
+			particleSystem2.emitting = false
+
+	#pass
 
 func _physics_process(delta):
 	if held:
