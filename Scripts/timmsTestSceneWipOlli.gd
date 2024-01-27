@@ -86,10 +86,9 @@ func handle_shared_click(parent, rotation: float):
 	click_active = true
 	
 	CurrentNode = parent
-	print(parent.name)
 	
-	var startPos = CurrentNode.get_node("Line2D").get_point_position(0) + parent.global_position
-	var local_offset = get_saw_local_offset().rotated(tool_idle_rotation - rotation)
+	var startPos = CurrentNode.get_node("Line2D").get_point_position(0) + CurrentNode.get_node("Line2D").global_position#parent.global_position
+	var local_offset = get_saw_local_offset().rotated(rotation - tool_idle_rotation)
 	
 	move_idle_tool(startPos + local_offset, rotation)
 	#Handsaw.global_position = startPos + local_offset
