@@ -105,3 +105,25 @@ func _on_head_clicked(parent):
 	
 func _on_left_arm_clicked(parent):
 	handle_shared_click(parent, -19.7 * PI / 180.0)
+
+func _on_left_hand_clicked(parent):
+	handle_shared_click(parent, 42 * PI / 180.0)
+
+func _on_right_hand_clicked(parent):
+	handle_shared_click(parent, 62.2 * PI / 180.0)
+
+
+func _on_left_leg_clicked(parent):
+	handle_shared_click(parent, 62.2 * PI / 180.0)
+
+
+func _on_right_leg_clicked(parent):
+	handle_shared_click(parent, 62.2 * PI / 180.0)
+
+
+func _on_right_foot_clicked(parent):
+	handle_shared_click(parent, 62.2 * PI / 180.0)
+
+
+func _on_left_foot_clicked(parent):
+	handle_shared_click(parent, 62.2 * PI / 180.0)
