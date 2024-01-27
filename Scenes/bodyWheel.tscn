@@ -20,91 +20,172 @@ body3 = NodePath("../Body3")
 position = Vector2(-207, 0)
 
 [node name="head" parent="Body/ColorRect" index="1"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LH" parent="Body/ColorRect" index="2"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LA" parent="Body/ColorRect" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RH" parent="Body/ColorRect" index="4"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RA" parent="Body/ColorRect" index="5"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LL" parent="Body/ColorRect" index="6"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LF" parent="Body/ColorRect" index="7"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RL" parent="Body/ColorRect" index="8"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RF" parent="Body/ColorRect" index="9"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="Body2" parent="." instance=ExtResource("1_cs0bs")]
 position = Vector2(-207, 0)
 
 [node name="head" parent="Body2/ColorRect" index="1"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LH" parent="Body2/ColorRect" index="2"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LA" parent="Body2/ColorRect" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RH" parent="Body2/ColorRect" index="4"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RA" parent="Body2/ColorRect" index="5"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LL" parent="Body2/ColorRect" index="6"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LF" parent="Body2/ColorRect" index="7"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RL" parent="Body2/ColorRect" index="8"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RF" parent="Body2/ColorRect" index="9"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="Body3" parent="." instance=ExtResource("1_cs0bs")]
 position = Vector2(-207, 0)
 
 [node name="head" parent="Body3/ColorRect" index="1"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LH" parent="Body3/ColorRect" index="2"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LA" parent="Body3/ColorRect" index="3"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RH" parent="Body3/ColorRect" index="4"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RA" parent="Body3/ColorRect" index="5"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LL" parent="Body3/ColorRect" index="6"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="LF" parent="Body3/ColorRect" index="7"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RL" parent="Body3/ColorRect" index="8"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [node name="RF" parent="Body3/ColorRect" index="9"]
-layout_mode = 0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 62.0
+offset_bottom = 61.0
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
 
