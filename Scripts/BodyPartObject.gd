@@ -11,6 +11,9 @@ var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
 var offset_held = Vector2(0, 0);
 
+var upper_angle_limit : float = 30
+var lower_angle_limit : float = -30
+
 var held = false : 
 	get:
 		return held
@@ -72,10 +75,13 @@ func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	node.position = own_child.position
 	node.node_a = self.get_path()
 	node.node_b = dock_point.get_parent().get_path()
-	node.set_angular_limit_enabled(true)
-	node.angular_limit_lower = dock_point.min_angle
-	node.angular_limit_upper = dock_point.max_angle
-	# node.disable_collision = false
+	# node.set_angular_limit_enabled(true)
+	# node.angular_limit_lower = dock_point.min_angle
+	# node.angular_limit_upper = dock_point.max_angle
+	node.disable_collision = false
+	upper_angle_limit = dock_point.max_angle
+	lower_angle_limit = dock_point.min_angle
+	lock_rotation = false
 	add_child(node)
 	# Enable other dock points for docking
 	for d in dock_points:
@@ -92,7 +98,10 @@ func _physics_process(delta):
 	if held:
 		global_transform.origin = get_global_mouse_position() + offset_held
 		queue_redraw()
-
+		
+func _integrate_forces(state):
+	pass
+	
 func rotate_around_point(rotate : float):
 	offset_held = offset_held.rotated(rotate)
 	rotate(rotate)
@@ -100,7 +109,7 @@ func rotate_around_point(rotate : float):
 func _on_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
-			offset_held = self.global_position - event.position
+			offset_held = self.global_position - get_global_mouse_position()
 			held = true
 		elif event.is_released():
 			held = false

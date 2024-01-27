@@ -23,7 +23,7 @@ normal = Vector2(-0.999949, -0.0100497)
 [node name="Node2D2" type="Node2D"]
 
 [node name="WorldBoundary" type="StaticBody2D" parent="."]
-position = Vector2(-6, 651)
+position = Vector2(-228, 907)
 collision_layer = 7
 collision_mask = 7
 
@@ -37,11 +37,11 @@ shape = SubResource("WorldBoundaryShape2D_olymo")
 shape = SubResource("WorldBoundaryShape2D_vmn1t")
 
 [node name="CollisionShape2D_Left" type="CollisionShape2D" parent="WorldBoundary"]
-position = Vector2(1153, 0)
+position = Vector2(2294, 7)
 shape = SubResource("WorldBoundaryShape2D_yoyet")
 
 [node name="Recipent" type="StaticBody2D" parent="."]
-position = Vector2(915, 292)
+position = Vector2(1467, 295)
 collision_layer = 4
 collision_mask = 4
 
@@ -94,23 +94,26 @@ position = Vector2(326, 471)
 [node name="leftFoot" parent="." instance=ExtResource("8_w8r02")]
 position = Vector2(324, 603)
 
-[node name="rightLeg" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("9_wdstm")]
+[node name="rightLeg" parent="." instance=ExtResource("9_wdstm")]
 position = Vector2(375, 480)
-sprite = NodePath("")
 
 [node name="rightFoot" parent="." instance=ExtResource("10_hvy0a")]
 position = Vector2(373, 625)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(347, 255)
-collision_layer = 7
-collision_mask = 7
+collision_layer = 4
+collision_mask = 4
 
 [node name="TorsoTest" type="Sprite2D" parent="StaticBody2D"]
 texture = ExtResource("11_d01yc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-44, 96, -46, 69, -38, 18, -51, -36, -50, -87, 49, -84, 49, -38, 36, -21, 34, 19, 41, 72, 43, 100)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(925, 262)
+zoom = Vector2(0.5, 0.5)
 
 [editable path="head"]
 [editable path="leftHand"]

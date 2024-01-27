@@ -18,7 +18,7 @@ texture = ExtResource("1_4pqka")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-9.8, -86)
-polygon = PackedVector2Array(-13, -31, 31, -31, 18, 208, -6, 209)
+polygon = PackedVector2Array(-12.2, -6, -5.2, -15, 16.8, -16, 29.8, -13, 18.8, 187, 10.8, 198, 0.8, 198, -6.2, 194)
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_v0uf8")]
 position = Vector2(-0.800003, -115)
