@@ -1,0 +1,86 @@
+[gd_resource type="Resource" script_class="CharacterDatabase" load_steps=24 format=3 uid="uid://bxxpfb4p11y7g"]
+
+[ext_resource type="Script" path="res://Scripts/DataTypes/BodyPart.gd" id="1_0rm3m"]
+[ext_resource type="Script" path="res://Scripts/DataTypes/Character.gd" id="1_ax5ak"]
+[ext_resource type="Script" path="res://Scripts/DataTypes/CharacterDatabase.gd" id="1_dysmw"]
+[ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="2_1kepx"]
+[ext_resource type="Texture2D" uid="uid://ddc6n6qwy0u2q" path="res://Sprites/LeftArm/LeftArmTest.png" id="3_ih2bk"]
+[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="4_164cv"]
+[ext_resource type="Texture2D" uid="uid://d07o35qvj427b" path="res://Sprites/LeftFoot/LeftFootTest.png" id="4_y2ylk"]
+[ext_resource type="Texture2D" uid="uid://bpdc3tka7g6lp" path="res://Sprites/LeftHand/LeftHandTest.png" id="5_6vjoi"]
+[ext_resource type="Texture2D" uid="uid://bj8n4l56a762a" path="res://Sprites/LeftLeg/LeftLegTest.png" id="6_hq3gd"]
+[ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="7_04vhb"]
+[ext_resource type="Texture2D" uid="uid://d15075vtjnv5v" path="res://Sprites/RightFoot/RightFootTest.png" id="8_56tel"]
+[ext_resource type="Texture2D" uid="uid://cu720wnosq5uu" path="res://Sprites/RightHand/RightHandTest.png" id="9_sqpls"]
+[ext_resource type="Texture2D" uid="uid://b13xcdnp6mhms" path="res://Sprites/RightLeg/RightLegTest.png" id="10_h04q5"]
+
+[sub_resource type="Resource" id="Resource_vh7de"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("2_1kepx")
+description = "Denkt zu viel"
+description_type = 2
+
+[sub_resource type="Resource" id="Resource_rp0je"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("3_ih2bk")
+description = "Besiegt Chuck Norris"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_kgw88"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("4_y2ylk")
+description = "Ist Fachschaftler"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_lkkjj"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("5_6vjoi")
+description = "DJ President"
+description_type = 1
+
+[sub_resource type="Resource" id="Resource_tpsm4"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("6_hq3gd")
+description = "Schreit öfters"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_tmb70"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("7_04vhb")
+description = "Hasst Pinguine"
+description_type = 2
+
+[sub_resource type="Resource" id="Resource_7ek7d"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("8_56tel")
+description = "Kotzt einhornfarbend"
+description_type = 1
+
+[sub_resource type="Resource" id="Resource_gkavh"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("9_sqpls")
+description = "Macht Brot"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_7a8nb"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("10_h04q5")
+description = "Jammt gerne"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_0j5do"]
+script = ExtResource("1_ax5ak")
+torso = ExtResource("4_164cv")
+head = SubResource("Resource_vh7de")
+left_arm = SubResource("Resource_rp0je")
+left_hand = SubResource("Resource_lkkjj")
+right_arm = SubResource("Resource_tmb70")
+right_hand = SubResource("Resource_gkavh")
+left_leg = SubResource("Resource_tpsm4")
+left_foot = SubResource("Resource_kgw88")
+right_leg = SubResource("Resource_7a8nb")
+right_foot = SubResource("Resource_7ek7d")
+
+[resource]
+script = ExtResource("1_dysmw")
+db = Array[ExtResource("1_ax5ak")]([SubResource("Resource_0j5do")])

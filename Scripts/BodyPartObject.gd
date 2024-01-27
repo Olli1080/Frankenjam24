@@ -3,11 +3,14 @@ extends RigidBody2D
 signal clicked(this : RigidBody2D)
 signal released(this : RigidBody2D)
 
+signal desc_changed(new_text : String, new_type : int)
+
 @export var sprite : Sprite2D
 @export var rotation_sensitivity : float = 0.15
 @export var particle_vel_threshold : float = 0.1
 var notesLabel : Label
 @export var notesCharacteristicsText : String
+@export var notes_characteristics_type : int
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
@@ -188,4 +191,10 @@ func _finished_dock_point(dock_point : Node2D):
 	print("Finished")
 	attached_cut_points.erase(dock_point.get_parent())
 	input_pickable = attached_cut_points.size() == 0
+	
+func update_to(bp : BodyPart):
+	sprite.texture = bp.sprite
+	notesCharacteristicsText = bp.description
+	notes_characteristics_type = int(bp.description_type)
+	desc_changed.emit(notesCharacteristicsText, notes_characteristics_type)
 	
