@@ -6,6 +6,7 @@ extends Node2D
 @onready var SawUpper: Node2D = get_node("Handsaw/UpperEndNode")
 
 @export var tool_idle_position: Vector2
+@export var tool_idle_rotation: float
 
 var sawing: bool = false
 var to_saw_transition: bool = true
@@ -15,25 +16,30 @@ var relativeProgress: float = 0.0
 
 var CurrentNode = null
 
-var lerp_target
+var body_tool_rotation
+var lerp_target_position
+var lerp_target_angle
 var lerp_t = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Handsaw.global_position = tool_idle_position
+	tool_idle_rotation = tool_idle_rotation * PI / 180.0
+	Handsaw.rotation = tool_idle_rotation
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if lerp_target == Handsaw.global_position:
-		lerp_target = null
+	if lerp_target_position == Handsaw.global_position:
+		lerp_target_position = null
 		if to_saw_transition:
 			sawing = true
 		
 		to_saw_transition = false
 	
-	if lerp_target != null:
+	if lerp_target_position != null:
 		lerp_t += 0.4 * delta
-		Handsaw.global_position = Handsaw.global_position.lerp(lerp_target, lerp_t)
+		Handsaw.global_position = Handsaw.global_position.lerp(lerp_target_position, lerp_t)
+		Handsaw.rotation = lerp(Handsaw.rotation, lerp_target_angle, lerp_t)
 
 func get_saw_local_offset():
 	return Handsaw.global_position - SawMid.global_position
@@ -51,31 +57,17 @@ func set_along_line(offset: Vector2):
 	var StartPosLineSegment = CurrentNode.get_node("Line2D").get_point_position(positionIndex)
 	var CutAxis: Vector2 = CurrentNode.get_node("Line2D").get_point_position(positionIndex + 1) - StartPosLineSegment
 	set_saw_position_with_offset(get_global_point_pos(StartPosLineSegment + relativeProgress * CutAxis) + offset)
-	pass
 
-func _on_right_arm_clicked(parent):
-	print(parent.name)
-	CurrentNode = parent
-	var startPos = CurrentNode.get_node("Line2D").get_point_position(0) + parent.global_position
-	var local_offset = get_saw_local_offset()
-	#print(startPos)
-	#print(get_node("Handsaw/MidPoint").position)
-	move_idle_tool(saw_position_with_offset(startPos))
-	#Handsaw.global_position = startPos + local_offset
-	to_saw_transition = true
-	positionIndex = 0
-	
-func move_idle_tool(target: Vector2):
+func move_idle_tool(target_position: Vector2, target_angle: float):
 	lerp_t = 0
-	lerp_target = target
-#	Handsaw.global_position = target
+	lerp_target_position = target_position
+	lerp_target_angle = target_angle
 
 func _input(event):
 	if sawing and event is InputEventMouseMotion:
 		var SawAxis: Vector2 = (SawUpper.global_position - SawLower.global_position).normalized()
 		var projection: float = event.relative.dot(SawAxis)
 		
-		#Handsaw.global_position += 
 		relativeProgress = min(relativeProgress + abs(projection) / 500.0, 1.0)
 		set_along_line(projection * SawAxis)
 		if (relativeProgress == 1.0):
@@ -84,4 +76,31 @@ func _input(event):
 				relativeProgress = 0.0
 			else:
 				sawing = false
-				move_idle_tool(tool_idle_position)
+				move_idle_tool(tool_idle_position, tool_idle_rotation)
+
+func handle_shared_click(parent):
+	CurrentNode = parent
+	
+	var targetRotation = body_tool_rotation
+	
+	var startPos = CurrentNode.get_node("Line2D").get_point_position(0) + parent.global_position
+	var local_offset = get_saw_local_offset().rotated(tool_idle_rotation - targetRotation)
+	
+	move_idle_tool(startPos + local_offset, targetRotation)
+	#Handsaw.global_position = startPos + local_offset
+	to_saw_transition = true
+	positionIndex = 0
+	parent.get_node("Node2D").queue_free()
+
+func _on_right_arm_clicked(parent):
+	body_tool_rotation = tool_idle_rotation
+	handle_shared_click(parent)
+
+
+func _on_head_clicked(parent):
+	body_tool_rotation = -81.4 * PI / 180.0
+	handle_shared_click(parent)
+	
+func _on_left_arm_clicked(parent):
+	body_tool_rotation = -19.7 * PI / 180.0
+	handle_shared_click(parent)
