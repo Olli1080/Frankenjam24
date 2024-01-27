@@ -9,6 +9,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var offset = delta * 20
+	var offset = delta * 40
 	text.size.y += offset
 	text.position.y -= offset

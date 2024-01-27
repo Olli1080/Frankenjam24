@@ -32,27 +32,83 @@ offset_left = 445.0
 offset_top = 600.0
 offset_right = 705.0
 offset_bottom = 603.0
-text = "Veronika \"FalloutOwl\" Gasser
-David
-Dennis \"Stennsen\" Streicher
-Timon \"Tütimon\" Bendl
-Chris \"Zerotac\" Schuster
+text = "The Delulu Fever-Dreamers
+- proudly presented -
+
+My Perfect Partner
+
+- with -
+
+
+Code Connoisseurs
+
+Timmm* \"Mario Gourmet\" Bugla
 Oliver \"Schrödingers Hund\" Zahn
 Markus \"Inkompetencia\" Dennstedt
-Timmm* \"Mario Gourmet\" Bugla
+
+
+Creative Chaos Crafters
+
+Timon \"Tütimon\" Bendl
+David
+Chris \"Zerotac\" Schuster
+Veronika \"FalloutOwl\" Gasser
 Betty \"blorbo\" Feibel
 
-Kategorien:
 
-Code Crafters
-Creative Chaos Crafters
 Pixel Magicians
+
+Chris \"Zerotac\" Schuster
+David
+
+
+Saxy Audio Artisans
+
+Veronika \"FalloutOwl\" Gasser
+Dennis \"Stennsen\" Streicher
+
+
 User Experience Unicorns
+
+Timon \"Tütimon\" Bendl
+Betty \"blorbo\" Feibel
+
+
 Meme God
+
+Markus \"Inkompetencia\" Dennstedt
+
+
 Best Boi
+
+Timmm* \"Mario Gourmet\" Bugla
+
+
 Emotional Support
+
+Timon \"Tütimon\" Bendl
+
+
 Sleepwalking Energy Devourer
-Furry Forger"
+
+Markus \"Inkompetencia\" Dennstedt
+
+
+Furry Forger
+
+David
+
+
+with Special Thanks to
+
+Jochen \"Joust\" Koubek
+Robin \"Dave\" Hädicke
+Felix \"The Gentleman\" Raczkowski
+
+
+We hope you're proud of us.
+
+(Please don't exmatriculate us.)"
 scroll_active = false
 
 [node name="Label" type="Label" parent="."]
@@ -63,28 +119,84 @@ offset_top = 600.0
 offset_right = 706.0
 offset_bottom = 603.0
 theme_override_fonts/font = ExtResource("4_iljfp")
-theme_override_font_sizes/font_size = 18
-text = "Veronika \"FalloutOwl\" Gasser
-David
-Dennis \"Stennsen\" Streicher
-Timon \"Tütimon\" Bendl
-Chris \"Zerotac\" Schuster
+theme_override_font_sizes/font_size = 15
+text = "The Delulu Fever-Dreamers
+- proudly presented -
+
+My Perfect Partner
+
+- with -
+
+
+Code Connoisseurs
+
+Timmm* \"Mario Gourmet\" Bugla
 Oliver \"Schrödingers Hund\" Zahn
 Markus \"Inkompetencia\" Dennstedt
-Timmm* \"Mario Gourmet\" Bugla
+
+
+Creative Chaos Crafters
+
+Timon \"Tütimon\" Bendl
+David
+Chris \"Zerotac\" Schuster
+Veronika \"FalloutOwl\" Gasser
 Betty \"blorbo\" Feibel
 
-Kategorien:
 
-Code Crafters
-Creative Chaos Crafters
 Pixel Magicians
+
+Chris \"Zerotac\" Schuster
+David
+
+
+Saxy Audio Artisans
+
+Veronika \"FalloutOwl\" Gasser
+Dennis \"Stennsen\" Streicher
+
+
 User Experience Unicorns
+
+Timon \"Tütimon\" Bendl
+Betty \"blorbo\" Feibel
+
+
 Meme God
+
+Markus \"Inkompetencia\" Dennstedt
+
+
 Best Boi
+
+Timmm* \"Mario Gourmet\" Bugla
+
+
 Emotional Support
+
+Timon \"Tütimon\" Bendl
+
+
 Sleepwalking Energy Devourer
-Furry Forger"
+
+Markus \"Inkompetencia\" Dennstedt
+
+
+Furry Forger
+
+David
+
+
+with Special Thanks to
+
+Jochen \"Joust\" Koubek
+Robin \"Dave\" Hädicke
+Felix \"The Gentleman\" Raczkowski
+
+
+We hope you're proud of us.
+
+(Please don't exmatriculate us.)"
 horizontal_alignment = 1
 autowrap_mode = 3
 clip_text = true
