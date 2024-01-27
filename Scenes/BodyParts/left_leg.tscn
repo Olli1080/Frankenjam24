@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cob2bpvkgpytq"]
+
+[ext_resource type="Texture2D" uid="uid://bj8n4l56a762a" path="res://Sprites/LeftLeg/LeftLegTest.png" id="1_4pqka"]
+[ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_g2y4j"]
+
+[node name="LeftLeg" type="RigidBody2D" node_paths=PackedStringArray("sprite")]
+input_pickable = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_g2y4j")
+sprite = NodePath("LeftLegTest")
+
+[node name="LeftLegTest" type="Sprite2D" parent="."]
+position = Vector2(236, 566)
+texture = ExtResource("1_4pqka")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(229, 471)
+polygon = PackedVector2Array(-13, -31, 31, -31, 18, 208, -6, 209)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

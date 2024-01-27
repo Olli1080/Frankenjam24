@@ -3,7 +3,7 @@ extends RigidBody2D
 signal clicked(this : RigidBody2D)
 signal released(this : RigidBody2D)
 
-var sprite : Sprite2D
+@export var sprite : Sprite2D
 
 var offset_held = Vector2(0, 0);
 
@@ -23,7 +23,7 @@ var held = false :
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	sprite = $LeftArmTest
+	#sprite = $HeadTest
 	pass # Replace with function body.
 
 
