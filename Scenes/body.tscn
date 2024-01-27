@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cectf7qkms7hr"]
+
+[ext_resource type="PackedScene" uid="uid://iqxp1reu6lte" path="res://Scenes/markusTestScene.tscn" id="1_hm8le"]
+
+[node name="Body" instance=ExtResource("1_hm8le")]
+
+[editable path="leftArm"]
+[editable path="head"]
+[editable path="leftHand"]
+[editable path="rightArm"]
+[editable path="rightHand"]
+[editable path="leftLeg"]
+[editable path="leftFoot"]
+[editable path="rightLeg"]
+[editable path="rightFoot"]

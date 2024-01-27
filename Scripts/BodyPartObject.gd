@@ -67,7 +67,6 @@ func append_to_dock(own_child : Area2D, dock_point : Area2D):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(linear_velocity)
 	if linear_velocity.length() >= 0.1:
 		particleSystem1.emitting = true
 		if particleSystem2 != null:
