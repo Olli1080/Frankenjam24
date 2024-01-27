@@ -16,6 +16,8 @@ var offset_held = Vector2(0, 0);
 var upper_angle_limit : float = 30
 var lower_angle_limit : float = -30
 
+@export var attached_cut_points : Array[Node2D]
+
 var held = false : 
 	get:
 		return held
@@ -54,6 +56,7 @@ func _draw():
 				dock_points_contact.sort_custom(PairArea2D.distance_comparator)
 			var dp = dock_points_contact[0]
 			draw_line(dp.first.position, dp.first.position + (dp.second.global_position - dp.first.global_position).rotated(-rotation), Color.GREEN, 5.0, true)
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite = get_child(0)
@@ -66,6 +69,10 @@ func _ready():
 			child.area_exited.connect(_on_dock_node_area_exited.bind(child))
 			child.monitorable = false
 			child.monitoring = false
+	# Attach to dock
+	input_pickable = attached_cut_points.size() == 0
+	for dp in attached_cut_points:
+		dp.finished.connect(_finished_dock_point)
 
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	print("APPEND!!")
@@ -166,3 +173,8 @@ func _on_dock_node_area_exited(other_area : Area2D, own_child : Area2D):
 		dock_points_contact.remove_at(remove_idx)
 	print("Area {} has left Dock Point {}".format([own_child.name, other_area.name], "{}"))
 	pass # Replace with function body.
+	
+func _finished_dock_point(dock_point : Node2D):
+	print("Finished")
+	attached_cut_points.erase(dock_point)
+	input_pickable = attached_cut_points.size() == 0

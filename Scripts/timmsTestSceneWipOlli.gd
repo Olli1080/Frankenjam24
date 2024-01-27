@@ -24,6 +24,7 @@ var lerp_target_angle
 var lerp_t = 0
 
 var lastMovement: int = -1
+var current_cut_point : Node2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -103,6 +104,8 @@ func _input(event):
 				relativeProgress = 0.0
 			else:
 				sawing = false
+				current_cut_point.finished.emit(current_cut_point)
+				current_cut_point = null
 				move_idle_tool(tool_idle_position, tool_idle_rotation)
 
 func handle_shared_click(parent, rotation: float):
@@ -110,6 +113,7 @@ func handle_shared_click(parent, rotation: float):
 		return
 	click_active = true
 	
+	current_cut_point = parent.get_child(0)
 	CurrentNode = parent
 	
 	var startPos = CurrentNode.get_node("Line2D").get_point_position(0) + CurrentNode.get_node("Line2D").global_position#parent.global_position
@@ -119,7 +123,8 @@ func handle_shared_click(parent, rotation: float):
 	#Handsaw.global_position = startPos + local_offset
 	to_saw_transition = true
 	positionIndex = 0
-	parent.get_node("Node2D").queue_free()
+	current_cut_point.visible = false
+	
 
 func _on_right_arm_clicked(parent):
 	handle_shared_click(parent, tool_idle_rotation)

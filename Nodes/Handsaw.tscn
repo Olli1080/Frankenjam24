@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://b51tywbqq0bb3"]
+
+[ext_resource type="Texture2D" uid="uid://cw6m6nuhdgdr5" path="res://Sprites/Tools/handsaw.png" id="1_8e255"]
+
+[node name="Handsaw" type="Sprite2D"]
+position = Vector2(657, 138)
+rotation = 1.09258
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_8e255")
+
+[node name="MidPoint" type="Node2D" parent="."]
+position = Vector2(66.6673, 200)
+
+[node name="UpperEndNode" type="Node2D" parent="."]
+position = Vector2(-359.998, 446.668)
+
+[node name="LowerEndNode" type="Node2D" parent="."]
+position = Vector2(593.333, -113.335)

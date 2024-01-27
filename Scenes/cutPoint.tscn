@@ -3,8 +3,10 @@
 [ext_resource type="Script" path="res://Scripts/cutPoint.gd" id="2_ldh72"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8vbtk"]
+radius = 25.0
 
 [node name="Node2D" type="Node2D"]
+z_index = 5
 script = ExtResource("2_ldh72")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]

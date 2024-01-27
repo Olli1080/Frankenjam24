@@ -160,10 +160,12 @@ notesLabel = NodePath("../ColorRect/LA")
 notesCharacteristicsText = "Banane"
 
 [node name="head" parent="." index="2" node_paths=PackedStringArray("notesLabel")]
+position = Vector2(533, 83)
 notesLabel = NodePath("../ColorRect/head")
 notesCharacteristicsText = "koks"
 
 [node name="leftHand" parent="." index="3" node_paths=PackedStringArray("notesLabel")]
+position = Vector2(600, 187)
 notesLabel = NodePath("../ColorRect/LH")
 notesCharacteristicsText = "Nutten"
 

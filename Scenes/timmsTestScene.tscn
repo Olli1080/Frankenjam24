@@ -1,5 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://csnbgngwaa3fk"]
+[gd_scene load_steps=16 format=3 uid="uid://csnbgngwaa3fk"]
 
+[ext_resource type="PackedScene" uid="uid://bc33ftl5ljeu8" path="res://Scenes/cutPoints.tscn" id="1_yda8v"]
 [ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/left_arm.tscn" id="2_hh3dy"]
 [ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="2_rb8sg"]
 [ext_resource type="PackedScene" uid="uid://bsfqce3b6t3dq" path="res://Scenes/BodyParts/head.tscn" id="3_bkm6h"]
@@ -71,56 +72,73 @@ max_angle = 0.5
 position = Vector2(-3, -88)
 rotation = 3.08585
 
-[node name="leftArm" parent="." instance=ExtResource("2_hh3dy")]
+[node name="DonorBody" type="Node2D" parent="."]
+
+[node name="leftArm" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("2_hh3dy")]
 position = Vector2(204, 200)
+input_pickable = false
 notesCharacteristicsText = "Taschen"
+attached_cut_points = [NodePath("../../CutPoints/LeftArmTest/Node2D"), NodePath("../../CutPoints/LeftHandTest/Node2D")]
 
-[node name="head" parent="." instance=ExtResource("3_bkm6h")]
+[node name="head" parent="DonorBody" instance=ExtResource("3_bkm6h")]
 position = Vector2(352, 83)
+input_pickable = false
 
-[node name="leftHand" parent="." instance=ExtResource("4_cy3jm")]
+[node name="leftHand" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("4_cy3jm")]
 position = Vector2(69, 201)
+input_pickable = false
+attached_cut_points = [NodePath("../../CutPoints/LeftHandTest/Node2D")]
 
-[node name="rightArm" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("5_y08rp")]
+[node name="rightArm" parent="DonorBody" node_paths=PackedStringArray("sprite") instance=ExtResource("5_y08rp")]
 position = Vector2(500, 186)
+input_pickable = false
 sprite = NodePath("../leftHand/DockNode/AreaShape2D")
 
-[node name="rightHand" parent="." node_paths=PackedStringArray("sprite") instance=ExtResource("6_u5k7d")]
+[node name="rightHand" parent="DonorBody" node_paths=PackedStringArray("sprite") instance=ExtResource("6_u5k7d")]
 position = Vector2(594, 193)
+input_pickable = false
 sprite = NodePath("../leftArm/LeftArmSprite")
 
-[node name="leftLeg" parent="." instance=ExtResource("7_pwd65")]
+[node name="leftLeg" parent="DonorBody" instance=ExtResource("7_pwd65")]
 position = Vector2(326, 471)
+input_pickable = false
 
-[node name="leftFoot" parent="." instance=ExtResource("8_w8r02")]
+[node name="leftFoot" parent="DonorBody" instance=ExtResource("8_w8r02")]
 position = Vector2(324, 603)
+input_pickable = false
 
-[node name="rightLeg" parent="." instance=ExtResource("9_wdstm")]
+[node name="rightLeg" parent="DonorBody" instance=ExtResource("9_wdstm")]
 position = Vector2(375, 480)
+input_pickable = false
 
-[node name="rightFoot" parent="." instance=ExtResource("10_hvy0a")]
+[node name="rightFoot" parent="DonorBody" instance=ExtResource("10_hvy0a")]
 position = Vector2(373, 625)
+input_pickable = false
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="DonorBody"]
 position = Vector2(347, 255)
 collision_layer = 4
 collision_mask = 4
 
-[node name="TorsoTest" type="Sprite2D" parent="StaticBody2D"]
+[node name="TorsoTest" type="Sprite2D" parent="DonorBody/StaticBody2D"]
 texture = ExtResource("11_d01yc")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DonorBody/StaticBody2D"]
 polygon = PackedVector2Array(-44, 96, -46, 69, -38, 18, -51, -36, -50, -87, 49, -84, 49, -38, 36, -21, 34, 19, 41, 72, 43, 100)
+
+[node name="CutPoints" parent="." instance=ExtResource("1_yda8v")]
+position = Vector2(-45, 13)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(925, 262)
 zoom = Vector2(0.5, 0.5)
 
-[editable path="head"]
-[editable path="leftHand"]
-[editable path="rightArm"]
-[editable path="rightHand"]
-[editable path="leftLeg"]
-[editable path="leftFoot"]
-[editable path="rightLeg"]
-[editable path="rightFoot"]
+[editable path="DonorBody/head"]
+[editable path="DonorBody/leftHand"]
+[editable path="DonorBody/rightArm"]
+[editable path="DonorBody/rightHand"]
+[editable path="DonorBody/leftLeg"]
+[editable path="DonorBody/leftFoot"]
+[editable path="DonorBody/rightLeg"]
+[editable path="DonorBody/rightFoot"]
+[editable path="CutPoints"]
