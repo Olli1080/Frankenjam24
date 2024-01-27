@@ -42,8 +42,8 @@ func stopSound():
 		$AudioStreamPlayer2D.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	if lerp_target_position == Handsaw.global_position:
+func _process(delta):	
+	if lerp_target_position and (lerp_target_position - Handsaw.global_position).length() < 0.001:
 		lerp_target_position = null
 		if to_saw_transition:
 			sawing = true
@@ -137,7 +137,7 @@ func _on_left_arm_clicked(parent):
 	handle_shared_click(parent, -19.7 * PI / 180.0)
 
 func _on_left_hand_clicked(parent):
-	handle_shared_click(parent, 42 * PI / 180.0)
+	handle_shared_click(parent, 42.0 * PI / 180.0)
 
 func _on_right_hand_clicked(parent):
 	handle_shared_click(parent, 62.2 * PI / 180.0)
