@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djxk52vr7sx7b"
-path="res://.godot/imported/tape_v1.png-2c08c96d1ee9ad7fe18446b01e522fff.ctex"
+uid="uid://batg8331efjca"
+path="res://.godot/imported/Tooltip.jpg-5313d84de9365165a5c029580e583564.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Tools/tape_v1.png"
-dest_files=["res://.godot/imported/tape_v1.png-2c08c96d1ee9ad7fe18446b01e522fff.ctex"]
+source_file="res://Sprites/BackgroundImages/Tooltip.jpg"
+dest_files=["res://.godot/imported/Tooltip.jpg-5313d84de9365165a5c029580e583564.ctex"]
 
 [params]
 
