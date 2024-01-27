@@ -49,7 +49,7 @@ collision_mask = 4
 texture = ExtResource("11_d01yc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recipent"]
-polygon = PackedVector2Array(-48, 99, -46, 62, -40, 7, -51, -35, -51, -83, -21, -87, 16, -86, 48, -80, 50, -42, 39, -34, 34, 9, 36, 62, 44, 99)
+polygon = PackedVector2Array(-47, 87, -46, 62, -40, 7, -51, -35, -51, -83, -21, -87, 16, -86, 48, -80, 50, -42, 39, -34, 34, 9, 36, 62, 42, 86)
 
 [node name="DockNode" parent="Recipent" instance=ExtResource("2_rb8sg")]
 position = Vector2(-52, -59)
@@ -73,6 +73,7 @@ rotation = 3.08585
 
 [node name="leftArm" parent="." instance=ExtResource("2_hh3dy")]
 position = Vector2(204, 200)
+notesCharacteristicsText = "Taschen"
 
 [node name="head" parent="." instance=ExtResource("3_bkm6h")]
 position = Vector2(352, 83)

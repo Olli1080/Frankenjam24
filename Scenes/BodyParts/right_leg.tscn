@@ -9,6 +9,7 @@
 [node name="rightLeg" type="RigidBody2D"]
 position = Vector2(-2, 4)
 input_pickable = true
+center_of_mass_mode = 1
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_x30k5")

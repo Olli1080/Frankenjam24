@@ -5,12 +5,9 @@ signal released(this : RigidBody2D)
 
 @export var sprite : Sprite2D
 @export var rotation_sensitivity : float = 0.15
-<<<<<<< HEAD
 @export var particle_vel_threshold : float = 0.1
-=======
 @export var notesLabel : Label
 @export var notesCharacteristicsText : String
->>>>>>> origin/dev_markus
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
@@ -60,7 +57,8 @@ func _draw():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	sprite = get_child(0)
-	notesLabel.text = notesCharacteristicsText
+	if notesLabel:
+		notesLabel.text = notesCharacteristicsText
 	for child in get_children():
 		if child.is_in_group("DockPoint"):
 			dock_points.append(child)
@@ -134,13 +132,15 @@ func _unhandled_input(event):
 
 func _on_mouse_entered():
 	sprite.modulate = Color.YELLOW
-	notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
+	if notesLabel:
+		notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
 	pass # Replace with function body.
 
 
 func _on_mouse_exited():
 	sprite.modulate = Color.WHITE
-	notesLabel.remove_theme_color_override("font_shadow_color")
+	if notesLabel:
+		notesLabel.remove_theme_color_override("font_shadow_color")
 	pass # Replace with function body.
 
 

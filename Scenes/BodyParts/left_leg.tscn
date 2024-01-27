@@ -8,6 +8,7 @@
 
 [node name="LeftLeg" type="RigidBody2D"]
 input_pickable = true
+center_of_mass_mode = 1
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_g2y4j")
@@ -18,7 +19,7 @@ texture = ExtResource("1_4pqka")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-9.8, -86)
-polygon = PackedVector2Array(-12.2, -6, -5.2, -15, 16.8, -16, 29.8, -13, 18.8, 187, 10.8, 198, 0.8, 198, -6.2, 194)
+polygon = PackedVector2Array(-12.2, -6, -6.2, -9, 17.8, -10, 26.8, -4, 18.8, 187, 10.8, 198, 0.8, 198, -6.2, 185)
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_v0uf8")]
 position = Vector2(-0.800003, -115)
