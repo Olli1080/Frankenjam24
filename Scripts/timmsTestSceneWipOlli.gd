@@ -8,6 +8,8 @@ extends Node2D
 @export var tool_idle_position: Vector2
 @export var tool_idle_rotation: float
 
+@onready var SawSound = preload("res://Sound/handsaw.mp3")
+
 var click_active: bool = false
 var sawing: bool = false
 var to_saw_transition: bool = true
@@ -21,11 +23,22 @@ var lerp_target_position
 var lerp_target_angle
 var lerp_t = 0
 
+var lastMovement: int = -1
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	Handsaw.global_position = tool_idle_position
 	tool_idle_rotation = tool_idle_rotation * PI / 180.0
 	Handsaw.rotation = tool_idle_rotation
+	$AudioStreamPlayer2D.stream = SawSound
+
+func playSound():
+	if !$AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.play()
+		
+func stopSound():
+	if $AudioStreamPlayer2D.is_playing():
+		$AudioStreamPlayer2D.stop()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -41,6 +54,16 @@ func _process(delta):
 		lerp_t += 0.4 * delta
 		Handsaw.global_position = Handsaw.global_position.lerp(lerp_target_position, lerp_t)
 		Handsaw.rotation = lerp(Handsaw.rotation, lerp_target_angle, lerp_t)
+		
+	if sawing:
+		if Time.get_ticks_msec() - lastMovement > 300:
+			stopSound()
+		else:
+			playSound()
+	elif Time.get_ticks_msec() - lastMovement > 90:
+		stopSound()
+			
+		
 
 func get_saw_local_offset():
 	return Handsaw.global_position - SawMid.global_position
@@ -69,6 +92,8 @@ func _input(event):
 	if sawing and event is InputEventMouseMotion:
 		var SawAxis: Vector2 = (SawUpper.global_position - SawLower.global_position).normalized()
 		var projection: float = event.relative.dot(SawAxis)
+		
+		lastMovement = Time.get_ticks_msec()
 		
 		relativeProgress = min(relativeProgress + abs(projection) / 500.0, 1.0)
 		set_along_line(projection * SawAxis)
