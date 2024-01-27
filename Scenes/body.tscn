@@ -207,24 +207,21 @@ input_pickable = false
 notesCharacteristicsText = "Pinguin"
 attached_cut_points = [NodePath("../../CutPoints/HeadTest")]
 
-[node name="leftHand" parent="DonorBody" node_paths=PackedStringArray("sprite", "attached_cut_points") instance=ExtResource("7_gr5eo")]
+[node name="leftHand" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("7_gr5eo")]
 position = Vector2(69, 201)
 input_pickable = false
-sprite = NodePath("")
 notesCharacteristicsText = "Pinguin"
 attached_cut_points = [NodePath("../../CutPoints/LeftHandTest")]
 
-[node name="rightArm" parent="DonorBody" node_paths=PackedStringArray("sprite", "attached_cut_points") instance=ExtResource("8_kb20x")]
+[node name="rightArm" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("8_kb20x")]
 position = Vector2(500, 186)
 input_pickable = false
-sprite = NodePath("")
 notesCharacteristicsText = "Pinguin"
 attached_cut_points = [NodePath("../../CutPoints/RightArmTest"), NodePath("../../CutPoints/RightHandTest")]
 
-[node name="rightHand" parent="DonorBody" node_paths=PackedStringArray("sprite", "attached_cut_points") instance=ExtResource("9_h00fm")]
+[node name="rightHand" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("9_h00fm")]
 position = Vector2(594, 193)
 input_pickable = false
-sprite = NodePath("")
 notesCharacteristicsText = "Pinguin"
 attached_cut_points = [NodePath("../../CutPoints/RightHandTest")]
 
@@ -234,10 +231,9 @@ input_pickable = false
 notesCharacteristicsText = "Pinguin"
 attached_cut_points = [NodePath("../../CutPoints/LeftLegTest"), NodePath("../../CutPoints/LeftFootTest")]
 
-[node name="leftFoot" parent="DonorBody" node_paths=PackedStringArray("sprite", "attached_cut_points") instance=ExtResource("11_4pek4")]
+[node name="leftFoot" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("11_4pek4")]
 position = Vector2(324, 603)
 input_pickable = false
-sprite = NodePath("")
 notesCharacteristicsText = "Pinguin"
 attached_cut_points = [NodePath("../../CutPoints/LeftFootTest")]
 
