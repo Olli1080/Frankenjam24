@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://qpma3icuof4i"]
+[gd_scene load_steps=5 format=3 uid="uid://qpma3icuof4i"]
 
 [ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="1_fg7th"]
 [ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_u11bq"]
 [ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_uaupg"]
+[ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_s25o4"]
 
 [node name="rightArm" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1", "particleSystem2")]
 input_pickable = true
@@ -30,6 +31,12 @@ emitting = false
 position = Vector2(508, 280)
 rotation = -1.5708
 emitting = false
+
+[node name="DockNode" parent="." instance=ExtResource("4_s25o4")]
+position = Vector2(308, 279)
+
+[node name="DockNode2" parent="." instance=ExtResource("4_s25o4")]
+position = Vector2(507, 278)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

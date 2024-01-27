@@ -1,11 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://cmwt7nwj0b1sx"]
+[gd_scene load_steps=2 format=3 uid="uid://cqtbg0laj4dvh"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_g8nte"]
 radius = 20.0
 
-[node name="LeftLegDockNode" type="Area2D" groups=["DockPoint"]]
-position = Vector2(-25, 100)
-rotation = 0.208696
+[node name="DockNode" type="Area2D" groups=["DockPoint"]]
 collision_layer = 2
 collision_mask = 2
 monitoring = false
