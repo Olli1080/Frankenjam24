@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cfr0a5fokav1n"]
+
+[ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_1ylvv"]
+[ext_resource type="Texture2D" uid="uid://ddc6n6qwy0u2q" path="res://Sprites/LeftArm/LeftArmTest.png" id="2_jcwre"]
+[ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_7imhs"]
+[ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_hhkhs"]
+
+[node name="RigidBody2D" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1", "particleSystem2")]
+position = Vector2(120, 282)
+input_pickable = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_1ylvv")
+sprite = NodePath("LeftArmSprite")
+particleSystem1 = NodePath("GPUParticles2D")
+particleSystem2 = NodePath("GPUParticles2D2")
+
+[node name="LeftArmSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_jcwre")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-96, -8, 94, -24, 94, 34, 2, 23, -98, 21)
+
+[node name="GPUParticles2D" parent="." instance=ExtResource("3_7imhs")]
+position = Vector2(-100, 7)
+rotation = 1.5708
+emitting = false
+
+[node name="GPUParticles2D2" parent="." instance=ExtResource("3_7imhs")]
+position = Vector2(100, 5)
+rotation = -1.5708
+emitting = false
+
+[node name="DockNode" parent="." instance=ExtResource("4_hhkhs")]
+position = Vector2(98, 6)
+
+[node name="DockNode2" parent="." instance=ExtResource("4_hhkhs")]
+position = Vector2(-99, 6)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

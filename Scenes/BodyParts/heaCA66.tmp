@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bsfqce3b6t3dq"]
+[gd_scene load_steps=4 format=3 uid="uid://bsfqce3b6t3dq"]
 
 [ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_b8f5k"]
 [ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="2_575bb"]
 [ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_5y5rg"]
-[ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_0tkc8"]
 
 [node name="head" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1")]
 input_pickable = true
@@ -23,10 +22,6 @@ polygon = PackedVector2Array(-26, -75, 0, -92, 27, -77, 41, -16, 10, 55, -14, 56
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_5y5rg")]
 position = Vector2(259, 248)
-emitting = false
-
-[node name="DockNode" parent="." instance=ExtResource("4_0tkc8")]
-position = Vector2(261, 244)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
