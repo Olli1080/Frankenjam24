@@ -22,7 +22,6 @@ polygon = PackedVector2Array(-26, -75, 0, -92, 27, -77, 41, -16, 10, 55, -14, 56
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_5y5rg")]
 position = Vector2(259, 248)
-emitting = false
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
