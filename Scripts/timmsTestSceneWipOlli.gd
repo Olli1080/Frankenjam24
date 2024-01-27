@@ -8,6 +8,7 @@ extends Node2D
 @export var tool_idle_position: Vector2
 @export var tool_idle_rotation: float
 
+var click_active: bool = false
 var sawing: bool = false
 var to_saw_transition: bool = true
 
@@ -33,7 +34,8 @@ func _process(delta):
 		lerp_target_position = null
 		if to_saw_transition:
 			sawing = true
-		
+		else:
+			click_active = false
 		to_saw_transition = false
 	
 	if lerp_target_position != null:
@@ -93,14 +95,22 @@ func handle_shared_click(parent):
 	parent.get_node("Node2D").queue_free()
 
 func _on_right_arm_clicked(parent):
+	if click_active:
+		return
+	click_active = true
 	body_tool_rotation = tool_idle_rotation
 	handle_shared_click(parent)
 
-
 func _on_head_clicked(parent):
+	if click_active:
+		return
+	click_active = true
 	body_tool_rotation = -81.4 * PI / 180.0
 	handle_shared_click(parent)
 	
 func _on_left_arm_clicked(parent):
+	if click_active:
+		return
+	click_active = true
 	body_tool_rotation = -19.7 * PI / 180.0
 	handle_shared_click(parent)
