@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bsfqce3b6t3dq"]
+
+[ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_b8f5k"]
+[ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="2_575bb"]
+
+[node name="head" type="RigidBody2D" node_paths=PackedStringArray("sprite")]
+input_pickable = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_b8f5k")
+sprite = NodePath("HeadTest")
+
+[node name="HeadTest" type="Sprite2D" parent="."]
+position = Vector2(256, 169)
+texture = ExtResource("2_575bb")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(261, 187)
+polygon = PackedVector2Array(-26, -75, 0, -92, 27, -77, 41, -16, 10, 55, -14, 56, -42, -18)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

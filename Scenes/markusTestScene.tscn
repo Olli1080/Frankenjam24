@@ -1,15 +1,14 @@
-[gd_scene load_steps=15 format=3 uid="uid://iqxp1reu6lte"]
+[gd_scene load_steps=14 format=3 uid="uid://iqxp1reu6lte"]
 
-[ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_agfot"]
-[ext_resource type="Texture2D" uid="uid://ddc6n6qwy0u2q" path="res://Sprites/LeftArm/LeftArmTest.png" id="2_hod15"]
-[ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="3_mmoc4"]
-[ext_resource type="Texture2D" uid="uid://d07o35qvj427b" path="res://Sprites/LeftFoot/LeftFootTest.png" id="4_cl6q5"]
-[ext_resource type="Texture2D" uid="uid://bpdc3tka7g6lp" path="res://Sprites/LeftHand/LeftHandTest.png" id="5_2thti"]
-[ext_resource type="Texture2D" uid="uid://bj8n4l56a762a" path="res://Sprites/LeftLeg/LeftLegTest.png" id="6_yobbr"]
-[ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="7_p7d1k"]
-[ext_resource type="Texture2D" uid="uid://d15075vtjnv5v" path="res://Sprites/RightFoot/RightFootTest.png" id="8_qebng"]
-[ext_resource type="Texture2D" uid="uid://cu720wnosq5uu" path="res://Sprites/RightHand/RightHandTest.png" id="9_sp2w6"]
-[ext_resource type="Texture2D" uid="uid://b13xcdnp6mhms" path="res://Sprites/RightLeg/RightLegTest.png" id="10_chrkg"]
+[ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/leftArm.tscn" id="1_y31bj"]
+[ext_resource type="PackedScene" uid="uid://bsfqce3b6t3dq" path="res://Scenes/BodyParts/head.tscn" id="2_85d8m"]
+[ext_resource type="PackedScene" uid="uid://d1fwh58bk2sgd" path="res://Scenes/BodyParts/left_hand.tscn" id="3_hywea"]
+[ext_resource type="PackedScene" uid="uid://qpma3icuof4i" path="res://Scenes/BodyParts/right_arm.tscn" id="4_w4mll"]
+[ext_resource type="PackedScene" uid="uid://cesxkvwkssn7c" path="res://Scenes/BodyParts/right_hand.tscn" id="5_2fsp8"]
+[ext_resource type="PackedScene" uid="uid://cob2bpvkgpytq" path="res://Scenes/BodyParts/left_leg.tscn" id="6_ok5lp"]
+[ext_resource type="PackedScene" uid="uid://cdskxifacaj32" path="res://Scenes/BodyParts/left_foot.tscn" id="7_b44ww"]
+[ext_resource type="PackedScene" uid="uid://bjdltiududoxk" path="res://Scenes/BodyParts/right_leg.tscn" id="8_eheba"]
+[ext_resource type="PackedScene" uid="uid://c5o3jeiljvx43" path="res://Scenes/BodyParts/right_foot.tscn" id="9_cd162"]
 [ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="11_6i0br"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7rj24"]
@@ -22,57 +21,37 @@ normal = Vector2(-0.999949, -0.0100497)
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(120, 282)
-input_pickable = true
-freeze = true
-freeze_mode = 1
-script = ExtResource("1_agfot")
+[node name="leftArm" parent="." instance=ExtResource("1_y31bj")]
+position = Vector2(390, 196)
 
-[node name="LeftArmTest" type="Sprite2D" parent="RigidBody2D"]
-texture = ExtResource("2_hod15")
+[node name="head" parent="." instance=ExtResource("2_85d8m")]
+position = Vector2(270, -86)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RigidBody2D"]
-polygon = PackedVector2Array(-96, -8, 94, -24, 94, 34, 2, 23, -98, 21)
+[node name="leftHand" parent="." instance=ExtResource("3_hywea")]
+position = Vector2(270, -86)
 
-[node name="HeadTest" type="Sprite2D" parent="."]
-position = Vector2(256, 169)
-texture = ExtResource("3_mmoc4")
+[node name="rightArm" parent="." instance=ExtResource("4_w4mll")]
+position = Vector2(270, -86)
 
-[node name="LeftFootTest" type="Sprite2D" parent="."]
-position = Vector2(238, 705)
-texture = ExtResource("4_cl6q5")
+[node name="rightHand" parent="." instance=ExtResource("5_2fsp8")]
+position = Vector2(270, -86)
 
-[node name="LeftHandTest" type="Sprite2D" parent="."]
-position = Vector2(-28, 284)
-texture = ExtResource("5_2thti")
+[node name="leftLeg" parent="." instance=ExtResource("6_ok5lp")]
+position = Vector2(270, -86)
 
-[node name="LeftLegTest" type="Sprite2D" parent="."]
-position = Vector2(236, 566)
-texture = ExtResource("6_yobbr")
+[node name="leftFoot" parent="." instance=ExtResource("7_b44ww")]
+position = Vector2(270, -86)
 
-[node name="RightArmTest" type="Sprite2D" parent="."]
-position = Vector2(407, 276)
-texture = ExtResource("7_p7d1k")
+[node name="rightLeg" parent="." instance=ExtResource("8_eheba")]
 
-[node name="RightFootTest" type="Sprite2D" parent="."]
-position = Vector2(287, 704)
-texture = ExtResource("8_qebng")
-
-[node name="RightHandTest" type="Sprite2D" parent="."]
-position = Vector2(558, 280)
-texture = ExtResource("9_sp2w6")
-
-[node name="RightLegTest" type="Sprite2D" parent="."]
-position = Vector2(286, 566)
-texture = ExtResource("10_chrkg")
+[node name="rightFoot" parent="." instance=ExtResource("9_cd162")]
 
 [node name="TorsoTest" type="Sprite2D" parent="."]
-position = Vector2(264, 340)
+position = Vector2(534, 254)
 texture = ExtResource("11_6i0br")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(-131, 752)
+position = Vector2(139, 666)
 
 [node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_7rj24")
@@ -87,6 +66,12 @@ shape = SubResource("WorldBoundaryShape2D_jrx88")
 position = Vector2(1153, 0)
 shape = SubResource("WorldBoundaryShape2D_iqsta")
 
-[connection signal="input_event" from="RigidBody2D" to="RigidBody2D" method="_on_input_event"]
-[connection signal="mouse_entered" from="RigidBody2D" to="RigidBody2D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="RigidBody2D" to="RigidBody2D" method="_on_mouse_exited"]
+[editable path="leftArm"]
+[editable path="head"]
+[editable path="leftHand"]
+[editable path="rightArm"]
+[editable path="rightHand"]
+[editable path="leftLeg"]
+[editable path="leftFoot"]
+[editable path="rightLeg"]
+[editable path="rightFoot"]

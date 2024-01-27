@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://qpma3icuof4i"]
+
+[ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="1_fg7th"]
+[ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_u11bq"]
+
+[node name="rightArm" type="RigidBody2D" node_paths=PackedStringArray("sprite")]
+input_pickable = true
+freeze = true
+freeze_mode = 1
+script = ExtResource("1_u11bq")
+sprite = NodePath("RightArmTest")
+
+[node name="RightArmTest" type="Sprite2D" parent="."]
+position = Vector2(407, 276)
+texture = ExtResource("1_fg7th")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(378, 276)
+polygon = PackedVector2Array(130, 19, -70, 39, -72, -26, 129, -10)
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
