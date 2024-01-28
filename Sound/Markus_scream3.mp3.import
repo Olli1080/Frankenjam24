@@ -2,11 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-<<<<<<< HEAD
-uid="uid://dca5ydcyq6epj"
-=======
-uid="uid://bg5oktwtbqku7"
->>>>>>> dev_markus
+uid="uid://ccnp2y770m58h"
 path="res://.godot/imported/Markus_scream3.mp3-3e71d1785cea21637ed942af1bc86df8.mp3str"
 
 [deps]

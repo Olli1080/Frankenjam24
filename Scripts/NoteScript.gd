@@ -27,14 +27,16 @@ func _update(new_desc : String, new_type : int):
 
 func _on_mouse_entered():
 	bodySprite.highlighting = true
-	bigTextRect.visible = true
-	bigText.text = ownLabel.text
+	if bigTextRect:
+		bigTextRect.visible = true
+		bigText.text = ownLabel.text
 
 
 
 func _on_mouse_exited():
 	bodySprite.highlighting = false
-	bigTextRect.visible = false
+	if bigTextRect:
+		bigTextRect.visible = false
 
 
 

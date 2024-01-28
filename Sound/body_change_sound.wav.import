@@ -2,11 +2,7 @@
 
 importer="wav"
 type="AudioStreamWAV"
-<<<<<<< HEAD
-uid="uid://dmwhd4mab1m3r"
-=======
-uid="uid://i4onhtb7r4p7"
->>>>>>> dev_markus
+uid="uid://cqn2qqn2bgkfy"
 path="res://.godot/imported/body_change_sound.wav-07b455ce8efb6b6644c030d0c20ab43f.sample"
 
 [deps]

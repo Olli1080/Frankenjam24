@@ -89,7 +89,8 @@ func _ready():
 	input_pickable = attached_cut_points.size() == 0
 	for dp in attached_cut_points:
 		dp.get_child(0).finished.connect(_finished_dock_point)
-	bigText = bigTextRect.get_child(0)
+	if bigTextRect:
+		bigText = bigTextRect.get_child(0)
 
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	print("APPEND!!")
