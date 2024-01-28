@@ -15,13 +15,12 @@ func _ready():
 	
 	self.add_child(stream)
 	play_music()
-	
+
 func play_music():
 	var idx: int = randi() % sounds.size()
 	
 	stream.stream = sounds[idx]
 	stream.play(offsets[idx])
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
