@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cectf7qkms7hr"]
+[gd_scene load_steps=17 format=3 uid="uid://cectf7qkms7hr"]
 
+[ext_resource type="Script" path="res://Scripts/BodySetup.gd" id="1_sn5ai"]
 [ext_resource type="Script" path="res://Scripts/NoteScript.gd" id="2_f2s22"]
 [ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="3_8imtf"]
 [ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/left_arm.tscn" id="5_6s35a"]
@@ -22,156 +23,171 @@ normal = Vector2(0.99985, 0.0173134)
 normal = Vector2(-0.999949, -0.0100497)
 
 [node name="Body" type="Node2D"]
+script = ExtResource("1_sn5ai")
 
 [node name="ColorRect" type="ColorRect" parent="."]
-offset_left = 14.0
+offset_left = -79.0
 offset_top = 306.0
-offset_right = 299.0
-offset_bottom = 640.0
+offset_right = 321.0
+offset_bottom = 706.0
 
 [node name="Label" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_top = 12.0
-offset_right = 285.0
-offset_bottom = 35.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -142.5
+offset_right = 142.5
+offset_bottom = 23.0
+grow_horizontal = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Notes: "
 horizontal_alignment = 1
 
-[node name="head" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 64.0
-offset_right = 84.0
-offset_bottom = 125.0
-mouse_filter = 1
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
-text = "Hallo"
-horizontal_alignment = 1
-vertical_alignment = 1
-script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/head")
+[node name="GridContainer" type="GridContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 3
 
-[node name="LH" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 64.0
-offset_right = 178.0
-offset_bottom = 125.0
+[node name="head" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/leftArm")
+bodySprite = NodePath("../../../DonorBody/head")
 
-[node name="LA" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 205.0
-offset_top = 64.0
-offset_right = 267.0
-offset_bottom = 125.0
+[node name="LH" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/leftHand")
+bodySprite = NodePath("../../../DonorBody/leftArm")
 
-[node name="RH" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 21.0
-offset_top = 124.0
-offset_right = 83.0
-offset_bottom = 185.0
+[node name="LA" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/rightArm")
+bodySprite = NodePath("../../../DonorBody/leftHand")
 
-[node name="RA" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 115.0
-offset_top = 124.0
-offset_right = 177.0
-offset_bottom = 185.0
+[node name="RH" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/rightHand")
+bodySprite = NodePath("../../../DonorBody/rightArm")
 
-[node name="LL" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 124.0
-offset_right = 266.0
-offset_bottom = 185.0
+[node name="RA" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/leftLeg")
+bodySprite = NodePath("../../../DonorBody/rightHand")
 
-[node name="LF" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 22.0
-offset_top = 188.0
-offset_right = 84.0
-offset_bottom = 249.0
+[node name="LL" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/leftFoot")
+bodySprite = NodePath("../../../DonorBody/leftLeg")
 
-[node name="RL" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 116.0
-offset_top = 188.0
-offset_right = 178.0
-offset_bottom = 249.0
+[node name="LF" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/rightLeg")
+bodySprite = NodePath("../../../DonorBody/leftFoot")
 
-[node name="RF" type="Label" parent="ColorRect" node_paths=PackedStringArray("bodySprite")]
-layout_mode = 0
-offset_left = 205.0
-offset_top = 188.0
-offset_right = 267.0
-offset_bottom = 249.0
+[node name="RL" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_font_sizes/font_size = 20
 text = "Hallo"
 horizontal_alignment = 1
 vertical_alignment = 1
+autowrap_mode = 3
 script = ExtResource("2_f2s22")
-bodySprite = NodePath("../../DonorBody/rightFoot")
+bodySprite = NodePath("../../../DonorBody/rightLeg")
+
+[node name="RF" type="Label" parent="ColorRect/GridContainer" node_paths=PackedStringArray("bodySprite")]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 6
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 20
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("2_f2s22")
+bodySprite = NodePath("../../../DonorBody/rightFoot")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(139, 666)
@@ -249,34 +265,34 @@ input_pickable = false
 notesCharacteristicsText = "Pinguin"
 attached_cut_points = [NodePath("../../CutPoints/RightFootTest")]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="DonorBody"]
+[node name="torso" type="StaticBody2D" parent="DonorBody"]
 position = Vector2(347, 255)
-collision_layer = 4
-collision_mask = 4
+collision_layer = 5
+collision_mask = 5
 
-[node name="TorsoTest" type="Sprite2D" parent="DonorBody/StaticBody2D"]
+[node name="Sprite" type="Sprite2D" parent="DonorBody/torso"]
 texture = ExtResource("3_8imtf")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DonorBody/StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DonorBody/torso"]
 polygon = PackedVector2Array(-44, 96, -46, 69, -38, 18, -51, -36, -50, -87, 49, -84, 49, -38, 36, -21, 34, 19, 41, 72, 43, 100)
 
-[connection signal="mouse_entered" from="ColorRect/head" to="ColorRect/head" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/head" to="ColorRect/head" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/LH" to="ColorRect/LH" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/LH" to="ColorRect/LH" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/LA" to="ColorRect/LA" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/LA" to="ColorRect/LA" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/RH" to="ColorRect/RH" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/RH" to="ColorRect/RH" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/RA" to="ColorRect/RA" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/RA" to="ColorRect/RA" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/LL" to="ColorRect/LL" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/LL" to="ColorRect/LL" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/LF" to="ColorRect/LF" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/LF" to="ColorRect/LF" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/RL" to="ColorRect/RL" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/RL" to="ColorRect/RL" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="ColorRect/RF" to="ColorRect/RF" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="ColorRect/RF" to="ColorRect/RF" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/head" to="ColorRect/GridContainer/head" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/head" to="ColorRect/GridContainer/head" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/LH" to="ColorRect/GridContainer/LH" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/LH" to="ColorRect/GridContainer/LH" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/LA" to="ColorRect/GridContainer/LA" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/LA" to="ColorRect/GridContainer/LA" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/RH" to="ColorRect/GridContainer/RH" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/RH" to="ColorRect/GridContainer/RH" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/RA" to="ColorRect/GridContainer/RA" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/RA" to="ColorRect/GridContainer/RA" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/LL" to="ColorRect/GridContainer/LL" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/LL" to="ColorRect/GridContainer/LL" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/LF" to="ColorRect/GridContainer/LF" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/LF" to="ColorRect/GridContainer/LF" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/RL" to="ColorRect/GridContainer/RL" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/RL" to="ColorRect/GridContainer/RL" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="ColorRect/GridContainer/RF" to="ColorRect/GridContainer/RF" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="ColorRect/GridContainer/RF" to="ColorRect/GridContainer/RF" method="_on_mouse_exited"]
 
 [editable path="CutPoints"]
