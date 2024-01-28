@@ -242,40 +242,31 @@ autowrap_mode = 2
 script = ExtResource("2_ignn7")
 bodySprite = NodePath("../../../rightFoot/RightFootTest")
 
-[node name="leftArm" parent="." index="1" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect3/LA")
+[node name="leftArm" parent="." index="1"]
 notesCharacteristicsText = "forgets important dates"
 
-[node name="head" parent="." index="2" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect/head")
+[node name="head" parent="." index="2"]
 notesCharacteristicsText = "active listener"
 
-[node name="leftHand" parent="." index="3" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect2/LH")
+[node name="leftHand" parent="." index="3"]
 notesCharacteristicsText = "encourages your goals"
 
-[node name="rightArm" parent="." index="4" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect6/RA")
+[node name="rightArm" parent="." index="4"]
 notesCharacteristicsText = "always on time"
 
-[node name="rightHand" parent="." index="5" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect5/RH")
+[node name="rightHand" parent="." index="5"]
 notesCharacteristicsText = "leaves you thougthful notes"
 
-[node name="leftLeg" parent="." index="6" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect7/LL")
+[node name="leftLeg" parent="." index="6"]
 notesCharacteristicsText = "unreliable"
 
-[node name="leftFoot" parent="." index="7" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect8/LF")
+[node name="leftFoot" parent="." index="7"]
 notesCharacteristicsText = "likes similar music"
 
-[node name="rightLeg" parent="." index="8" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect9/RL")
+[node name="rightLeg" parent="." index="8"]
 notesCharacteristicsText = "prefers indoors"
 
-[node name="rightFoot" parent="." index="9" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect10/RF")
+[node name="rightFoot" parent="." index="9"]
 notesCharacteristicsText = "uncommunicative"
 
 [connection signal="mouse_entered" from="TextureRect/ColorRect/head" to="TextureRect/ColorRect/head" method="_on_mouse_entered"]

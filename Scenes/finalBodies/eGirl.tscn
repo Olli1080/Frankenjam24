@@ -15,6 +15,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_wcvos")
 
 [node name="ColorRect4" type="ColorRect" parent="TextureRect" index="0"]
+layout_mode = 0
 offset_left = 308.0
 offset_top = 424.0
 offset_right = 758.0
@@ -34,6 +35,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="TextureRect" index="1"]
+layout_mode = 0
 offset_left = 45.0
 offset_top = 600.0
 offset_right = 345.0
@@ -56,6 +58,7 @@ script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../head/HeadTest")
 
 [node name="ColorRect2" type="ColorRect" parent="TextureRect" index="2"]
+layout_mode = 0
 offset_left = 385.0
 offset_top = 600.0
 offset_right = 685.0
@@ -78,6 +81,7 @@ script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../leftHand/LeftHandTest")
 
 [node name="ColorRect3" type="ColorRect" parent="TextureRect" index="3"]
+layout_mode = 0
 offset_left = 725.0
 offset_top = 600.0
 offset_right = 1025.0
@@ -100,6 +104,7 @@ script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../leftArm/LeftArmSprite")
 
 [node name="ColorRect5" type="ColorRect" parent="TextureRect" index="4"]
+layout_mode = 0
 offset_left = 45.0
 offset_top = 1000.0
 offset_right = 345.0
@@ -122,6 +127,7 @@ script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../rightHand/RightHandTest")
 
 [node name="ColorRect6" type="ColorRect" parent="TextureRect" index="5"]
+layout_mode = 0
 offset_left = 385.0
 offset_top = 1000.0
 offset_right = 685.0
@@ -144,6 +150,7 @@ script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../rightArm/RightArmTest")
 
 [node name="ColorRect7" type="ColorRect" parent="TextureRect" index="6"]
+layout_mode = 0
 offset_left = 725.0
 offset_top = 1000.0
 offset_right = 1025.0
@@ -167,6 +174,7 @@ bodySprite = NodePath("../../../leftLeg/LeftLegTest")
 
 [node name="ColorRect8" type="ColorRect" parent="TextureRect" index="7"]
 custom_minimum_size = Vector2(300, 300)
+layout_mode = 0
 offset_left = 45.0
 offset_top = 1400.0
 offset_right = 345.0
@@ -189,6 +197,7 @@ script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../leftFoot/LeftFootTest")
 
 [node name="ColorRect9" type="ColorRect" parent="TextureRect" index="8"]
+layout_mode = 0
 offset_left = 385.0
 offset_top = 1400.0
 offset_right = 685.0
@@ -211,6 +220,7 @@ script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../rightLeg/RightLegTest")
 
 [node name="ColorRect10" type="ColorRect" parent="TextureRect" index="9"]
+layout_mode = 0
 offset_left = 724.0
 offset_top = 1400.0
 offset_right = 1024.0
@@ -232,40 +242,31 @@ autowrap_mode = 2
 script = ExtResource("2_p7jl1")
 bodySprite = NodePath("../../../rightFoot/RightFootTest")
 
-[node name="leftArm" parent="." index="1" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect3/LA")
+[node name="leftArm" parent="." index="1"]
 notesCharacteristicsText = "introverted"
 
-[node name="head" parent="." index="2" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect/head")
+[node name="head" parent="." index="2"]
 notesCharacteristicsText = "is a gemini"
 
-[node name="leftHand" parent="." index="3" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect2/LH")
+[node name="leftHand" parent="." index="3"]
 notesCharacteristicsText = "suprises you with flowers"
 
-[node name="rightArm" parent="." index="4" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect6/RA")
+[node name="rightArm" parent="." index="4"]
 notesCharacteristicsText = "plans thoughtful dates"
 
-[node name="rightHand" parent="." index="5" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect5/RH")
+[node name="rightHand" parent="." index="5"]
 notesCharacteristicsText = "materialistic"
 
-[node name="leftLeg" parent="." index="6" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect7/LL")
+[node name="leftLeg" parent="." index="6"]
 notesCharacteristicsText = "dishonest"
 
-[node name="leftFoot" parent="." index="7" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect8/LF")
+[node name="leftFoot" parent="." index="7"]
 notesCharacteristicsText = "overbearing"
 
-[node name="rightLeg" parent="." index="8" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect9/RL")
+[node name="rightLeg" parent="." index="8"]
 notesCharacteristicsText = "enjoys quiet evenings"
 
-[node name="rightFoot" parent="." index="9" node_paths=PackedStringArray("notesLabel")]
-notesLabel = NodePath("../TextureRect/ColorRect10/RF")
+[node name="rightFoot" parent="." index="9"]
 notesCharacteristicsText = "empathetic"
 
 [connection signal="mouse_entered" from="TextureRect/ColorRect/head" to="TextureRect/ColorRect/head" method="_on_mouse_entered"]

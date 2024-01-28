@@ -6,8 +6,12 @@ signal released(this : RigidBody2D)
 @export var sprite : Sprite2D
 @export var rotation_sensitivity : float = 0.15
 @export var particle_vel_threshold : float = 0.1
-var notesLabel : Label
+@export var notesLabel : Label
 @export var notesCharacteristicsText : String
+@export var bigTextRect : ColorRect
+
+
+var bigText : Label
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
@@ -83,6 +87,7 @@ func _ready():
 	input_pickable = attached_cut_points.size() == 0
 	for dp in attached_cut_points:
 		dp.get_child(0).finished.connect(_finished_dock_point)
+	bigText = bigTextRect.get_child(0)
 
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	print("APPEND!!")
@@ -149,15 +154,18 @@ func _unhandled_input(event):
 
 func _on_mouse_entered():
 	sprite.modulate = Color.YELLOW
-	if notesLabel:
-		notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
+	bigTextRect.visible = true
+	bigText.text = notesCharacteristicsText
+	#if notesLabel:
+	notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
 	pass # Replace with function body.
 
 
 func _on_mouse_exited():
 	sprite.modulate = Color.WHITE
-	if notesLabel:
-		notesLabel.remove_theme_color_override("font_shadow_color")
+	bigTextRect.visible = false
+	#if notesLabel:
+	notesLabel.remove_theme_color_override("font_shadow_color")
 	pass # Replace with function body.
 
 
