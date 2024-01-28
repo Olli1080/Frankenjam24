@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/vote_screen.gd" id="1_dmc44"]
 [ext_resource type="Texture2D" uid="uid://b5jnbgh8qrach" path="res://Sprites/BackgroundImages/GGJ 2024 - Vote Screen_new.jpg" id="1_pgak8"]
 [ext_resource type="PackedScene" uid="uid://b8j586ho4bfhf" path="res://Nodes/cloud_collider.tscn" id="2_lr8wl"]
-[ext_resource type="PackedScene" path="res://Scenes/victory_overlay.tscn" id="2_vvfdl"]
+[ext_resource type="PackedScene" uid="uid://cg01y5a2gemnx" path="res://Scenes/victory_overlay.tscn" id="2_vvfdl"]
 [ext_resource type="FontFile" uid="uid://b7u6y1ir2jdfk" path="res://Fonts/Caveat-Bold.ttf" id="6_b5t6a"]
 
 [node name="VoteScreen" type="Control" node_paths=PackedStringArray("tooltip")]
