@@ -15,25 +15,29 @@ mouse_filter = 1
 script = ExtResource("1_dmc44")
 
 [node name="Ggj2024-VoteScreenNew" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
-scale = Vector2(0.864216, 0.865154)
+position = Vector2(1071.07, 603.2)
+scale = Vector2(1.598, 1.6)
 texture = ExtResource("1_pgak8")
 
 [node name="cloud_collider_left" parent="." instance=ExtResource("2_lr8wl")]
-position = Vector2(221, 616)
+position = Vector2(412, 1142)
+scale = Vector2(2, 2.002)
 
 [node name="cloud_collider_middle" parent="." instance=ExtResource("2_lr8wl")]
-position = Vector2(576, 615)
+position = Vector2(1070, 1140)
+scale = Vector2(2, 2.003)
 
 [node name="cloud_collider_right" parent="." instance=ExtResource("2_lr8wl")]
-position = Vector2(931, 616)
+position = Vector2(1726, 1146)
+scale = Vector2(2, 2.003)
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 934.0
-offset_top = 46.0
-offset_right = 1046.0
-offset_bottom = 107.0
+offset_left = 1739.0
+offset_top = 95.0
+offset_right = 1851.0
+offset_bottom = 156.0
+scale = Vector2(1.598, 1.6)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 44
 text = "00:30"
@@ -42,6 +46,19 @@ text = "00:30"
 wait_time = 30.1
 one_shot = true
 autostart = true
+
+[node name="PlayerSpot" type="Node2D" parent="."]
+position = Vector2(1064, 572)
+
+[node name="LoserSpot1" type="Node2D" parent="."]
+position = Vector2(1732, 595)
+
+[node name="LoserSpot2" type="Node2D" parent="."]
+position = Vector2(414, 570)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(1071, 609)
+zoom = Vector2(0.55, 0.55)
 
 [connection signal="clicked" from="cloud_collider_left" to="." method="_on_cloud_collider_left_clicked"]
 [connection signal="clicked" from="cloud_collider_middle" to="." method="_on_cloud_collider_middle_clicked"]

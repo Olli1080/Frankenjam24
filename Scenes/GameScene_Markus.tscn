@@ -44,22 +44,6 @@ texture = ExtResource("3_160ae")
 [node name="Node" parent="." instance=ExtResource("1_vxjn8")]
 position = Vector2(-176, 2)
 
-[node name="FinishButton" type="Button" parent="Node"]
-clip_contents = true
-custom_minimum_size = Vector2(200, 100)
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1519.0
-offset_top = 533.0
-offset_right = 1719.0
-offset_bottom = 633.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Finisch"
-
 [node name="HebelBase" type="TextureRect" parent="Node/Button" index="0"]
 layout_mode = 0
 offset_right = 1920.0
@@ -1123,11 +1107,28 @@ notesLabel = NodePath("../../TextureRect/ColorRect10/RF")
 notesCharacteristicsText = "doesn´t clean their hair out of the shower drain"
 bigTextRect = NodePath("../../TextureRect/ColorRect11")
 
+[node name="FinishButton" type="Button" parent="Node"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1519.0
+offset_top = 533.0
+offset_right = 1719.0
+offset_bottom = 633.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Finisch"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(724, 172)
 zoom = Vector2(0.7, 0.7)
 
 [node name="Recipent" type="StaticBody2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(1163, 199)
 collision_layer = 4
 collision_mask = 4
@@ -1160,7 +1161,6 @@ max_angle = 0.5
 position = Vector2(-3, -88)
 rotation = 3.08585
 
-[connection signal="pressed" from="Node/FinishButton" to="Recipent" method="store_body_to_morgue"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect2/LH" to="Node/Body/TextureRect/ColorRect2/LH" method="_on_mouse_entered"]
@@ -1221,6 +1221,7 @@ rotation = 3.08585
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect10/RF" to="Node/Body3/TextureRect/ColorRect10/RF" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_exited"]
+[connection signal="pressed" from="Node/FinishButton" to="Recipent" method="store_body_to_morgue"]
 
 [editable path="Node"]
 [editable path="Node/Body"]

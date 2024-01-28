@@ -26,6 +26,8 @@ var lower_angle_limit : float = -30
 	get:
 		return highlighting
 	set(value):
+		if !sprite:
+			return
 		highlighting = value
 		if (highlighting):
 			sprite.modulate = Color.YELLOW
@@ -94,7 +96,10 @@ func _ready():
 
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	print("APPEND!!")
-	reparent(dock_point.get_parent().get_parent())
+	var cur_par : Node2D = dock_point.get_parent()
+	while cur_par.name != "Recipent":
+		cur_par = cur_par.get_parent()
+	reparent(cur_par)
 	dock_point.monitorable = false
 	freeze = false
 	input_pickable = false
@@ -157,8 +162,9 @@ func _unhandled_input(event):
 
 func _on_mouse_entered():
 	sprite.modulate = Color.YELLOW
-	bigTextRect.visible = true
-	bigText.text = notesCharacteristicsText
+	if bigTextRect:
+		bigTextRect.visible = true
+		bigText.text = notesCharacteristicsText
 	#if notesLabel:
 	notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
 	pass # Replace with function body.

@@ -1,4 +1,4 @@
 extends Node
 class_name theMorgue
 
-@export var player_body : PackedScene = PackedScene.new()
+@export var player_body : PackedScene

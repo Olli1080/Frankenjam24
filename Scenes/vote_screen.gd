@@ -4,7 +4,10 @@ extends Control
 @onready var time_label: Label = get_node("Label")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	var the_morgue : TheMorgue = $"/root/TheMorgue"
+	var player_body : Node2D = the_morgue.player_body.instantiate()
+	player_body.position = $PlayerSpot.position
+	add_child(player_body)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
