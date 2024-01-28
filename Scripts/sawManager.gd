@@ -9,6 +9,9 @@ extends Node2D
 @export var tool_idle_rotation: float
 
 @onready var SawSound = preload("res://Sound/handsaw.mp3")
+var ScreamSounds: Array[AudioStream]
+var ScreamSoundsHorse: Array[AudioStream]
+var ScreamStream: AudioStreamPlayer2D
 
 var click_active: bool = false
 var sawing: bool = false
@@ -28,10 +31,39 @@ var current_cut_point : Node2D = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	ScreamSounds.append(preload("res://Sound/timon_scream.mp3"))
+	ScreamSounds.append(preload("res://Sound/timon_scream2.mp3"))
+	ScreamSounds.append(preload("res://Sound/Markus_scream1.mp3"))
+	ScreamSounds.append(preload("res://Sound/Markus_scream2.mp3"))
+	ScreamSounds.append(preload("res://Sound/Markus_scream3.mp3"))
+	ScreamSoundsHorse.append(preload("res://Sound/horse1.mp3"))
+	ScreamSoundsHorse.append(preload("res://Sound/horse2.mp3"))
+	ScreamSoundsHorse.append(preload("res://Sound/horse3.mp3"))
+	ScreamStream = AudioStreamPlayer2D.new()
+	ScreamStream.finished.connect(screamDone)
+	ScreamStream.volume_db = 20
+	self.add_child(ScreamStream)
+	
 	Handsaw.global_position = tool_idle_position
 	tool_idle_rotation = tool_idle_rotation * PI / 180.0
 	Handsaw.rotation = tool_idle_rotation
 	$AudioStreamPlayer2D.stream = SawSound
+
+func screamDone():
+	if sawing:
+		playScream()
+
+func playScream():
+	var stream: AudioStream	
+	if self.get_parent().get_index() != 2:
+		var idx: int = randi() % ScreamSounds.size()
+		stream = ScreamSounds[idx]
+	else:
+		var idx: int = randi() % ScreamSoundsHorse.size()
+		stream = ScreamSoundsHorse[idx]
+		
+	ScreamStream.stream = stream
+	ScreamStream.play()
 
 func playSound():
 	if !$AudioStreamPlayer2D.is_playing():
@@ -47,6 +79,7 @@ func _process(delta):
 		lerp_target_position = null
 		if to_saw_transition:
 			sawing = true
+			playScream()
 		else:
 			click_active = false
 		to_saw_transition = false
