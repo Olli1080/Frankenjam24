@@ -7,15 +7,30 @@ extends Control
 var done: bool = false
 var timestamp_done = null
 
+var stream: AudioStreamPlayer2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	stream = AudioStreamPlayer2D.new()
+	stream.stream = preload("res://Sound/Idle Funk.mp3")
+	
+	stream.volume_db = 6
+	stream.finished.connect(play_music)
+	
+	self.add_child(stream)
+	play_music()
+	
+func play_music():
+	stream.play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if done:
-		if Time.get_ticks_msec() - timestamp_done > 3000:
+		var fadeout_time = Time.get_ticks_msec() - timestamp_done
+		if fadeout_time > 3000:
 			get_tree().change_scene_to_file("res://Scenes/start_menu.tscn")
+		else:
+			stream.volume_db = lerp(6, 0, fadeout_time / 3000.0)
 		return
 		
 	var offset = delta * 40

@@ -1,12 +1,24 @@
 extends Control
 
+var stream: AudioStreamPlayer2D
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	stream = AudioStreamPlayer2D.new()
+	stream.stream = preload("res://Sound/Idle Funk.mp3")
+	
+	stream.volume_db = 6
+	stream.finished.connect(play_music)
+	
+	self.add_child(stream)
+	play_music()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+	
+func play_music():
+	stream.play()
 
 
 func _on_start_game_button_pressed():
