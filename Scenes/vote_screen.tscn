@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://Scenes/vote_screen.gd" id="1_dmc44"]
 [ext_resource type="Texture2D" uid="uid://b5jnbgh8qrach" path="res://Sprites/BackgroundImages/GGJ 2024 - Vote Screen_new.jpg" id="1_pgak8"]
-[ext_resource type="PackedScene" uid="uid://cg01y5a2gemnx" path="res://Scenes/victory_overlay.tscn" id="2_lq8eg"]
 [ext_resource type="PackedScene" uid="uid://b8j586ho4bfhf" path="res://Nodes/cloud_collider.tscn" id="2_lr8wl"]
+[ext_resource type="PackedScene" path="res://Scenes/victory_overlay.tscn" id="2_vvfdl"]
 [ext_resource type="PackedScene" uid="uid://di7lftmsq0ymx" path="res://Scenes/pureBody.tscn" id="4_nyovl"]
 [ext_resource type="FontFile" uid="uid://b7u6y1ir2jdfk" path="res://Fonts/Caveat-Bold.ttf" id="6_b5t6a"]
 
@@ -16,8 +16,9 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_dmc44")
-next_scene = ExtResource("2_cd8bs")
+next_scene = ExtResource("2_vvfdl")
 tooltip = NodePath("Tooltip")
+
 [node name="Ggj2024-VoteScreenNew" type="Sprite2D" parent="."]
 position = Vector2(1071.07, 603.2)
 scale = Vector2(1.598, 1.6)
