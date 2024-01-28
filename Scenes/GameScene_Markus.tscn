@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dklb3tlx2hu16"]
+[gd_scene load_steps=48 format=3 uid="uid://dklb3tlx2hu16"]
 
 [ext_resource type="Texture2D" uid="uid://du3cuegugtv83" path="res://Sprites/Tools/background_v1.png" id="1_imhc6"]
 [ext_resource type="Script" path="res://Scenes/GameScene_Markus.gd" id="1_vb2ba"]
@@ -78,14 +78,6 @@ texture = ExtResource("3_160ae")
 
 [node name="Node" parent="." instance=ExtResource("1_vxjn8")]
 position = Vector2(-176, 2)
-
-[node name="Button" parent="Node" index="0"]
-visible = false
-modulate = Color(1, 1, 1, 0)
-offset_left = 761.0
-offset_top = 211.0
-offset_right = 923.0
-offset_bottom = 315.0
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body" index="0"]
 offset_top = 250.0
@@ -609,7 +601,7 @@ texture = ExtResource("18_jp1sk")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/torso" index="1"]
 polygon = PackedVector2Array(-70, 102, -57, 22, -66, -46, -83, -77, -24, -101, -7, -94, 16, -104, 81, -81, 50, -42, 54, -34, 44, 21, 50, 99)
 
-[node name="Body2" parent="Node" index="2"]
+[node name="Body2" parent="Node" index="1"]
 index = 1
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body2" index="0"]
@@ -1137,7 +1129,7 @@ texture = ExtResource("28_k0ne3")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/torso" index="1"]
 polygon = PackedVector2Array(-63, 107, -63, 96, -83, 91, -61, 27, -65, -4, -46, -62, -55, -90, -47, -92, -33, -111, -19, -117, -8, -108, 7, -107, 19, -119, 29, -117, 41, -97, 38, -93, 59, -89, 51, -79, 47, -49, 51, -21, 61, -12, 62, 29, 58.5892, 41.7456, 70, 74, 77, 79, 73, 89, 66, 95, 58, 93, 58, 107, 41, 102, 17, 99, -16, 100)
 
-[node name="Body3" parent="Node" index="3"]
+[node name="Body3" parent="Node" index="2"]
 index = 2
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body3" index="0"]

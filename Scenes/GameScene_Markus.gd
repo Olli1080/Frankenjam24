@@ -10,7 +10,7 @@ func _ready():
 	sounds.append(preload("res://Sound/Amateur_Jazz_2.mp3"))
 	sounds.append(preload("res://Sound/Amateur_Jazz_3.mp3"))
 	
-	stream.volume_db = 20
+	stream.volume_db = 12
 	stream.finished.connect(play_music)
 	
 	self.add_child(stream)
