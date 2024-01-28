@@ -10,6 +10,7 @@ func _ready():
 	var player_body : Node2D = the_morgue.player_body.instantiate()
 	player_body.position = $PlayerSpot.position
 	player_body.update_tooltip(tooltip)
+	player_body.set_grabable(false)
 	add_child(player_body)
 
 

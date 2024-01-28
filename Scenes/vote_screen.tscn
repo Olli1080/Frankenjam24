@@ -75,6 +75,7 @@ zoom = Vector2(0.55, 0.55)
 
 [node name="Tooltip" type="ColorRect" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 127.0
 offset_top = 63.0
 offset_right = 327.0

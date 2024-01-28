@@ -12,6 +12,7 @@ signal desc_changed(new_text : String, new_type : int)
 @export var notesCharacteristicsText : String
 @export var notes_characteristics_type : int
 @export var bigTextRect : ColorRect
+@export var grabable : bool = true
 
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
@@ -98,7 +99,8 @@ func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	reparent(cur_par)
 	dock_point.monitorable = false
 	freeze = false
-	input_pickable = false
+	grabable = false
+	sprite.modulate = Color.WHITE
 	position += dock_point.global_position - own_child.global_position
 	var node = PinJoint2D.new()
 	node.set_name("PinJoint2D")
@@ -137,7 +139,7 @@ func rotate_around_point(rotate : float):
 	rotate(rotate)
 
 func _on_input_event(viewport, event, shape_idx):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	if grabable and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_pressed():
 			offset_held = self.global_position - get_global_mouse_position()
 			held = true
@@ -152,12 +154,13 @@ func _on_input_event(viewport, event, shape_idx):
 			rotate_around_point(-rotation_sensitivity)
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
+	if grabable and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT:
 		if event.is_released():
 			held = false
 
 func _on_mouse_entered():
-	sprite.modulate = Color.YELLOW
+	if grabable:
+		sprite.modulate = Color.YELLOW
 	if bigTextRect:
 		bigTextRect.visible = true
 		bigTextRect.get_child(0).text = notesCharacteristicsText
@@ -167,7 +170,8 @@ func _on_mouse_entered():
 
 
 func _on_mouse_exited():
-	sprite.modulate = Color.WHITE
+	if grabable:
+		sprite.modulate = Color.WHITE
 	if bigTextRect:
 		bigTextRect.visible = false
 	if notesLabel:

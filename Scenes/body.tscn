@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cectf7qkms7hr"]
+[gd_scene load_steps=15 format=3 uid="uid://cectf7qkms7hr"]
 
 [ext_resource type="Script" path="res://Scripts/BodySetup.gd" id="1_sn5ai"]
 [ext_resource type="Script" path="res://Scripts/NoteScript.gd" id="2_f2s22"]
@@ -14,14 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://cdskxifacaj32" path="res://Scenes/BodyParts/left_foot.tscn" id="11_4pek4"]
 [ext_resource type="PackedScene" uid="uid://bjdltiududoxk" path="res://Scenes/BodyParts/right_leg.tscn" id="12_mywsa"]
 [ext_resource type="PackedScene" uid="uid://c5o3jeiljvx43" path="res://Scenes/BodyParts/right_foot.tscn" id="13_ppxuc"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_7rj24"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_jrx88"]
-normal = Vector2(0.99985, 0.0173134)
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_iqsta"]
-normal = Vector2(-0.999949, -0.0100497)
 
 [node name="Body" type="Node2D"]
 script = ExtResource("1_sn5ai")
@@ -190,23 +182,6 @@ vertical_alignment = 1
 autowrap_mode = 3
 script = ExtResource("2_f2s22")
 bodySprite = NodePath("../../../DonorBody/rightFoot")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(139, 666)
-
-[node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_7rj24")
-
-[node name="CollisionShape2D_Bottom2" type="CollisionShape2D" parent="StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_7rj24")
-
-[node name="CollisionShape2D_Right" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-269, 0)
-shape = SubResource("WorldBoundaryShape2D_jrx88")
-
-[node name="CollisionShape2D_Left" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1436, 0)
-shape = SubResource("WorldBoundaryShape2D_iqsta")
 
 [node name="CutPoints" parent="." instance=ExtResource("5_ygfg4")]
 position = Vector2(9, 28)
