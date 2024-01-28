@@ -9,6 +9,7 @@
 [node name="GameScene" type="Node2D"]
 
 [node name="Node" parent="." instance=ExtResource("1_vxjn8")]
+position = Vector2(-176, 2)
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body" index="0"]
 offset_top = 250.0
@@ -273,10 +274,10 @@ ownLabel = NodePath(".")
 [node name="ColorRect11" type="ColorRect" parent="Node/Body/TextureRect"]
 visible = false
 layout_mode = 0
-offset_left = 60.0
-offset_top = -2316.0
-offset_right = 960.0
-offset_bottom = -1416.0
+offset_left = 40.0
+offset_top = -1632.0
+offset_right = 940.0
+offset_bottom = -732.0
 color = Color(1, 0.882353, 0.392157, 1)
 
 [node name="BigText" type="Label" parent="Node/Body/TextureRect/ColorRect11"]
@@ -607,10 +608,10 @@ ownLabel = NodePath(".")
 [node name="ColorRect11" type="ColorRect" parent="Node/Body2/TextureRect"]
 visible = false
 layout_mode = 0
-offset_left = 60.0
-offset_top = -2316.0
-offset_right = 960.0
-offset_bottom = -1416.0
+offset_left = 40.0
+offset_top = -1640.0
+offset_right = 940.0
+offset_bottom = -740.0
 color = Color(1, 0.882353, 0.392157, 1)
 
 [node name="BigText" type="Label" parent="Node/Body2/TextureRect/ColorRect11"]
@@ -941,10 +942,10 @@ ownLabel = NodePath(".")
 [node name="ColorRect11" type="ColorRect" parent="Node/Body3/TextureRect"]
 visible = false
 layout_mode = 0
-offset_left = 60.0
-offset_top = -2316.0
-offset_right = 960.0
-offset_bottom = -1416.0
+offset_left = 32.0
+offset_top = -1660.0
+offset_right = 932.0
+offset_bottom = -760.0
 color = Color(1, 0.882353, 0.392157, 1)
 
 [node name="BigText" type="Label" parent="Node/Body3/TextureRect/ColorRect11"]
@@ -1014,10 +1015,10 @@ bigTextRect = NodePath("../../TextureRect/ColorRect11")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(724, 172)
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.7, 0.7)
 
 [node name="Recipent" type="StaticBody2D" parent="."]
-position = Vector2(1301, 197)
+position = Vector2(1163, 199)
 collision_layer = 4
 collision_mask = 4
 

@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cectf7qkms7hr"]
+[gd_scene load_steps=18 format=3 uid="uid://cectf7qkms7hr"]
 
 [ext_resource type="Script" path="res://Scripts/BodySetup.gd" id="1_sn5ai"]
 [ext_resource type="Script" path="res://Scripts/NoteScript.gd" id="2_f2s22"]
+[ext_resource type="Resource" uid="uid://bxxpfb4p11y7g" path="res://Database/CharacterDatabase.tres" id="2_ngoa1"]
 [ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="3_8imtf"]
 [ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/left_arm.tscn" id="5_6s35a"]
 [ext_resource type="PackedScene" uid="uid://bc33ftl5ljeu8" path="res://Scenes/cutPoints.tscn" id="5_ygfg4"]
@@ -24,6 +25,7 @@ normal = Vector2(-0.999949, -0.0100497)
 
 [node name="Body" type="Node2D"]
 script = ExtResource("1_sn5ai")
+database = ExtResource("2_ngoa1")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_left = -79.0
@@ -199,14 +201,18 @@ shape = SubResource("WorldBoundaryShape2D_7rj24")
 shape = SubResource("WorldBoundaryShape2D_7rj24")
 
 [node name="CollisionShape2D_Right" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-269, 0)
 shape = SubResource("WorldBoundaryShape2D_jrx88")
 
 [node name="CollisionShape2D_Left" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1153, 0)
+position = Vector2(1436, 0)
 shape = SubResource("WorldBoundaryShape2D_iqsta")
 
 [node name="CutPoints" parent="." instance=ExtResource("5_ygfg4")]
 position = Vector2(9, 28)
+
+[node name="Handsaw" parent="CutPoints" index="9"]
+z_index = 1
 
 [node name="DonorBody" type="Node2D" parent="."]
 position = Vector2(54, 15)

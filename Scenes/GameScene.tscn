@@ -1,10 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5c03s1v1122i"]
+[gd_scene load_steps=4 format=3 uid="uid://b0bu3d8ak3ck7"]
 
 [ext_resource type="PackedScene" uid="uid://dssa7jwvsv6hk" path="res://Scenes/bodyWheel.tscn" id="1_7oxav"]
 [ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="2_1vljd"]
 [ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="3_lqejl"]
 
-[node name="GameScene" type="Node2D"]
+[node name="GameScene2" type="Node2D"]
 
 [node name="Node" parent="." instance=ExtResource("1_7oxav")]
 position = Vector2(-213, 38)
