@@ -11,6 +11,9 @@ func _process(delta):
 	pass
 
 
+func _on_start_game_button_pressed():
+	get_tree().change_scene_to_file("res://Scenes/GameScene_Markus.tscn")
+	
 func _on_credits_button_pressed():
 	get_tree().change_scene_to_file("res://Scenes/credits.tscn")
 	
@@ -35,3 +38,4 @@ func _on_start_game_button_mouse_entered():
 
 func _on_start_game_button_mouse_exited():
 	get_node("start_game_button").modulate = Color(1, 1, 1, 0)
+
