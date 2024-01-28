@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://dklb3tlx2hu16"]
+[gd_scene load_steps=17 format=3 uid="uid://dklb3tlx2hu16"]
 
 [ext_resource type="Texture2D" uid="uid://du3cuegugtv83" path="res://Sprites/Tools/background_v1.png" id="1_imhc6"]
 [ext_resource type="PackedScene" uid="uid://dssa7jwvsv6hk" path="res://Scenes/bodyWheel.tscn" id="1_vxjn8"]
-[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="2_k2xs8"]
 [ext_resource type="Texture2D" uid="uid://ctgo64m74ofxj" path="res://Sprites/Tools/table2.png" id="2_k44v0"]
 [ext_resource type="Texture2D" uid="uid://ccaa1g8l5i8a1" path="res://Sprites/Tools/pinwand.png" id="2_lcdbp"]
 [ext_resource type="Texture2D" uid="uid://com0ibphq2o0d" path="res://Sprites/Tools/table1.png" id="3_160ae"]
@@ -13,6 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://cnwgatlhq1wku" path="res://Scenes/vote_screen.tscn" id="5_d7ehb"]
 [ext_resource type="Texture2D" uid="uid://begpmnvmrsqfm" path="res://Sprites/Tools/hebel.png" id="6_aul2s"]
 [ext_resource type="FontFile" uid="uid://b7u6y1ir2jdfk" path="res://Fonts/Caveat-Bold.ttf" id="7_cplwx"]
+[ext_resource type="Texture2D" uid="uid://bour62sl3bbi3" path="res://Sprites/Tools/cloud.png" id="7_gg78o"]
+[ext_resource type="Script" path="res://Scripts/CharacterSwitch.gd" id="9_f134h"]
+[ext_resource type="Texture2D" uid="uid://r64lv5wylgqy" path="res://Sprites/Tools/handsaw_v2.png" id="12_3buay"]
+[ext_resource type="Texture2D" uid="uid://cnw4rrj8wh5ln" path="res://Sprites/ChracterSprites/Torso transparent.png" id="15_ypua4"]
 
 [node name="GameScene" type="Node2D"]
 
@@ -44,33 +47,126 @@ texture = ExtResource("3_160ae")
 [node name="Node" parent="." instance=ExtResource("1_vxjn8")]
 position = Vector2(-176, 2)
 
-[node name="HebelBase" type="TextureRect" parent="Node/Button" index="0"]
-layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="NextButton" type="Node2D" parent="Node"]
+position = Vector2(-26, 0)
+
+[node name="HebelBase" type="TextureRect" parent="Node/NextButton"]
+offset_left = 723.0
+offset_top = 207.0
+offset_right = 2643.0
+offset_bottom = 1287.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("5_amuhb")
 
-[node name="TextureRect" type="TextureRect" parent="Node/Button/HebelBase"]
+[node name="TextureRect" type="TextureRect" parent="Node/NextButton/HebelBase"]
 layout_mode = 0
-offset_left = 710.0
-offset_top = -220.0
-offset_right = 1243.0
-offset_bottom = 678.0
+offset_left = 230.0
+offset_top = 30.0
+offset_right = 763.0
+offset_bottom = 928.0
+rotation = -0.523599
 texture = ExtResource("6_aul2s")
 
-[node name="Label" type="Label" parent="Node/Button/HebelBase"]
+[node name="Cloud" type="TextureRect" parent="Node/NextButton"]
+offset_left = 794.0
+offset_top = 216.0
+offset_right = 2714.0
+offset_bottom = 1296.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("7_gg78o")
+
+[node name="Label" type="Label" parent="Node/NextButton/Cloud"]
 layout_mode = 0
-offset_left = 440.0
-offset_top = 820.0
-offset_right = 1510.0
-offset_bottom = 1130.0
+offset_left = 430.0
+offset_top = 430.0
+offset_right = 1500.0
+offset_bottom = 740.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 150
 text = "Next body
 "
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Node/NextButton" node_paths=PackedStringArray("body1", "body2", "body3")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 761.0
+offset_top = 211.0
+offset_right = 923.0
+offset_bottom = 315.0
+text = "Weiter"
+script = ExtResource("9_f134h")
+body1 = NodePath("../../Body")
+body2 = NodePath("../../Body2")
+body3 = NodePath("../../Body3")
+
+[node name="FinishButton2" type="Node2D" parent="Node"]
+position = Vector2(793, 0)
+
+[node name="HebelBase" type="TextureRect" parent="Node/FinishButton2"]
+offset_left = 723.0
+offset_top = 207.0
+offset_right = 2643.0
+offset_bottom = 1287.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_amuhb")
+
+[node name="TextureRect" type="TextureRect" parent="Node/FinishButton2/HebelBase"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 30.0
+offset_right = 763.0
+offset_bottom = 928.0
+rotation = -0.523599
+texture = ExtResource("6_aul2s")
+
+[node name="Cloud" type="TextureRect" parent="Node/FinishButton2"]
+offset_left = 794.0
+offset_top = 216.0
+offset_right = 2714.0
+offset_bottom = 1296.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("7_gg78o")
+
+[node name="Label" type="Label" parent="Node/FinishButton2/Cloud"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 430.0
+offset_right = 1500.0
+offset_bottom = 740.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cplwx")
+theme_override_font_sizes/font_size = 150
+text = "Next body
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinishButton" type="Button" parent="Node/FinishButton2"]
+modulate = Color(1, 1, 1, 0)
+clip_contents = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 759.0
+offset_top = 210.0
+offset_right = 924.0
+offset_bottom = 316.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "
+"
+
+[node name="Button" parent="Node" index="2"]
+visible = false
+modulate = Color(1, 1, 1, 0)
+offset_left = 761.0
+offset_top = 211.0
+offset_right = 923.0
+offset_bottom = 315.0
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body" index="0"]
 offset_top = 250.0
@@ -372,6 +468,9 @@ offset_top = 281.0
 offset_right = -393.0
 offset_bottom = 615.0
 
+[node name="Handsaw" parent="Node/Body/CutPoints" index="9"]
+texture = ExtResource("12_3buay")
+
 [node name="leftArm" parent="Node/Body/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
 notesCharacteristicsText = "forgets important dates"
@@ -416,6 +515,9 @@ bigTextRect = NodePath("../../TextureRect/ColorRect11")
 notesLabel = NodePath("../../TextureRect/ColorRect10/RF")
 notesCharacteristicsText = "uncommunicative"
 bigTextRect = NodePath("../../TextureRect/ColorRect11")
+
+[node name="Body2" parent="Node" index="4"]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body2" index="0"]
 offset_top = 250.0
@@ -717,6 +819,9 @@ offset_top = 286.0
 offset_right = -408.0
 offset_bottom = 620.0
 
+[node name="Handsaw" parent="Node/Body2/CutPoints" index="9"]
+texture = ExtResource("12_3buay")
+
 [node name="leftArm" parent="Node/Body2/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
 notesCharacteristicsText = "introverted"
@@ -761,6 +866,9 @@ bigTextRect = NodePath("../../TextureRect/ColorRect11")
 notesLabel = NodePath("../../TextureRect/ColorRect10/RF")
 notesCharacteristicsText = "empathetic"
 bigTextRect = NodePath("../../TextureRect/ColorRect11")
+
+[node name="Body3" parent="Node" index="5"]
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body3" index="0"]
 offset_top = 250.0
@@ -1062,6 +1170,9 @@ offset_top = 279.0
 offset_right = -406.0
 offset_bottom = 613.0
 
+[node name="Handsaw" parent="Node/Body3/CutPoints" index="9"]
+texture = ExtResource("12_3buay")
+
 [node name="leftArm" parent="Node/Body3/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
 notesCharacteristicsText = "talks excessively about themselves"
@@ -1107,22 +1218,6 @@ notesLabel = NodePath("../../TextureRect/ColorRect10/RF")
 notesCharacteristicsText = "doesn´t clean their hair out of the shower drain"
 bigTextRect = NodePath("../../TextureRect/ColorRect11")
 
-[node name="FinishButton" type="Button" parent="Node"]
-clip_contents = true
-custom_minimum_size = Vector2(200, 100)
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1519.0
-offset_top = 533.0
-offset_right = 1719.0
-offset_bottom = 633.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Finisch"
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(724, 172)
 zoom = Vector2(0.7, 0.7)
@@ -1136,31 +1231,36 @@ script = ExtResource("4_f5thq")
 next_scene = ExtResource("5_d7ehb")
 
 [node name="TorsoTest" type="Sprite2D" parent="Recipent"]
-texture = ExtResource("2_k2xs8")
+position = Vector2(4, 34)
+scale = Vector2(0.14, 0.14)
+texture = ExtResource("15_ypua4")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recipent"]
-polygon = PackedVector2Array(-47, 87, -46, 62, -40, 7, -51, -35, -51, -83, -21, -87, 16, -86, 48, -80, 50, -42, 39, -34, 34, 9, 36, 62, 42, 86)
+position = Vector2(0, -1)
+polygon = PackedVector2Array(-60, 85, -59, 62, -54, 7, -61, -42, -72, -52, -66, -81, -16, -94, 17, -93, 44, -84, 66, -81, 53, -33, 44, 9, 51, 59, 50, 85)
 
 [node name="DockNode" parent="Recipent" instance=ExtResource("3_whbq1")]
-position = Vector2(-52, -59)
+position = Vector2(-70, -62)
 rotation = -3.12598
 
 [node name="DockNode2" parent="Recipent" instance=ExtResource("3_whbq1")]
-position = Vector2(-31, 100)
+position = Vector2(-36, 84)
 
 [node name="DockNode3" parent="Recipent" instance=ExtResource("3_whbq1")]
-position = Vector2(25, 98)
+position = Vector2(33, 85)
 
 [node name="DockNode4" parent="Recipent" instance=ExtResource("3_whbq1")]
-position = Vector2(48, -57)
+position = Vector2(61, -62)
 rotation = -1.5723
 min_angle = -0.5
 max_angle = 0.5
 
 [node name="DockNode5" parent="Recipent" instance=ExtResource("3_whbq1")]
-position = Vector2(-3, -88)
+position = Vector2(-2, -94)
 rotation = 3.08585
 
+[connection signal="pressed" from="Node/NextButton/Button2" to="Node/NextButton/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Node/FinishButton2/FinishButton" to="Recipent" method="store_body_to_morgue"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect2/LH" to="Node/Body/TextureRect/ColorRect2/LH" method="_on_mouse_entered"]
@@ -1221,7 +1321,6 @@ rotation = 3.08585
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect10/RF" to="Node/Body3/TextureRect/ColorRect10/RF" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_exited"]
-[connection signal="pressed" from="Node/FinishButton" to="Recipent" method="store_body_to_morgue"]
 
 [editable path="Node"]
 [editable path="Node/Body"]
