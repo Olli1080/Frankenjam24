@@ -2,7 +2,11 @@
 
 importer="wav"
 type="AudioStreamWAV"
+<<<<<<< HEAD
 uid="uid://b464kjsck7x7n"
+=======
+uid="uid://b5mkuna62shvo"
+>>>>>>> dev_markus
 path="res://.godot/imported/limb_cut_sound.wav-58ab672c33434b2710a04b1bb841ed21.sample"
 
 [deps]

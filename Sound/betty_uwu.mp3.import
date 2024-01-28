@@ -2,7 +2,11 @@
 
 importer="mp3"
 type="AudioStreamMP3"
+<<<<<<< HEAD
 uid="uid://j3nstnu53ifa"
+=======
+uid="uid://denmntpa1e4b3"
+>>>>>>> dev_markus
 path="res://.godot/imported/betty_uwu.mp3-78838bb4d59b0eec3939def17ed68041.mp3str"
 
 [deps]
