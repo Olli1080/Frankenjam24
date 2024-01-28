@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cg01y5a2gemnx"]
+[gd_scene load_steps=6 format=3 uid="uid://cg01y5a2gemnx"]
 
 [ext_resource type="Script" path="res://Scenes/victory_overlay.gd" id="1_32hbn"]
 [ext_resource type="Texture2D" uid="uid://mbuvb56elvtm" path="res://Sprites/BackgroundImages/GGJ 2024 - Copy of Victory Overlay(1).jpg" id="1_wn22b"]
 [ext_resource type="PackedScene" uid="uid://b8j586ho4bfhf" path="res://Nodes/cloud_collider.tscn" id="2_y1x23"]
 [ext_resource type="FontFile" uid="uid://b7u6y1ir2jdfk" path="res://Fonts/Caveat-Bold.ttf" id="4_8sdb3"]
+[ext_resource type="PackedScene" uid="uid://bnmtb4efekdf2" path="res://Scenes/background_music.tscn" id="5_mhl43"]
 
 [node name="VictoryOverlay" type="Control"]
 layout_mode = 3
@@ -57,5 +58,7 @@ position = Vector2(379, 318)
 [node name="attachPoint" type="Node2D" parent="."]
 position = Vector2(379, 316)
 scale = Vector2(0.7, 0.7)
+
+[node name="BackgroundMusic" parent="." instance=ExtResource("5_mhl43")]
 
 [connection signal="clicked" from="cloud_collider" to="." method="_on_cloud_collider_clicked"]
