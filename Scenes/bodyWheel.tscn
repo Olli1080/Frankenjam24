@@ -13,13 +13,13 @@ normal = Vector2(-0.999949, -0.0100497)
 [node name="Node" type="Node2D"]
 
 [node name="Body" parent="." instance=ExtResource("1_cs0bs")]
-position = Vector2(86, -67)
+position = Vector2(84, -57)
 
 [node name="Body2" parent="." instance=ExtResource("1_cs0bs")]
-position = Vector2(86, -67)
+position = Vector2(84, -57)
 
 [node name="Body3" parent="." instance=ExtResource("1_cs0bs")]
-position = Vector2(86, -67)
+position = Vector2(84, -57)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(139, 666)
