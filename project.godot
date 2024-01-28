@@ -11,9 +11,17 @@ config_version=5
 [application]
 
 config/name="Frankenstein"
-run/main_scene="res://Scenes/GameScene.tscn"
+run/main_scene="res://Scenes/GameScene_Markus.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+TheMorgue="*res://Scripts/Global/theMorgue.gd"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [importer_defaults]
 
@@ -23,3 +31,7 @@ image={}
 
 2d_physics/layer_2="Drag&Drop-Layer"
 2d_physics/layer_3="Recipient"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"

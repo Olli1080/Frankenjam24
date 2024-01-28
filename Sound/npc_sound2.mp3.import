@@ -2,11 +2,7 @@
 
 importer="mp3"
 type="AudioStreamMP3"
-<<<<<<< HEAD
-uid="uid://ef66lwpca70y"
-=======
-uid="uid://bwispvjsr7eot"
->>>>>>> dev_markus
+uid="uid://be3j3epu51fgv"
 path="res://.godot/imported/npc_sound2.mp3-b6ba3a95671b81fb6aa47e1c51e1365e.mp3str"
 
 [deps]

@@ -27,7 +27,6 @@ texture = ExtResource("2_ipxei")
 
 [node name="begrenzung" type="Node2D" parent="CreditsUpperPart"]
 position = Vector2(-0.962036, -51.1387)
-scale = Vector2(1, 1)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 visible = false
