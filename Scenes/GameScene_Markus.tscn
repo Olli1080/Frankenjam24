@@ -1320,7 +1320,7 @@ rotation = 3.08585
 [connection signal="mouse_entered" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_exited"]
 [connection signal="pressed" from="Node/NextButton/Button2" to="Node/NextButton/Button2" method="_on_pressed"]
-[connection signal="pressed" from="Node/FinishButton2/FinishButton" to="Recipent" method="store_body_to_morgue"]
+[connection signal="pressed" from="Node/FinishButton2/FinishButton" to="Recipent" method="sound_transition"]
 
 [editable path="Node"]
 [editable path="Node/Body"]

@@ -1,6 +1,18 @@
 extends StaticBody2D
 
 @export var next_scene : PackedScene
+var uwu_right: AudioStreamPlayer2D
+
+func _ready():
+	uwu_right = AudioStreamPlayer2D.new()
+	var uwuSoundRight = preload("res://Sound/betty_uwu.mp3")
+	uwu_right.stream = uwuSoundRight
+	uwu_right.volume_db = 20
+	self.add_child(uwu_right)
+	uwu_right.finished.connect(store_body_to_morgue)
+
+func sound_transition():
+	uwu_right.play()
 
 func store_body_to_morgue():
 	var node : Node2D = self
