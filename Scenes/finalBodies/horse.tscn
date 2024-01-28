@@ -1,0 +1,299 @@
+[gd_scene load_steps=4 format=3 uid="uid://c15cae0j7pqbe"]
+
+[ext_resource type="PackedScene" uid="uid://iqxp1reu6lte" path="res://Scenes/markusTestScene.tscn" id="1_xbcf7"]
+[ext_resource type="Script" path="res://Scripts/NoteScript.gd" id="2_okiqw"]
+[ext_resource type="Texture2D" uid="uid://ccaa1g8l5i8a1" path="res://Sprites/Tools/pinwand.png" id="2_yuilt"]
+
+[node name="Body" instance=ExtResource("1_xbcf7")]
+
+[node name="TextureRect" type="TextureRect" parent="." index="0"]
+offset_left = 20.0
+offset_top = 205.0
+offset_right = 1100.0
+offset_bottom = 2125.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_yuilt")
+
+[node name="ColorRect4" type="ColorRect" parent="TextureRect" index="0"]
+layout_mode = 0
+offset_left = 308.0
+offset_top = 424.0
+offset_right = 758.0
+offset_bottom = 548.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="Label" type="Label" parent="TextureRect/ColorRect4" index="0"]
+layout_mode = 0
+offset_left = -240.0
+offset_top = -20.0
+offset_right = 704.0
+offset_bottom = 136.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 100
+text = "Notes: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="TextureRect" index="1"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 600.0
+offset_right = 345.0
+offset_bottom = 900.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="head" type="Label" parent="TextureRect/ColorRect" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../head/HeadTest")
+
+[node name="ColorRect2" type="ColorRect" parent="TextureRect" index="2"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 600.0
+offset_right = 685.0
+offset_bottom = 900.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="LH" type="Label" parent="TextureRect/ColorRect2" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../leftHand/LeftHandTest")
+
+[node name="ColorRect3" type="ColorRect" parent="TextureRect" index="3"]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 600.0
+offset_right = 1025.0
+offset_bottom = 900.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="LA" type="Label" parent="TextureRect/ColorRect3" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../leftArm/LeftArmSprite")
+
+[node name="ColorRect5" type="ColorRect" parent="TextureRect" index="4"]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 1000.0
+offset_right = 345.0
+offset_bottom = 1300.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="RH" type="Label" parent="TextureRect/ColorRect5" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../rightHand/RightHandTest")
+
+[node name="ColorRect6" type="ColorRect" parent="TextureRect" index="5"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 1000.0
+offset_right = 685.0
+offset_bottom = 1300.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="RA" type="Label" parent="TextureRect/ColorRect6" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../rightArm/RightArmTest")
+
+[node name="ColorRect7" type="ColorRect" parent="TextureRect" index="6"]
+layout_mode = 0
+offset_left = 725.0
+offset_top = 1000.0
+offset_right = 1025.0
+offset_bottom = 1300.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="LL" type="Label" parent="TextureRect/ColorRect7" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../leftLeg/LeftLegTest")
+
+[node name="ColorRect8" type="ColorRect" parent="TextureRect" index="7"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 0
+offset_left = 45.0
+offset_top = 1400.0
+offset_right = 345.0
+offset_bottom = 1700.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="LF" type="Label" parent="TextureRect/ColorRect8" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../leftFoot/LeftFootTest")
+
+[node name="ColorRect9" type="ColorRect" parent="TextureRect" index="8"]
+layout_mode = 0
+offset_left = 385.0
+offset_top = 1400.0
+offset_right = 685.0
+offset_bottom = 1700.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="RL" type="Label" parent="TextureRect/ColorRect9" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../rightLeg/RightLegTest")
+
+[node name="ColorRect10" type="ColorRect" parent="TextureRect" index="9"]
+layout_mode = 0
+offset_left = 724.0
+offset_top = 1400.0
+offset_right = 1024.0
+offset_bottom = 1700.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="RF" type="Label" parent="TextureRect/ColorRect10" index="0" node_paths=PackedStringArray("bodySprite")]
+layout_mode = 0
+offset_right = 300.0
+offset_bottom = 300.0
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_font_sizes/font_size = 40
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+script = ExtResource("2_okiqw")
+bodySprite = NodePath("../../../rightFoot/RightFootTest")
+
+[node name="leftArm" parent="." index="1"]
+notesCharacteristicsText = "talks excessively about themselves"
+
+[node name="head" parent="." index="2"]
+notesCharacteristicsText = "makes you laugh"
+
+[node name="leftHand" parent="." index="3"]
+notesCharacteristicsText = "extroverted"
+
+[node name="rightArm" parent="." index="4"]
+notesCharacteristicsText = "lack of ambition"
+
+[node name="rightHand" parent="." index="5"]
+notesCharacteristicsText = "njoys and is good at cooking"
+
+[node name="leftLeg" parent="." index="6"]
+notesCharacteristicsText = "enjoys outdoor activities"
+
+[node name="leftFoot" parent="." index="7"]
+notesCharacteristicsText = "takes initiative"
+
+[node name="rightLeg" parent="." index="8"]
+notesCharacteristicsText = "spontaneous"
+
+[node name="rightFoot" parent="." index="9"]
+notesCharacteristicsText = "doesn´t clean their hair out of the shower drain"
+
+[connection signal="mouse_entered" from="TextureRect/ColorRect/head" to="TextureRect/ColorRect/head" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect/head" to="TextureRect/ColorRect/head" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect2/LH" to="TextureRect/ColorRect2/LH" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect2/LH" to="TextureRect/ColorRect2/LH" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect3/LA" to="TextureRect/ColorRect3/LA" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect3/LA" to="TextureRect/ColorRect3/LA" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect5/RH" to="TextureRect/ColorRect5/RH" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect5/RH" to="TextureRect/ColorRect5/RH" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect6/RA" to="TextureRect/ColorRect6/RA" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect6/RA" to="TextureRect/ColorRect6/RA" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect7/LL" to="TextureRect/ColorRect7/LL" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect7/LL" to="TextureRect/ColorRect7/LL" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect8/LF" to="TextureRect/ColorRect8/LF" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect8/LF" to="TextureRect/ColorRect8/LF" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect9/RL" to="TextureRect/ColorRect9/RL" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect9/RL" to="TextureRect/ColorRect9/RL" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="TextureRect/ColorRect10/RF" to="TextureRect/ColorRect10/RF" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="TextureRect/ColorRect10/RF" to="TextureRect/ColorRect10/RF" method="_on_mouse_exited"]
+
+[editable path="leftArm"]
+[editable path="head"]
+[editable path="leftHand"]
+[editable path="rightArm"]
+[editable path="rightHand"]
+[editable path="leftLeg"]
+[editable path="leftFoot"]
+[editable path="rightLeg"]
+[editable path="rightFoot"]

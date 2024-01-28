@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dssa7jwvsv6hk"]
+
+[ext_resource type="Script" path="res://Scripts/CharacterSwitch.gd" id="1_2366d"]
+[ext_resource type="PackedScene" uid="uid://cectf7qkms7hr" path="res://Scenes/body.tscn" id="1_cs0bs"]
+
+[node name="Node" type="Node2D"]
+
+[node name="Button" type="Button" parent="." node_paths=PackedStringArray("body1", "body2", "body3")]
+offset_left = 894.0
+offset_top = 531.0
+offset_right = 1133.0
+offset_bottom = 639.0
+text = "Weiter"
+script = ExtResource("1_2366d")
+body1 = NodePath("../Body")
+body2 = NodePath("../Body2")
+body3 = NodePath("../Body3")
+
+[node name="Body" parent="." instance=ExtResource("1_cs0bs")]
+position = Vector2(86, -67)
+
+[node name="Body2" parent="." instance=ExtResource("1_cs0bs")]
+position = Vector2(86, -67)
+
+[node name="Body3" parent="." instance=ExtResource("1_cs0bs")]
+position = Vector2(86, -67)
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

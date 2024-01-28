@@ -1,0 +1,280 @@
+[gd_resource type="Resource" script_class="CharacterDatabase" load_steps=64 format=3 uid="uid://bxxpfb4p11y7g"]
+
+[ext_resource type="Script" path="res://Scripts/DataTypes/BodyPart.gd" id="1_0rm3m"]
+[ext_resource type="Script" path="res://Scripts/DataTypes/Character.gd" id="1_ax5ak"]
+[ext_resource type="Script" path="res://Scripts/DataTypes/CharacterDatabase.gd" id="1_dysmw"]
+[ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="2_yg8ph"]
+[ext_resource type="Texture2D" uid="uid://ddc6n6qwy0u2q" path="res://Sprites/LeftArm/LeftArmTest.png" id="3_ih2bk"]
+[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="4_164cv"]
+[ext_resource type="Texture2D" uid="uid://d07o35qvj427b" path="res://Sprites/LeftFoot/LeftFootTest.png" id="4_y2ylk"]
+[ext_resource type="Texture2D" uid="uid://bpdc3tka7g6lp" path="res://Sprites/LeftHand/LeftHandTest.png" id="5_6vjoi"]
+[ext_resource type="Texture2D" uid="uid://bj8n4l56a762a" path="res://Sprites/LeftLeg/LeftLegTest.png" id="6_hq3gd"]
+[ext_resource type="Texture2D" uid="uid://fj8tuemtetw" path="res://Sprites/RightArm/RightArmTest.png" id="7_04vhb"]
+[ext_resource type="Texture2D" uid="uid://d15075vtjnv5v" path="res://Sprites/RightFoot/RightFootTest.png" id="8_56tel"]
+[ext_resource type="Texture2D" uid="uid://cu720wnosq5uu" path="res://Sprites/RightHand/RightHandTest.png" id="9_sqpls"]
+[ext_resource type="Texture2D" uid="uid://b13xcdnp6mhms" path="res://Sprites/RightLeg/RightLegTest.png" id="10_h04q5"]
+
+[sub_resource type="Resource" id="Resource_vh7de"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("2_yg8ph")
+description = "active listener"
+description_type = 1
+
+[sub_resource type="Resource" id="Resource_rp0je"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("3_ih2bk")
+description = "forgets important dates"
+description_type = 2
+
+[sub_resource type="Resource" id="Resource_kgw88"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("4_y2ylk")
+description = "likes similar music"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_lkkjj"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("5_6vjoi")
+description = "encourages your goals"
+description_type = 1
+
+[sub_resource type="Resource" id="Resource_tpsm4"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("6_hq3gd")
+description = "unreliable"
+description_type = 2
+
+[sub_resource type="Resource" id="Resource_tmb70"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("7_04vhb")
+description = "always on time"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_7ek7d"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("8_56tel")
+description = "uncommunicative"
+description_type = 2
+
+[sub_resource type="Resource" id="Resource_gkavh"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("9_sqpls")
+description = "leaves you thoughtful notes"
+description_type = 1
+
+[sub_resource type="Resource" id="Resource_7a8nb"]
+script = ExtResource("1_0rm3m")
+sprite = ExtResource("10_h04q5")
+description = "prefers indoor"
+description_type = 0
+
+[sub_resource type="Resource" id="Resource_0j5do"]
+script = ExtResource("1_ax5ak")
+torso = ExtResource("4_164cv")
+head = SubResource("Resource_vh7de")
+left_arm = SubResource("Resource_rp0je")
+left_hand = SubResource("Resource_lkkjj")
+right_arm = SubResource("Resource_tmb70")
+right_hand = SubResource("Resource_gkavh")
+left_leg = SubResource("Resource_tpsm4")
+left_foot = SubResource("Resource_kgw88")
+right_leg = SubResource("Resource_7a8nb")
+right_foot = SubResource("Resource_7ek7d")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_f0a1l"]
+load_path = "res://.godot/imported/HeadTest.png-c2d6704d4f2d284c6a95f47452e42ede.ctex"
+
+[sub_resource type="Resource" id="Resource_ye1b0"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_f0a1l")
+description = "is a gemini "
+description_type = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_v8soa"]
+load_path = "res://.godot/imported/LeftArmTest.png-3a311b4e8a622befdaa1443e94d421b5.ctex"
+
+[sub_resource type="Resource" id="Resource_sagwb"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_v8soa")
+description = "introverted"
+description_type = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_t88yr"]
+load_path = "res://.godot/imported/LeftFootTest.png-d6ab50f28ce65de7bb21cb53abaf0c86.ctex"
+
+[sub_resource type="Resource" id="Resource_tncqs"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_t88yr")
+description = "overbearing"
+description_type = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uxnpu"]
+load_path = "res://.godot/imported/LeftHandTest.png-3465c6cdd99027325c2a0839731dbcd4.ctex"
+
+[sub_resource type="Resource" id="Resource_38lsm"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_uxnpu")
+description = "surprises you with flowers"
+description_type = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_sm41o"]
+load_path = "res://.godot/imported/LeftLegTest.png-60061c8d5630dbdabc70599b597fe2e6.ctex"
+
+[sub_resource type="Resource" id="Resource_570g0"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_sm41o")
+description = "dishonest"
+description_type = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_33gt4"]
+load_path = "res://.godot/imported/RightArmTest.png-296f92e31ff8ba9b3097e7db48cf1452.ctex"
+
+[sub_resource type="Resource" id="Resource_ratn3"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_33gt4")
+description = "plans thoughtful dates"
+description_type = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cpsdi"]
+load_path = "res://.godot/imported/RightFootTest.png-ab167ddedb89fd689c2a756a98402d8c.ctex"
+
+[sub_resource type="Resource" id="Resource_c87eg"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_cpsdi")
+description = "empathetic"
+description_type = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_twkef"]
+load_path = "res://.godot/imported/RightHandTest.png-b0c1abf485b46c737134c525a049030c.ctex"
+
+[sub_resource type="Resource" id="Resource_8pyrb"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_twkef")
+description = "materialistic"
+description_type = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3wxyx"]
+load_path = "res://.godot/imported/RightLegTest.png-3e358a100e31aacf6bae67f62c0c3de5.ctex"
+
+[sub_resource type="Resource" id="Resource_fwfp0"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_3wxyx")
+description = "enjoys quiet evenings"
+description_type = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_08utl"]
+load_path = "res://.godot/imported/TorsoTest.png-b6ac21c45b92ddf84c4cf625fa6993da.ctex"
+
+[sub_resource type="Resource" id="Resource_bx5co"]
+script = ExtResource("1_ax5ak")
+torso = SubResource("CompressedTexture2D_08utl")
+head = SubResource("Resource_ye1b0")
+left_arm = SubResource("Resource_sagwb")
+left_hand = SubResource("Resource_38lsm")
+right_arm = SubResource("Resource_ratn3")
+right_hand = SubResource("Resource_8pyrb")
+left_leg = SubResource("Resource_570g0")
+left_foot = SubResource("Resource_tncqs")
+right_leg = SubResource("Resource_fwfp0")
+right_foot = SubResource("Resource_c87eg")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_btfe6"]
+load_path = "res://.godot/imported/HeadTest.png-c2d6704d4f2d284c6a95f47452e42ede.ctex"
+
+[sub_resource type="Resource" id="Resource_4agvq"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_btfe6")
+description = "makes you laugh"
+description_type = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lerpk"]
+load_path = "res://.godot/imported/LeftArmTest.png-3a311b4e8a622befdaa1443e94d421b5.ctex"
+
+[sub_resource type="Resource" id="Resource_7ymvn"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_lerpk")
+description = "tals excessively about themselves"
+description_type = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vmbyt"]
+load_path = "res://.godot/imported/LeftFootTest.png-d6ab50f28ce65de7bb21cb53abaf0c86.ctex"
+
+[sub_resource type="Resource" id="Resource_j6t8n"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_vmbyt")
+description = "takes initiative"
+description_type = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lb8rk"]
+load_path = "res://.godot/imported/LeftHandTest.png-3465c6cdd99027325c2a0839731dbcd4.ctex"
+
+[sub_resource type="Resource" id="Resource_b0dcb"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_lb8rk")
+description = "extroverted"
+description_type = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bevf3"]
+load_path = "res://.godot/imported/LeftLegTest.png-60061c8d5630dbdabc70599b597fe2e6.ctex"
+
+[sub_resource type="Resource" id="Resource_fkhli"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_bevf3")
+description = "enjoys outdoor activities"
+description_type = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_je7pt"]
+load_path = "res://.godot/imported/RightArmTest.png-296f92e31ff8ba9b3097e7db48cf1452.ctex"
+
+[sub_resource type="Resource" id="Resource_3svo6"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_je7pt")
+description = "lack of ambition"
+description_type = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ii5d2"]
+load_path = "res://.godot/imported/RightFootTest.png-ab167ddedb89fd689c2a756a98402d8c.ctex"
+
+[sub_resource type="Resource" id="Resource_5gy6g"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_ii5d2")
+description = "doesn´t clean their hair out of the shower drain"
+description_type = 2
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_j1ol0"]
+load_path = "res://.godot/imported/RightHandTest.png-b0c1abf485b46c737134c525a049030c.ctex"
+
+[sub_resource type="Resource" id="Resource_s5nof"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_j1ol0")
+description = "enjoys and is good at cooking"
+description_type = 1
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1inq6"]
+load_path = "res://.godot/imported/RightLegTest.png-3e358a100e31aacf6bae67f62c0c3de5.ctex"
+
+[sub_resource type="Resource" id="Resource_np77g"]
+script = ExtResource("1_0rm3m")
+sprite = SubResource("CompressedTexture2D_1inq6")
+description = "spontaneous"
+description_type = 0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ih3m7"]
+load_path = "res://.godot/imported/TorsoTest.png-b6ac21c45b92ddf84c4cf625fa6993da.ctex"
+
+[sub_resource type="Resource" id="Resource_tpt0r"]
+script = ExtResource("1_ax5ak")
+torso = SubResource("CompressedTexture2D_ih3m7")
+head = SubResource("Resource_4agvq")
+left_arm = SubResource("Resource_7ymvn")
+left_hand = SubResource("Resource_b0dcb")
+right_arm = SubResource("Resource_3svo6")
+right_hand = SubResource("Resource_s5nof")
+left_leg = SubResource("Resource_fkhli")
+left_foot = SubResource("Resource_j6t8n")
+right_leg = SubResource("Resource_np77g")
+right_foot = SubResource("Resource_5gy6g")
+
+[resource]
+script = ExtResource("1_dysmw")
+db = Array[ExtResource("1_ax5ak")]([SubResource("Resource_0j5do"), SubResource("Resource_bx5co"), SubResource("Resource_tpt0r")])

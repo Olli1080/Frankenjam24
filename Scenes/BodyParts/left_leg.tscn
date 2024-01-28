@@ -1,41 +1,42 @@
-[gd_scene load_steps=5 format=3 uid="uid://cob2bpvkgpytq"]
+[gd_scene load_steps=6 format=3 uid="uid://cob2bpvkgpytq"]
 
 [ext_resource type="Texture2D" uid="uid://bj8n4l56a762a" path="res://Sprites/LeftLeg/LeftLegTest.png" id="1_4pqka"]
 [ext_resource type="Script" path="res://Scripts/BodyPartObject.gd" id="1_g2y4j"]
 [ext_resource type="PackedScene" uid="uid://b513n2gi38sea" path="res://Scenes/bloodParticleSystem.tscn" id="3_v0uf8"]
 [ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="4_katfx"]
+[ext_resource type="Script" path="res://Scripts/particleOnVelocity.gd" id="4_tl6f7"]
 
-[node name="LeftLeg" type="RigidBody2D" node_paths=PackedStringArray("sprite", "particleSystem1", "particleSystem2")]
+[node name="LeftLeg" type="RigidBody2D"]
 input_pickable = true
+center_of_mass_mode = 1
 freeze = true
 freeze_mode = 1
 script = ExtResource("1_g2y4j")
-sprite = NodePath("LeftLegTest")
-particleSystem1 = NodePath("GPUParticles2D")
-particleSystem2 = NodePath("GPUParticles2D2")
 
 [node name="LeftLegTest" type="Sprite2D" parent="."]
-position = Vector2(236, 566)
+position = Vector2(-2.8, 9)
 texture = ExtResource("1_4pqka")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(229, 471)
-polygon = PackedVector2Array(-13, -31, 31, -31, 18, 208, -6, 209)
+position = Vector2(-9.8, -86)
+polygon = PackedVector2Array(-12.2, -6, -6.2, -9, 17.8, -10, 26.8, -4, 18.8, 187, 10.8, 198, 0.8, 198, -6.2, 185)
 
 [node name="GPUParticles2D" parent="." instance=ExtResource("3_v0uf8")]
-position = Vector2(238, 442)
+position = Vector2(-0.800003, -115)
 rotation = 3.14159
 emitting = false
+script = ExtResource("4_tl6f7")
 
 [node name="GPUParticles2D2" parent="." instance=ExtResource("3_v0uf8")]
-position = Vector2(233, 683)
+position = Vector2(-5.8, 126)
 emitting = false
+script = ExtResource("4_tl6f7")
 
 [node name="DockNode" parent="." instance=ExtResource("4_katfx")]
-position = Vector2(237, 443)
+position = Vector2(-1.8, -114)
 
 [node name="DockNode2" parent="." instance=ExtResource("4_katfx")]
-position = Vector2(232, 682)
+position = Vector2(-6.8, 125)
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

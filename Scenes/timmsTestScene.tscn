@@ -1,6 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://csnbgngwaa3fk"]
+[gd_scene load_steps=16 format=3 uid="uid://csnbgngwaa3fk"]
 
+[ext_resource type="PackedScene" uid="uid://bc33ftl5ljeu8" path="res://Scenes/cutPoints.tscn" id="1_yda8v"]
 [ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/left_arm.tscn" id="2_hh3dy"]
+[ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="2_rb8sg"]
 [ext_resource type="PackedScene" uid="uid://bsfqce3b6t3dq" path="res://Scenes/BodyParts/head.tscn" id="3_bkm6h"]
 [ext_resource type="PackedScene" uid="uid://d1fwh58bk2sgd" path="res://Scenes/BodyParts/left_hand.tscn" id="4_cy3jm"]
 [ext_resource type="PackedScene" uid="uid://qpma3icuof4i" path="res://Scenes/BodyParts/right_arm.tscn" id="5_y08rp"]
@@ -19,13 +21,12 @@ normal = Vector2(0.99985, 0.0173134)
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_yoyet"]
 normal = Vector2(-0.999949, -0.0100497)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_g8nte"]
-radius = 20.0
-
 [node name="Node2D2" type="Node2D"]
 
 [node name="WorldBoundary" type="StaticBody2D" parent="."]
-position = Vector2(-6, 651)
+position = Vector2(-228, 907)
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="WorldBoundary"]
 shape = SubResource("WorldBoundaryShape2D_olymo")
@@ -37,103 +38,114 @@ shape = SubResource("WorldBoundaryShape2D_olymo")
 shape = SubResource("WorldBoundaryShape2D_vmn1t")
 
 [node name="CollisionShape2D_Left" type="CollisionShape2D" parent="WorldBoundary"]
-position = Vector2(1153, 0)
+position = Vector2(2294, 7)
 shape = SubResource("WorldBoundaryShape2D_yoyet")
 
 [node name="Recipent" type="StaticBody2D" parent="."]
-position = Vector2(970, 209)
-collision_layer = 0
+position = Vector2(1467, 295)
+collision_layer = 4
+collision_mask = 4
 
 [node name="TorsoTest" type="Sprite2D" parent="Recipent"]
 texture = ExtResource("11_d01yc")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recipent"]
-polygon = PackedVector2Array(-48, 99, -46, 62, -40, 7, -51, -35, -51, -83, -21, -87, 16, -86, 48, -80, 50, -42, 39, -34, 34, 9, 36, 62, 44, 99)
+polygon = PackedVector2Array(-47, 87, -46, 62, -40, 7, -51, -35, -51, -83, -21, -87, 16, -86, 48, -80, 50, -42, 39, -34, 34, 9, 36, 62, 42, 86)
 
-[node name="LeftLegDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(-25, 100)
-rotation = 0.208696
-collision_layer = 2
-collision_mask = 2
-monitoring = false
-
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/LeftLegDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
-
-[node name="RightLegDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(21, 99)
-rotation = -0.189497
-collision_layer = 2
-collision_mask = 2
-monitoring = false
-
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/RightLegDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
-
-[node name="LeftArmDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
+[node name="DockNode" parent="Recipent" instance=ExtResource("2_rb8sg")]
 position = Vector2(-52, -59)
-rotation = 1.55568
-collision_layer = 2
-collision_mask = 2
-monitoring = false
+rotation = -3.12598
 
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/LeftArmDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
+[node name="DockNode2" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(-31, 100)
 
-[node name="RightArmDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(50, -59)
-rotation = -1.53178
-collision_layer = 2
-collision_mask = 2
-monitoring = false
+[node name="DockNode3" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(25, 98)
 
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/RightArmDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
+[node name="DockNode4" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(48, -57)
+rotation = -1.5723
+min_angle = -0.5
+max_angle = 0.5
 
-[node name="NeckDockNode" type="Area2D" parent="Recipent" groups=["DockPoint"]]
-position = Vector2(-1.99998, -88)
-rotation = -2.96091
-collision_layer = 2
-monitoring = false
+[node name="DockNode5" parent="Recipent" instance=ExtResource("2_rb8sg")]
+position = Vector2(-3, -88)
+rotation = 3.08585
 
-[node name="AreaShape2D" type="CollisionShape2D" parent="Recipent/NeckDockNode"]
-shape = SubResource("CircleShape2D_g8nte")
+[node name="CutPoints" parent="." instance=ExtResource("1_yda8v")]
+position = Vector2(-45, 13)
 
-[node name="leftArm" parent="." instance=ExtResource("2_hh3dy")]
-position = Vector2(390, 196)
+[node name="DonorBody" type="Node2D" parent="."]
 
-[node name="head" parent="." instance=ExtResource("3_bkm6h")]
-position = Vector2(270, -86)
+[node name="leftArm" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("2_hh3dy")]
+position = Vector2(204, 200)
+input_pickable = false
+notesCharacteristicsText = "Taschen"
+attached_cut_points = [NodePath("../../CutPoints/LeftArmTest/Node2D"), NodePath("../../CutPoints/LeftHandTest/Node2D")]
 
-[node name="leftHand" parent="." instance=ExtResource("4_cy3jm")]
-position = Vector2(270, -86)
+[node name="head" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("3_bkm6h")]
+position = Vector2(352, 83)
+input_pickable = false
+attached_cut_points = [NodePath("../../CutPoints/HeadTest/Node2D")]
 
-[node name="rightArm" parent="." instance=ExtResource("5_y08rp")]
-position = Vector2(270, -86)
+[node name="leftHand" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("4_cy3jm")]
+position = Vector2(69, 201)
+input_pickable = false
+attached_cut_points = [NodePath("../../CutPoints/LeftHandTest/Node2D")]
 
-[node name="rightHand" parent="." instance=ExtResource("6_u5k7d")]
-position = Vector2(270, -86)
+[node name="rightArm" parent="DonorBody" node_paths=PackedStringArray("sprite", "attached_cut_points") instance=ExtResource("5_y08rp")]
+position = Vector2(500, 186)
+input_pickable = false
+sprite = NodePath("../leftHand/DockNode/AreaShape2D")
+attached_cut_points = [NodePath("../../CutPoints/RightArmTest/Node2D"), NodePath("../../CutPoints/RightHandTest/Node2D")]
 
-[node name="leftLeg" parent="." instance=ExtResource("7_pwd65")]
-position = Vector2(270, -86)
+[node name="rightHand" parent="DonorBody" node_paths=PackedStringArray("sprite", "attached_cut_points") instance=ExtResource("6_u5k7d")]
+position = Vector2(594, 193)
+input_pickable = false
+sprite = NodePath("../leftArm/LeftArmSprite")
+attached_cut_points = [NodePath("../../CutPoints/RightHandTest/Node2D")]
 
-[node name="leftFoot" parent="." instance=ExtResource("8_w8r02")]
-position = Vector2(270, -86)
+[node name="leftLeg" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("7_pwd65")]
+position = Vector2(326, 471)
+input_pickable = false
+attached_cut_points = [NodePath("../../CutPoints/LeftFootTest/Node2D"), NodePath("../../CutPoints/LeftLegTest/Node2D")]
 
-[node name="rightLeg" parent="." instance=ExtResource("9_wdstm")]
+[node name="leftFoot" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("8_w8r02")]
+position = Vector2(324, 603)
+input_pickable = false
+attached_cut_points = [NodePath("../../CutPoints/LeftFootTest/Node2D")]
 
-[node name="rightFoot" parent="." instance=ExtResource("10_hvy0a")]
+[node name="rightLeg" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("9_wdstm")]
+position = Vector2(375, 480)
+input_pickable = false
+attached_cut_points = [NodePath("../../CutPoints/RightFootTest/Node2D"), NodePath("../../CutPoints/RightLegTest/Node2D")]
 
-[node name="TorsoTest" type="Sprite2D" parent="."]
-position = Vector2(531, 261)
+[node name="rightFoot" parent="DonorBody" node_paths=PackedStringArray("attached_cut_points") instance=ExtResource("10_hvy0a")]
+position = Vector2(373, 625)
+input_pickable = false
+attached_cut_points = [NodePath("../../CutPoints/RightFootTest/Node2D")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DonorBody"]
+position = Vector2(347, 255)
+collision_layer = 4
+collision_mask = 4
+
+[node name="TorsoTest" type="Sprite2D" parent="DonorBody/StaticBody2D"]
 texture = ExtResource("11_d01yc")
 
-[editable path="leftArm"]
-[editable path="head"]
-[editable path="leftHand"]
-[editable path="rightArm"]
-[editable path="rightHand"]
-[editable path="leftLeg"]
-[editable path="leftFoot"]
-[editable path="rightLeg"]
-[editable path="rightFoot"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DonorBody/StaticBody2D"]
+polygon = PackedVector2Array(-44, 96, -46, 69, -38, 18, -51, -36, -50, -87, 49, -84, 49, -38, 36, -21, 34, 19, 41, 72, 43, 100)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(925, 262)
+zoom = Vector2(0.5, 0.5)
+
+[editable path="CutPoints"]
+[editable path="DonorBody/head"]
+[editable path="DonorBody/leftHand"]
+[editable path="DonorBody/rightArm"]
+[editable path="DonorBody/rightHand"]
+[editable path="DonorBody/leftLeg"]
+[editable path="DonorBody/leftFoot"]
+[editable path="DonorBody/rightLeg"]
+[editable path="DonorBody/rightFoot"]

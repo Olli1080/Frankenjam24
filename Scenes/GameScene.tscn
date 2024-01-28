@@ -1,0 +1,45 @@
+[gd_scene load_steps=4 format=3 uid="uid://b0bu3d8ak3ck7"]
+
+[ext_resource type="PackedScene" uid="uid://dssa7jwvsv6hk" path="res://Scenes/bodyWheel.tscn" id="1_7oxav"]
+[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="2_1vljd"]
+[ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="3_lqejl"]
+
+[node name="GameScene2" type="Node2D"]
+
+[node name="Node" parent="." instance=ExtResource("1_7oxav")]
+position = Vector2(-213, 38)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(724, 172)
+zoom = Vector2(0.6, 0.6)
+
+[node name="Recipent" type="StaticBody2D" parent="."]
+position = Vector2(1301, 197)
+collision_layer = 4
+collision_mask = 4
+
+[node name="TorsoTest" type="Sprite2D" parent="Recipent"]
+texture = ExtResource("2_1vljd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Recipent"]
+polygon = PackedVector2Array(-47, 87, -46, 62, -40, 7, -51, -35, -51, -83, -21, -87, 16, -86, 48, -80, 50, -42, 39, -34, 34, 9, 36, 62, 42, 86)
+
+[node name="DockNode" parent="Recipent" instance=ExtResource("3_lqejl")]
+position = Vector2(-52, -59)
+rotation = -3.12598
+
+[node name="DockNode2" parent="Recipent" instance=ExtResource("3_lqejl")]
+position = Vector2(-31, 100)
+
+[node name="DockNode3" parent="Recipent" instance=ExtResource("3_lqejl")]
+position = Vector2(25, 98)
+
+[node name="DockNode4" parent="Recipent" instance=ExtResource("3_lqejl")]
+position = Vector2(48, -57)
+rotation = -1.5723
+min_angle = -0.5
+max_angle = 0.5
+
+[node name="DockNode5" parent="Recipent" instance=ExtResource("3_lqejl")]
+position = Vector2(-3, -88)
+rotation = 3.08585
