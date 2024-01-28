@@ -13,6 +13,5 @@ func store_body_to_morgue():
 		c.owner = self
 		arr.append_array(c.get_children())
 	morgue.player_body.pack(node)
-	print("Packed!")
 	
 	get_tree().change_scene_to_packed(next_scene)

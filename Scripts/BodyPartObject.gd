@@ -49,7 +49,7 @@ var held = false :
 			apply_central_impulse(Input.get_last_mouse_velocity())
 		held = value
 		freeze = value
-		print(dock_points_contact.size())
+		# print(dock_points_contact.size())
 		
 		var glue_together : bool = dock_points_contact.size() >= 1
 		
@@ -95,7 +95,7 @@ func _ready():
 		bigText = bigTextRect.get_child(0)
 
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
-	print("APPEND!!")
+	# print("APPEND!!")
 	var cur_par : Node2D = dock_point.get_parent()
 	while cur_par.name != "Recipent":
 		cur_par = cur_par.get_parent()
@@ -165,16 +165,17 @@ func _on_mouse_entered():
 	if bigTextRect:
 		bigTextRect.visible = true
 		bigText.text = notesCharacteristicsText
-	#if notesLabel:
-	notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
+	if notesLabel:
+		notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
 	pass # Replace with function body.
 
 
 func _on_mouse_exited():
 	sprite.modulate = Color.WHITE
-	bigTextRect.visible = false
-	#if notesLabel:
-	notesLabel.remove_theme_color_override("font_shadow_color")
+	if bigTextRect:
+		bigTextRect.visible = false
+	if notesLabel:
+		notesLabel.remove_theme_color_override("font_shadow_color")
 	pass # Replace with function body.
 
 
@@ -182,7 +183,7 @@ func _on_dock_node_area_entered(other_area : Area2D, own_child : Area2D):
 	if (!other_area.is_in_group("DockPoint")):
 		return
 	dock_points_contact.append(PairArea2D.new(own_child, other_area))
-	print("Area {} has entered Dock Point {}".format([own_child.name, other_area.name], "{}"))
+	# print("Area {} has entered Dock Point {}".format([own_child.name, other_area.name], "{}"))
 	pass # Replace with function body.
 
 func _on_dock_node_area_exited(other_area : Area2D, own_child : Area2D):
@@ -198,11 +199,11 @@ func _on_dock_node_area_exited(other_area : Area2D, own_child : Area2D):
 		i += 1
 	if remove_idx >= 0:
 		dock_points_contact.remove_at(remove_idx)
-	print("Area {} has left Dock Point {}".format([own_child.name, other_area.name], "{}"))
+	# print("Area {} has left Dock Point {}".format([own_child.name, other_area.name], "{}"))
 	pass # Replace with function body.
 	
 func _finished_dock_point(dock_point : Node2D):
-	print("Finished")
+	# print("Finished")
 	attached_cut_points.erase(dock_point.get_parent())
 	input_pickable = attached_cut_points.size() == 0
 	

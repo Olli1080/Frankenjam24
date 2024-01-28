@@ -1,0 +1,80 @@
+[gd_scene load_steps=13 format=3 uid="uid://di7lftmsq0ymx"]
+
+[ext_resource type="Script" path="res://Scripts/BodySetup.gd" id="1_2by66"]
+[ext_resource type="Resource" uid="uid://bxxpfb4p11y7g" path="res://Database/CharacterDatabase.tres" id="2_8l7ig"]
+[ext_resource type="PackedScene" uid="uid://cfr0a5fokav1n" path="res://Scenes/BodyParts/left_arm.tscn" id="5_cfodf"]
+[ext_resource type="PackedScene" uid="uid://bsfqce3b6t3dq" path="res://Scenes/BodyParts/head.tscn" id="6_yv1v4"]
+[ext_resource type="PackedScene" uid="uid://d1fwh58bk2sgd" path="res://Scenes/BodyParts/left_hand.tscn" id="7_7d6sn"]
+[ext_resource type="PackedScene" uid="uid://qpma3icuof4i" path="res://Scenes/BodyParts/right_arm.tscn" id="8_qvo58"]
+[ext_resource type="PackedScene" uid="uid://cesxkvwkssn7c" path="res://Scenes/BodyParts/right_hand.tscn" id="9_bturb"]
+[ext_resource type="PackedScene" uid="uid://cob2bpvkgpytq" path="res://Scenes/BodyParts/left_leg.tscn" id="10_5nd8w"]
+[ext_resource type="PackedScene" uid="uid://cdskxifacaj32" path="res://Scenes/BodyParts/left_foot.tscn" id="11_hu464"]
+[ext_resource type="PackedScene" uid="uid://bjdltiududoxk" path="res://Scenes/BodyParts/right_leg.tscn" id="12_maxn0"]
+[ext_resource type="PackedScene" uid="uid://c5o3jeiljvx43" path="res://Scenes/BodyParts/right_foot.tscn" id="13_qvkp7"]
+[ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="14_bswh0"]
+
+[node name="Body" type="Node2D"]
+script = ExtResource("1_2by66")
+database = ExtResource("2_8l7ig")
+
+[node name="DonorBody" type="Node2D" parent="."]
+
+[node name="leftArm" parent="DonorBody" instance=ExtResource("5_cfodf")]
+position = Vector2(-118, -4.00001)
+rotation = -0.658108
+input_pickable = false
+notesCharacteristicsText = "Taschen"
+
+[node name="head" parent="DonorBody" instance=ExtResource("6_yv1v4")]
+position = Vector2(2, -171)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="leftHand" parent="DonorBody" instance=ExtResource("7_7d6sn")]
+position = Vector2(-210, 87)
+rotation = -1.21355
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="rightArm" parent="DonorBody" instance=ExtResource("8_qvo58")]
+position = Vector2(119, -9.99999)
+rotation = 0.611499
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="rightHand" parent="DonorBody" instance=ExtResource("9_bturb")]
+position = Vector2(196, 55)
+rotation = 1.3722
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="leftLeg" parent="DonorBody" instance=ExtResource("10_5nd8w")]
+position = Vector2(-24, 217)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="leftFoot" parent="DonorBody" instance=ExtResource("11_hu464")]
+position = Vector2(-26, 349)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="rightLeg" parent="DonorBody" instance=ExtResource("12_maxn0")]
+position = Vector2(25, 226)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="rightFoot" parent="DonorBody" instance=ExtResource("13_qvkp7")]
+position = Vector2(23, 371)
+input_pickable = false
+notesCharacteristicsText = "Pinguin"
+
+[node name="torso" type="StaticBody2D" parent="DonorBody"]
+position = Vector2(-3, 1)
+collision_layer = 5
+collision_mask = 5
+
+[node name="Sprite" type="Sprite2D" parent="DonorBody/torso"]
+texture = ExtResource("14_bswh0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="DonorBody/torso"]
+polygon = PackedVector2Array(-44, 96, -46, 69, -38, 18, -51, -36, -50, -87, 49, -84, 49, -38, 36, -21, 34, 19, 41, 72, 43, 100)

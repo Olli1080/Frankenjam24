@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://cnwgatlhq1wku"]
+[gd_scene load_steps=6 format=3 uid="uid://cnwgatlhq1wku"]
 
 [ext_resource type="Script" path="res://Scenes/vote_screen.gd" id="1_dmc44"]
 [ext_resource type="Texture2D" uid="uid://b5jnbgh8qrach" path="res://Sprites/BackgroundImages/GGJ 2024 - Vote Screen_new.jpg" id="1_pgak8"]
+[ext_resource type="PackedScene" uid="uid://cjmsgu5nvesn8" path="res://Scenes/start_menu.tscn" id="2_cd8bs"]
 [ext_resource type="PackedScene" uid="uid://b8j586ho4bfhf" path="res://Nodes/cloud_collider.tscn" id="2_lr8wl"]
+[ext_resource type="PackedScene" uid="uid://di7lftmsq0ymx" path="res://Scenes/pureBody.tscn" id="4_nyovl"]
 
 [node name="VoteScreen" type="Control"]
 layout_mode = 3
@@ -13,6 +15,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_dmc44")
+next_scene = ExtResource("2_cd8bs")
 
 [node name="Ggj2024-VoteScreenNew" type="Sprite2D" parent="."]
 position = Vector2(1071.07, 603.2)
@@ -53,8 +56,14 @@ position = Vector2(1064, 572)
 [node name="LoserSpot1" type="Node2D" parent="."]
 position = Vector2(1732, 595)
 
+[node name="Body" parent="LoserSpot1" instance=ExtResource("4_nyovl")]
+shuffle = true
+
 [node name="LoserSpot2" type="Node2D" parent="."]
 position = Vector2(414, 570)
+
+[node name="Body" parent="LoserSpot2" instance=ExtResource("4_nyovl")]
+shuffle = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1071, 609)
