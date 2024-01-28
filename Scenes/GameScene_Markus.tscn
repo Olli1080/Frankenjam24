@@ -299,33 +299,6 @@ offset_top = 281.0
 offset_right = -393.0
 offset_bottom = 615.0
 
-[node name="head" parent="Node/Body/ColorRect" index="1"]
-script = null
-
-[node name="LH" parent="Node/Body/ColorRect" index="2"]
-script = null
-
-[node name="LA" parent="Node/Body/ColorRect" index="3"]
-script = null
-
-[node name="RH" parent="Node/Body/ColorRect" index="4"]
-script = null
-
-[node name="RA" parent="Node/Body/ColorRect" index="5"]
-script = null
-
-[node name="LL" parent="Node/Body/ColorRect" index="6"]
-script = null
-
-[node name="LF" parent="Node/Body/ColorRect" index="7"]
-script = null
-
-[node name="RL" parent="Node/Body/ColorRect" index="8"]
-script = null
-
-[node name="RF" parent="Node/Body/ColorRect" index="9"]
-script = null
-
 [node name="leftArm" parent="Node/Body/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
 notesCharacteristicsText = "forgets important dates"
@@ -659,33 +632,6 @@ offset_left = -693.0
 offset_top = 286.0
 offset_right = -408.0
 offset_bottom = 620.0
-
-[node name="head" parent="Node/Body2/ColorRect" index="1"]
-script = null
-
-[node name="LH" parent="Node/Body2/ColorRect" index="2"]
-script = null
-
-[node name="LA" parent="Node/Body2/ColorRect" index="3"]
-script = null
-
-[node name="RH" parent="Node/Body2/ColorRect" index="4"]
-script = null
-
-[node name="RA" parent="Node/Body2/ColorRect" index="5"]
-script = null
-
-[node name="LL" parent="Node/Body2/ColorRect" index="6"]
-script = null
-
-[node name="LF" parent="Node/Body2/ColorRect" index="7"]
-script = null
-
-[node name="RL" parent="Node/Body2/ColorRect" index="8"]
-script = null
-
-[node name="RF" parent="Node/Body2/ColorRect" index="9"]
-script = null
 
 [node name="leftArm" parent="Node/Body2/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
