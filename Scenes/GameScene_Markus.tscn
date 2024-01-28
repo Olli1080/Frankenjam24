@@ -61,9 +61,9 @@ texture = ExtResource("1_imhc6")
 expand_mode = 1
 
 [node name="BodyTable" type="TextureRect" parent="."]
-offset_left = 50.0
+offset_left = 166.0
 offset_top = -250.0
-offset_right = 1130.0
+offset_right = 1246.0
 offset_bottom = 1670.0
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_k44v0")
@@ -379,6 +379,9 @@ offset_top = 281.0
 offset_right = -393.0
 offset_bottom = 615.0
 
+[node name="CutPoints" parent="Node/Body" index="2"]
+position = Vector2(153, 40)
+
 [node name="Node2D" parent="Node/Body/CutPoints/LeftArmTest" index="0"]
 position = Vector2(70, 2)
 
@@ -437,6 +440,9 @@ points = PackedVector2Array(-59, -33, -67, -40, -73, -32, -79, -40, -84, -32, -9
 [node name="Handsaw" parent="Node/Body/CutPoints" index="9"]
 texture = ExtResource("12_3buay")
 
+[node name="DonorBody" parent="Node/Body" index="3"]
+position = Vector2(184, 33)
+
 [node name="leftArm" parent="Node/Body/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
 notesCharacteristicsText = "forgets important dates"
@@ -449,6 +455,12 @@ texture = ExtResource("9_ikfo2")
 
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/leftArm" index="1"]
 polygon = PackedVector2Array(-0.600006, 140, 60.4, -17, 78.4, 17, 81.4, 32, 54.4, 82, 46.4, 111, 20.4, 152)
+
+[node name="GPUParticles2D" parent="Node/Body/DonorBody/leftArm" index="2"]
+position = Vector2(5.99999, 146)
+
+[node name="GPUParticles2D2" parent="Node/Body/DonorBody/leftArm" index="3"]
+position = Vector2(86, -10)
 
 [node name="DockNode" parent="Node/Body/DonorBody/leftArm" index="4"]
 position = Vector2(66, 0)
@@ -469,7 +481,7 @@ texture = ExtResource("10_d5iok")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/head" index="1"]
 polygon = PackedVector2Array(-36.9, 5.6, -20.9, -24.4, -0.899994, -29.4, 17.1, -25.4, 29.1, 6.6, 11.1, 40.6, 13.1, 53.6, -7.89999, 65.6, -25.9, 56.6, -23.9, 40.6)
 
-[node name="DockNode" parent="Node/Body/DonorBody/head" index="3"]
+[node name="DockNode" parent="Node/Body/DonorBody/head" index="2"]
 position = Vector2(-11, 77)
 
 [node name="leftHand" parent="Node/Body/DonorBody" index="2" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -485,7 +497,7 @@ texture = ExtResource("11_2xxxl")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/leftHand" index="1"]
 polygon = PackedVector2Array(144.9, 146, 147.9, 174, 144.9, 181, 137.9, 166, 129.9, 194, 116.9, 183, 111.9, 157, 125.9, 134)
 
-[node name="DockNode" parent="Node/Body/DonorBody/leftHand" index="3"]
+[node name="DockNode" parent="Node/Body/DonorBody/leftHand" index="2"]
 position = Vector2(143, 142)
 
 [node name="rightArm" parent="Node/Body/DonorBody" index="3" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -501,10 +513,10 @@ texture = ExtResource("12_xrr23")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/rightArm" index="1"]
 polygon = PackedVector2Array(-49.6, 177, -46.6, 100, -72.6, 26, -41.6, -12, -34.6, -1, -35.6, 12, -11.6, 93, -29.6, 179)
 
-[node name="DockNode" parent="Node/Body/DonorBody/rightArm" index="4"]
+[node name="DockNode" parent="Node/Body/DonorBody/rightArm" index="2"]
 position = Vector2(-87, 7)
 
-[node name="DockNode2" parent="Node/Body/DonorBody/rightArm" index="5"]
+[node name="DockNode2" parent="Node/Body/DonorBody/rightArm" index="3"]
 position = Vector2(-70, 177)
 
 [node name="rightHand" parent="Node/Body/DonorBody" index="4" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -520,7 +532,7 @@ texture = ExtResource("13_cpm7a")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/rightHand" index="1"]
 polygon = PackedVector2Array(-216.7, 205, -216.7, 186, -207.7, 185, -202.7, 176, -182.7, 177, -180.7, 186, -170.7, 186, -171.7, 208, -183.7, 211, -207.7, 209)
 
-[node name="DockNode" parent="Node/Body/DonorBody/rightHand" index="3"]
+[node name="DockNode" parent="Node/Body/DonorBody/rightHand" index="2"]
 position = Vector2(-164, 171)
 
 [node name="leftLeg" parent="Node/Body/DonorBody" index="5" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -536,10 +548,10 @@ texture = ExtResource("14_nwujc")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/leftLeg" index="1"]
 polygon = PackedVector2Array(-36.2, -28, 23.8, -29, 11.8, 81, 15.8, 93, 8.79999, 132, 5.79999, 196, -12.2, 200, -27.2, 194)
 
-[node name="DockNode" parent="Node/Body/DonorBody/leftLeg" index="4"]
+[node name="DockNode" parent="Node/Body/DonorBody/leftLeg" index="2"]
 position = Vector2(-21, -114)
 
-[node name="DockNode2" parent="Node/Body/DonorBody/leftLeg" index="5"]
+[node name="DockNode2" parent="Node/Body/DonorBody/leftLeg" index="3"]
 position = Vector2(-20, 110)
 
 [node name="leftFoot" parent="Node/Body/DonorBody" index="6" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -555,7 +567,7 @@ texture = ExtResource("15_cfutd")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/leftFoot" index="1"]
 polygon = PackedVector2Array(-37.6, -95.5, -11.6, -94.5, 0.399994, -75.5, -3.60001, -57.5, -25.6, -59.5, -101.6, -57.5, -99.6, -69.5, -45.6, -85.5)
 
-[node name="DockNode" parent="Node/Body/DonorBody/leftFoot" index="3"]
+[node name="DockNode" parent="Node/Body/DonorBody/leftFoot" index="2"]
 position = Vector2(-18, -22)
 
 [node name="rightLeg" parent="Node/Body/DonorBody" index="7" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -571,10 +583,10 @@ texture = ExtResource("16_soxme")
 [node name="CollisionPolygon2D" parent="Node/Body/DonorBody/rightLeg" index="1"]
 polygon = PackedVector2Array(25.2, -92.4, 29.2, -57.4, 28.2, -21.4, 18.2, 127.6, 6.20001, 138.6, -5.79999, 143.6, -18.8, 132.6, -14.8, 5.60001, -27.8, -90.4)
 
-[node name="DockNode" parent="Node/Body/DonorBody/rightLeg" index="4"]
+[node name="DockNode" parent="Node/Body/DonorBody/rightLeg" index="2"]
 position = Vector2(-1.99999, 102)
 
-[node name="DockNode2" parent="Node/Body/DonorBody/rightLeg" index="5"]
+[node name="DockNode2" parent="Node/Body/DonorBody/rightLeg" index="3"]
 position = Vector2(1.00001, -127)
 
 [node name="rightFoot" parent="Node/Body/DonorBody" index="8" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -904,6 +916,9 @@ offset_top = 286.0
 offset_right = -408.0
 offset_bottom = 620.0
 
+[node name="CutPoints" parent="Node/Body2" index="2"]
+position = Vector2(146, 28)
+
 [node name="Node2D" parent="Node/Body2/CutPoints/LeftArmTest" index="0"]
 position = Vector2(99, -4)
 
@@ -965,6 +980,9 @@ points = PackedVector2Array(-66, -10, -72, -19, -77, -12, -80, -20, -86, -14, -8
 [node name="Handsaw" parent="Node/Body2/CutPoints" index="9"]
 texture = ExtResource("12_3buay")
 
+[node name="DonorBody" parent="Node/Body2" index="3"]
+position = Vector2(183, 24)
+
 [node name="leftArm" parent="Node/Body2/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
 notesCharacteristicsText = "introverted"
@@ -997,7 +1015,7 @@ texture = ExtResource("20_4bler")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/head" index="1"]
 polygon = PackedVector2Array(7.10001, -35.4, 15.1, -42.4, 22.1, -46.4, 27.1, -49.4, 30.1, -43.4, 32.1, -30.4, 29.1, -17.4, 31.1, -11.4, 28.1, -4.4, 35.1, -2.4, 41.1, 4.6, 40.1, 19.6, 34.1, 25.6, 22.1, 25.6, 21.1, 29.6, 4.10001, 50.6, -11.9, 48.6, -17.9, 42.6, -20.9, 37.6, -23.9, 32.6, -25.9, 26.6, -38.8816, 25.9702, -42.9, 22.6, -43.9, 13.6, -38.9, 4.6, -29.9, -0.400002, -29.9, -10.4, -31.9, -13.4, -34.9, -26.4, -34.9, -34.4, -31.9, -47.4, -9.89999, -33.4, -1.89999, -35.4)
 
-[node name="DockNode" parent="Node/Body2/DonorBody/head" index="3"]
+[node name="DockNode" parent="Node/Body2/DonorBody/head" index="2"]
 position = Vector2(-4, 65)
 
 [node name="leftHand" parent="Node/Body2/DonorBody" index="2" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1013,7 +1031,7 @@ texture = ExtResource("21_w1s1p")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/leftHand" index="1"]
 polygon = PackedVector2Array(157.9, 141, 152.9, 172, 149.9, 181, 146.9, 175, 146.9, 162, 141.9, 170, 139.9, 194, 135.9, 193, 124.9, 190, 123.9, 174, 120.9, 183, 117.9, 180, 117.9, 170, 119.9, 156, 132.9, 135)
 
-[node name="DockNode" parent="Node/Body2/DonorBody/leftHand" index="3"]
+[node name="DockNode" parent="Node/Body2/DonorBody/leftHand" index="2"]
 position = Vector2(153, 140)
 
 [node name="rightArm" parent="Node/Body2/DonorBody" index="3" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1029,10 +1047,10 @@ texture = ExtResource("22_pabqc")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/rightArm" index="1"]
 polygon = PackedVector2Array(-46.6, -8, -40.6, -2, -28.6, 25, -21.6, 67, -16.6, 101, -3.60001, 129, -2.60001, 131, -1.60001, 137, -3.60001, 139, -1.60001, 141, -1.60001, 144, -6.60001, 146, -11.6, 146, -11.6, 155, -25.6, 161, -32.6, 162, -34.6, 144, -41.6, 143, -40.6, 136, -41.6, 134, -53.6, 97, -49.6, 79, -51.6, 65, -56.6, 57, -61.6, 56, -70.6, 48, -74.6, 21, -70.6, -10, -62.6, -19, -52.6, -16)
 
-[node name="DockNode" parent="Node/Body2/DonorBody/rightArm" index="4"]
+[node name="DockNode" parent="Node/Body2/DonorBody/rightArm" index="2"]
 position = Vector2(-105, 14)
 
-[node name="DockNode2" parent="Node/Body2/DonorBody/rightArm" index="5"]
+[node name="DockNode2" parent="Node/Body2/DonorBody/rightArm" index="3"]
 position = Vector2(-53, 159)
 
 [node name="rightHand" parent="Node/Body2/DonorBody" index="4" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1048,7 +1066,7 @@ texture = ExtResource("23_wysdy")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/rightHand" index="1"]
 polygon = PackedVector2Array(-194.7, 185, -191.7, 172, -185.7, 162, -166.7, 155, -162.7, 179, -160.7, 187, -160.7, 192, -161.7, 195, -163.7, 197, -165.7, 195, -166.7, 198, -169.7, 200, -171.7, 197, -166.7, 214, -166.7, 220, -168.7, 223, -171.7, 219, -180.7, 195, -181.7, 220, -183.7, 228, -186.7, 229, -189.7, 219, -189.7, 193)
 
-[node name="DockNode" parent="Node/Body2/DonorBody/rightHand" index="3"]
+[node name="DockNode" parent="Node/Body2/DonorBody/rightHand" index="2"]
 position = Vector2(-147, 152)
 
 [node name="leftLeg" parent="Node/Body2/DonorBody" index="5" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1064,10 +1082,10 @@ texture = ExtResource("24_v01je")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/leftLeg" index="1"]
 polygon = PackedVector2Array(-32.2, -23, 14.8, -30, 21.8, -30, 23.8, -5, 23.8, 10, 17.8, 33, 13.8, 44, 6.79999, 57, 8.79999, 69, 9.79999, 86, 13.8, 101, 16.8, 119, 15.8, 132, 9.79999, 145, 1.79999, 160, -2.20001, 174, -10.2, 177, -18.2, 178, -25.2, 175, -29.2, 172, -31.2, 136, -29.2, 108, -28.2, 96, -33.2, 72, -31.2, 64, -29.2, 59, -34.2, 41, -35.2, 6, -35.2, -12)
 
-[node name="DockNode" parent="Node/Body2/DonorBody/leftLeg" index="4"]
+[node name="DockNode" parent="Node/Body2/DonorBody/leftLeg" index="2"]
 position = Vector2(-18, -113)
 
-[node name="DockNode2" parent="Node/Body2/DonorBody/leftLeg" index="5"]
+[node name="DockNode2" parent="Node/Body2/DonorBody/leftLeg" index="3"]
 position = Vector2(-25, 92)
 
 [node name="leftFoot" parent="Node/Body2/DonorBody" index="6" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1083,7 +1101,7 @@ texture = ExtResource("25_orjsb")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/leftFoot" index="1"]
 polygon = PackedVector2Array(-43.6, -118.5, -34.6, -113.5, -26.6, -113.5, -17.6, -116.5, -14.6, -118.5, -11.6, -119.5, -13.6, -96.5, -13.6, -71.5, -15.6, -50.5, -28.6, -48.5, -30.6, -53.5, -34.6, -52.5, -38.6, -49.5, -94.6, -49.5, -92.6, -61.5, -91.6, -67.5, -93.6, -72.5, -92.6, -78.5, -88.6, -84.5, -83.6, -87.5, -60.6, -89.5, -46.6, -101.5)
 
-[node name="DockNode" parent="Node/Body2/DonorBody/leftFoot" index="3"]
+[node name="DockNode" parent="Node/Body2/DonorBody/leftFoot" index="2"]
 position = Vector2(-23, -40)
 
 [node name="rightLeg" parent="Node/Body2/DonorBody" index="7" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1099,10 +1117,10 @@ texture = ExtResource("26_jsesj")
 [node name="CollisionPolygon2D" parent="Node/Body2/DonorBody/rightLeg" index="1"]
 polygon = PackedVector2Array(15.2, -87.4, 32.2, -82.4, 34.2, -55.4, 32.2, -33.4, 30.2, -19.4, 25.2, -5.39999, 26.2, 16.6, 24.2, 28.6, 22.2, 35.6, 24.2, 43.6, 23.2, 78.6, 23.2, 94.6, 16.2, 118.6, 8.20001, 120.6, -0.799988, 121.6, -10.8, 121.6, -14.8, 94.6, -16.8, 63.6, -13.8, 44.6, -10.8, 35.6, -11.5834, 24.6329, -13.8, 19.6, -12.8, 8.60001, -8.79999, 1.60001, -13.8, -18.4, -17.8, -47.4, -18.8, -66.4, -19.8, -90.4, -8.79999, -90.4)
 
-[node name="DockNode" parent="Node/Body2/DonorBody/rightLeg" index="4"]
+[node name="DockNode" parent="Node/Body2/DonorBody/rightLeg" index="2"]
 position = Vector2(1.00001, 86)
 
-[node name="DockNode2" parent="Node/Body2/DonorBody/rightLeg" index="5"]
+[node name="DockNode2" parent="Node/Body2/DonorBody/rightLeg" index="3"]
 position = Vector2(5.00001, -124)
 
 [node name="rightFoot" parent="Node/Body2/DonorBody" index="8" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1432,6 +1450,9 @@ offset_top = 279.0
 offset_right = -406.0
 offset_bottom = 613.0
 
+[node name="CutPoints" parent="Node/Body3" index="2"]
+position = Vector2(128, 58)
+
 [node name="Node2D" parent="Node/Body3/CutPoints/LeftArmTest" index="0"]
 position = Vector2(101, 6)
 
@@ -1492,6 +1513,9 @@ position = Vector2(96, -180)
 [node name="Handsaw" parent="Node/Body3/CutPoints" index="9"]
 texture = ExtResource("12_3buay")
 
+[node name="DonorBody" parent="Node/Body3" index="3"]
+position = Vector2(191, 8)
+
 [node name="leftArm" parent="Node/Body3/DonorBody" index="0" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
 notesLabel = NodePath("../../TextureRect/ColorRect3/LA")
 notesCharacteristicsText = "talks excessively about themselves"
@@ -1524,7 +1548,7 @@ texture = ExtResource("30_08xv1")
 [node name="CollisionPolygon2D" parent="Node/Body3/DonorBody/head" index="1"]
 polygon = PackedVector2Array(-17.9, -37.4, -17.9, -31.4, -13.9, -28.4, -7.89999, -25.4, -5.89999, -21.4, -4.89999, -9.4, -2.89999, -10.4, 3.10001, -11.4, 6.10001, -11.4, 6.10001, -19.4, 7.01954, -24.4981, 10.1, -28.4, 16.1, -33.4, 20.1, -40.4, 24.1, -27.4, 25.1, -20.4, 23.1, -15.4, 18.1, -8.4, 20.1, -6.4, 22.1, 0.599998, 22.1, 9.6, 23.1, 11.6, 24.1, 18.6, 23.1, 20.6, 18.9357, 22.8468, 15.1, 29.6, 12.1, 33.6, 10.1, 39.6, 9.10001, 45.6, 13.1, 55.6, 13.1, 61.6, 12.1, 64.6, 9.10001, 66.6, 10.1, 68.6, 6.10001, 72.6, -7.89999, 71.6, -10.9, 69.6, -10.9, 66.6, -13.9, 63.6, -14.9, 56.6, -9.89999, 44.6, -10.9, 39.6, -14.9, 28.6, -17.9, 26.6, -21.8989, 24.5819, -22.9, 20.6, -20.9, 15.6, -20.9, 13.6, -18.9, 2.6, -15.9, -2.4, -21.9, -9.4, -23.9, -16.4, -23.9, -25.4, -20.9, -33.4)
 
-[node name="DockNode" parent="Node/Body3/DonorBody/head" index="3"]
+[node name="DockNode" parent="Node/Body3/DonorBody/head" index="2"]
 position = Vector2(-3, 86)
 
 [node name="leftHand" parent="Node/Body3/DonorBody" index="2" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1540,7 +1564,7 @@ texture = ExtResource("31_cm5ce")
 [node name="CollisionPolygon2D" parent="Node/Body3/DonorBody/leftHand" index="1"]
 polygon = PackedVector2Array(166.9, 121, 163.211, 134.904, 161.9, 145, 162.9, 150, 161.9, 150, 160.9, 154, 157.9, 158, 155.9, 159, 149.9, 178, 146.9, 179, 141.9, 179, 133.9, 178, 126.9, 174, 115.9, 164, 124.9, 154, 128.9, 146, 133.9, 139, 142.9, 130, 152.9, 116)
 
-[node name="DockNode" parent="Node/Body3/DonorBody/leftHand" index="3"]
+[node name="DockNode" parent="Node/Body3/DonorBody/leftHand" index="2"]
 position = Vector2(168, 121)
 
 [node name="rightArm" parent="Node/Body3/DonorBody" index="3" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1556,10 +1580,10 @@ texture = ExtResource("32_hswyg")
 [node name="CollisionPolygon2D" parent="Node/Body3/DonorBody/rightArm" index="1"]
 polygon = PackedVector2Array(-25.6, 22, -18.6, 40, -17.6, 58, -19.6, 70, -20.6, 71, -13.6, 84, -11.6, 91, -14.6, 102, -14.6, 125, -13.6, 143, -11.6, 147, -15.6, 155, -20.6, 156, -29.6, 149, -29.6, 148, -29.6, 141, -29.6, 130, -33.6, 112, -40.6, 102, -45.6, 90, -43.6, 83, -51.6, 76, -59.6, 67, -63.6, 60, -67.6, 47, -67.6, 41, -62.6, 34, -54.6, 28, -43.6, 23, -34.6, 21)
 
-[node name="DockNode" parent="Node/Body3/DonorBody/rightArm" index="4"]
+[node name="DockNode" parent="Node/Body3/DonorBody/rightArm" index="2"]
 position = Vector2(-80, 25)
 
-[node name="DockNode2" parent="Node/Body3/DonorBody/rightArm" index="5"]
+[node name="DockNode2" parent="Node/Body3/DonorBody/rightArm" index="3"]
 position = Vector2(-50, 156)
 
 [node name="rightHand" parent="Node/Body3/DonorBody" index="4" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1576,7 +1600,7 @@ texture = ExtResource("33_shj4w")
 position = Vector2(-148, 169)
 polygon = PackedVector2Array(-12, 8, -8, -6, -9, -8, -12, -7, -12, -9, -8, -21, -7, -27, 2, -20, 7, -21, 11, -29, 14, -16, 17, -12, 20, -8, 21, -3, 20, 0, 22, 8, 24, 13, 26, 15, 15, 18, 6, 18, -1, 17, -9, 13)
 
-[node name="DockNode" parent="Node/Body3/DonorBody/rightHand" index="3"]
+[node name="DockNode" parent="Node/Body3/DonorBody/rightHand" index="2"]
 position = Vector2(-144, 149)
 
 [node name="leftLeg" parent="Node/Body3/DonorBody" index="5" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1593,10 +1617,10 @@ texture = ExtResource("34_iwfjb")
 position = Vector2(-18, -172)
 polygon = PackedVector2Array(-18, 2, -13, -8, -9, -15, -3, -21, 4, -25, 12, -27, 18, -24, 22, -15, 29, 5, 37, 13, 39, 21, 39, 25, 34, 39, 33, 45, 32, 51, 30, 61, 29.0782, 71.3699, 31, 83, 33, 101, 31, 115, 29, 123, 25, 132, 23, 137, 22, 143, 21, 152, 22, 159, 22, 163, 26, 173, 22, 186, 16, 195, 15, 230, -5, 231, -3, 219, -3, 208, -6, 194, -10, 188, -11, 178, -2, 161, -10, 130, -18, 94, -20, 67, -20, 53, -16, 39, -19, 28, -20, 8)
 
-[node name="DockNode" parent="Node/Body3/DonorBody/leftLeg" index="4"]
+[node name="DockNode" parent="Node/Body3/DonorBody/leftLeg" index="2"]
 position = Vector2(4.99999, -184)
 
-[node name="DockNode2" parent="Node/Body3/DonorBody/leftLeg" index="5"]
+[node name="DockNode2" parent="Node/Body3/DonorBody/leftLeg" index="3"]
 position = Vector2(-13, 59)
 
 [node name="leftFoot" parent="Node/Body3/DonorBody" index="6" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1613,7 +1637,7 @@ texture = ExtResource("35_vd7jy")
 position = Vector2(-6.00001, 7)
 polygon = PackedVector2Array(-15, -80, 5, -81, 7, -65, 11.1341, -49.8417, 8, -39, 4, -33, 5, -23, 11, -10, 9, -1, 6, -3, 3, 7, 3, 11, -13, 13, -22, 12, -34, 4, -27, -8, -29, -10, -26, -14, -28, -15, -17, -28, -16, -32, -17, -36, -22, -45, -23, -55)
 
-[node name="DockNode" parent="Node/Body3/DonorBody/leftFoot" index="3"]
+[node name="DockNode" parent="Node/Body3/DonorBody/leftFoot" index="2"]
 position = Vector2(-11, -73)
 
 [node name="rightLeg" parent="Node/Body3/DonorBody" index="7" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1630,10 +1654,10 @@ texture = ExtResource("36_vhgkh")
 position = Vector2(3.00001, -78)
 polygon = PackedVector2Array(-18, -89, -13, -98, -15, -111, -14, -124, -7, -133, -1, -136, 12, -135, 16, -131, 21, -124, 26, -109, 28, -89, 26, -75, 18, -62, 25, -49, 29, -34, 29, -27, 25, -15, 13, 12, 8, 22, 8.27662, 29.416, 16, 48, 19, 59, 19, 68, 14, 77, 10, 83, 9, 90, 9.93985, 103.099, 12, 115, 15, 127, -8, 129, -5, 116, -4, 100, -7, 84, -10, 79, -17, 62, -14, 51, -18, 29, -22, 17, -23, 5, -23.7947, -6.39041, -23, -16, -19, -32, -19, -43, -24, -59, -24, -67, -27, -73, -29, -81)
 
-[node name="DockNode" parent="Node/Body3/DonorBody/rightLeg" index="4"]
+[node name="DockNode" parent="Node/Body3/DonorBody/rightLeg" index="2"]
 position = Vector2(6.00001, 50)
 
-[node name="DockNode2" parent="Node/Body3/DonorBody/rightLeg" index="5"]
+[node name="DockNode2" parent="Node/Body3/DonorBody/rightLeg" index="3"]
 position = Vector2(-12, -194)
 
 [node name="rightFoot" parent="Node/Body3/DonorBody" index="8" node_paths=PackedStringArray("notesLabel", "bigTextRect")]
@@ -1662,7 +1686,7 @@ texture = ExtResource("37_mxd6v")
 polygon = PackedVector2Array(-48, 29, -52, 36, -57, 46, -56, 36, -51.2214, 22.0071, -52, 15, -50, -1, -54, -9, -56, -21, -47, -36, -44, -49, -46, -59, -53, -75, -44, -77, -29, -82, -20, -89, -12, -128, -8, -118, -7, -113, -12, -101, -11, -94, -8.3569, -91.5331, -8, -88, -5, -86, 9, -85, 13, -89, 12, -91, 15, -93, 16, -96, 16, -102, 12, -112, 13, -118, 15, -124, 18, -128, 18, -115, 20, -102, 22, -94, 26, -89, 33, -84, 47, -79, 65, -76, 77, -71, 85, -65, 90, -59, 96, -47, 87, -48, 78, -46, 67, -41, 59, -35, 54, -28, 54, -22, 47, -8, 48, 2, 47, 16, 43, 12, 30, 11, 24, 14, 17, 23, 16, 36, 17.3935, 49.8406, 13, 58, 2, 66, 4, 74, 7, 80, 7, 88, 0.590164, 86.6163, -6, 89, -5, 83, -2, 75, 0, 69, 0, 65, -2, 57, -10, 49, -17, 29, -21, 20, -27, 17, -35, 19, -42, 23)
 
 [node name="NextButton" type="Node2D" parent="Node"]
-position = Vector2(-26, 0)
+position = Vector2(108, -30)
 
 [node name="HebelBase" type="TextureRect" parent="Node/NextButton"]
 offset_left = 723.0

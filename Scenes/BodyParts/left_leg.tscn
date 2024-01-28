@@ -21,22 +21,20 @@ texture = ExtResource("1_4pqka")
 position = Vector2(-9.8, -86)
 polygon = PackedVector2Array(-12.2, -6, -6.2, -9, 17.8, -10, 26.8, -4, 18.8, 187, 10.8, 198, 0.8, 198, -6.2, 185)
 
-[node name="GPUParticles2D" parent="." instance=ExtResource("3_v0uf8")]
-position = Vector2(-0.800003, -115)
+[node name="DockNode" parent="." instance=ExtResource("4_katfx")]
+position = Vector2(-1.8, -114)
+
+[node name="GPUParticles2D" parent="DockNode" instance=ExtResource("3_v0uf8")]
 rotation = 3.14159
 emitting = false
 script = ExtResource("4_tl6f7")
 
-[node name="GPUParticles2D2" parent="." instance=ExtResource("3_v0uf8")]
-position = Vector2(-5.8, 126)
-emitting = false
-script = ExtResource("4_tl6f7")
-
-[node name="DockNode" parent="." instance=ExtResource("4_katfx")]
-position = Vector2(-1.8, -114)
-
 [node name="DockNode2" parent="." instance=ExtResource("4_katfx")]
 position = Vector2(-6.8, 125)
+
+[node name="GPUParticles2D2" parent="DockNode2" instance=ExtResource("3_v0uf8")]
+emitting = false
+script = ExtResource("4_tl6f7")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
