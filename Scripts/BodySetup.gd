@@ -4,6 +4,8 @@ extends Node2D
 @export var index : int
 @export var shuffle : bool
 
+@export var tooltip : ColorRect
+
 func _ready():
 	if !shuffle:
 		var c : Character = database.db[index]
@@ -32,4 +34,14 @@ func _ready():
 		$DonorBody/head.update_to(database.db[rng.randi_range(0, len)].head)
 		$DonorBody/torso/Sprite.texture = database.db[rng.randi_range(0, len)].torso
 	
+	if tooltip:
+		$DonorBody/leftArm.bigTextRect = tooltip
+		$DonorBody/leftHand.bigTextRect = tooltip
+		$DonorBody/rightArm.bigTextRect = tooltip
+		$DonorBody/rightHand.bigTextRect = tooltip
+		$DonorBody/leftLeg.bigTextRect = tooltip
+		$DonorBody/leftFoot.bigTextRect = tooltip
+		$DonorBody/rightLeg.bigTextRect = tooltip
+		$DonorBody/rightFoot.bigTextRect = tooltip
+		$DonorBody/head.bigTextRect = tooltip
 	pass
