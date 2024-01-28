@@ -13,8 +13,6 @@ signal desc_changed(new_text : String, new_type : int)
 @export var notes_characteristics_type : int
 @export var bigTextRect : ColorRect
 
-var bigText : Label
-
 var dock_points : Array[Area2D]
 var dock_points_contact : Array[PairArea2D]
 var offset_held = Vector2(0, 0);
@@ -91,9 +89,7 @@ func _ready():
 	input_pickable = attached_cut_points.size() == 0
 	for dp in attached_cut_points:
 		dp.get_child(0).finished.connect(_finished_dock_point)
-	if bigTextRect:
-		bigText = bigTextRect.get_child(0)
-
+		
 func append_to_dock(own_child : Area2D, dock_point : Area2D):
 	# print("APPEND!!")
 	var cur_par : Node2D = dock_point.get_parent()
@@ -164,7 +160,7 @@ func _on_mouse_entered():
 	sprite.modulate = Color.YELLOW
 	if bigTextRect:
 		bigTextRect.visible = true
-		bigText.text = notesCharacteristicsText
+		bigTextRect.get_child(0).text = notesCharacteristicsText
 	if notesLabel:
 		notesLabel.add_theme_color_override("font_shadow_color", Color.RED)
 	pass # Replace with function body.

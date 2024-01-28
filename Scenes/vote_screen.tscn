@@ -1,12 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://cnwgatlhq1wku"]
+[gd_scene load_steps=7 format=3 uid="uid://cnwgatlhq1wku"]
 
 [ext_resource type="Script" path="res://Scenes/vote_screen.gd" id="1_dmc44"]
 [ext_resource type="Texture2D" uid="uid://b5jnbgh8qrach" path="res://Sprites/BackgroundImages/GGJ 2024 - Vote Screen_new.jpg" id="1_pgak8"]
 [ext_resource type="PackedScene" uid="uid://cjmsgu5nvesn8" path="res://Scenes/start_menu.tscn" id="2_cd8bs"]
 [ext_resource type="PackedScene" uid="uid://b8j586ho4bfhf" path="res://Nodes/cloud_collider.tscn" id="2_lr8wl"]
 [ext_resource type="PackedScene" uid="uid://di7lftmsq0ymx" path="res://Scenes/pureBody.tscn" id="4_nyovl"]
+[ext_resource type="FontFile" uid="uid://b7u6y1ir2jdfk" path="res://Fonts/Caveat-Bold.ttf" id="6_b5t6a"]
 
-[node name="VoteScreen" type="Control"]
+[node name="VoteScreen" type="Control" node_paths=PackedStringArray("tooltip")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +17,7 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_dmc44")
 next_scene = ExtResource("2_cd8bs")
+tooltip = NodePath("Tooltip")
 
 [node name="Ggj2024-VoteScreenNew" type="Sprite2D" parent="."]
 position = Vector2(1071.07, 603.2)
@@ -56,19 +58,48 @@ position = Vector2(1064, 572)
 [node name="LoserSpot1" type="Node2D" parent="."]
 position = Vector2(1732, 595)
 
-[node name="Body" parent="LoserSpot1" instance=ExtResource("4_nyovl")]
+[node name="Body" parent="LoserSpot1" node_paths=PackedStringArray("tooltip") instance=ExtResource("4_nyovl")]
 shuffle = true
+tooltip = NodePath("../../Tooltip")
 
 [node name="LoserSpot2" type="Node2D" parent="."]
 position = Vector2(414, 570)
 
-[node name="Body" parent="LoserSpot2" instance=ExtResource("4_nyovl")]
+[node name="Body" parent="LoserSpot2" node_paths=PackedStringArray("tooltip") instance=ExtResource("4_nyovl")]
 shuffle = true
+tooltip = NodePath("../../Tooltip")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1071, 609)
 zoom = Vector2(0.55, 0.55)
 
+[node name="Tooltip" type="ColorRect" parent="."]
+visible = false
+offset_left = 127.0
+offset_top = 63.0
+offset_right = 327.0
+offset_bottom = 263.0
+color = Color(1, 0.882353, 0.392157, 1)
+
+[node name="BigText" type="Label" parent="Tooltip"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("6_b5t6a")
+theme_override_font_sizes/font_size = 30
+text = "Hallo"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
 [connection signal="clicked" from="cloud_collider_left" to="." method="_on_cloud_collider_left_clicked"]
 [connection signal="clicked" from="cloud_collider_middle" to="." method="_on_cloud_collider_middle_clicked"]
 [connection signal="clicked" from="cloud_collider_right" to="." method="_on_cloud_collider_right_clicked"]
+[connection signal="mouse_entered" from="Tooltip/BigText" to="Tooltip/BigText" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Tooltip/BigText" to="Tooltip/BigText" method="_on_mouse_exited"]
