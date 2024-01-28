@@ -14,11 +14,14 @@ func _draw():
 	#var offset = self.position# - self.global_position
 	#print(self.global_position)
 	#var boxPos = self.#transform.origin #self.get_global_position();
-	var white : Color = Color.GREEN
-	draw_circle(Vector2(0,0), radius, white)
+	var col : Color = Color.GREEN
+	var dist_to_mouse = (global_position - get_viewport().get_camera_2d().get_global_mouse_position()).length() / 100
+	col.a = 1 - clampf(dist_to_mouse, 0.0, 0.8)
+	draw_circle(Vector2(0,0), radius, col)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	queue_redraw()
 	pass
 
 
