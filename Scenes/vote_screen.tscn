@@ -28,6 +28,20 @@ position = Vector2(576, 615)
 [node name="cloud_collider_right" parent="." instance=ExtResource("2_lr8wl")]
 position = Vector2(931, 616)
 
+[node name="Label" type="Label" parent="."]
+offset_left = 934.0
+offset_top = 46.0
+offset_right = 1046.0
+offset_bottom = 107.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 44
+text = "00:30"
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.1
+one_shot = true
+autostart = true
+
 [connection signal="clicked" from="cloud_collider_left" to="." method="_on_cloud_collider_left_clicked"]
 [connection signal="clicked" from="cloud_collider_middle" to="." method="_on_cloud_collider_middle_clicked"]
 [connection signal="clicked" from="cloud_collider_right" to="." method="_on_cloud_collider_right_clicked"]
