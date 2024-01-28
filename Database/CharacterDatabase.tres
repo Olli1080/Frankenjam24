@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/DataTypes/BodyPart.gd" id="1_0rm3m"]
 [ext_resource type="Script" path="res://Scripts/DataTypes/Character.gd" id="1_ax5ak"]
 [ext_resource type="Script" path="res://Scripts/DataTypes/CharacterDatabase.gd" id="1_dysmw"]
-[ext_resource type="Texture2D" uid="uid://g7tum3k5h4we" path="res://Sprites/FirstArt/PSG Head.png" id="2_p0fef"]
+[ext_resource type="Texture2D" uid="uid://coy6ruvgggfbl" path="res://Sprites/Head/HeadTest.png" id="2_yg8ph"]
 [ext_resource type="Texture2D" uid="uid://ddc6n6qwy0u2q" path="res://Sprites/LeftArm/LeftArmTest.png" id="3_ih2bk"]
 [ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="4_164cv"]
 [ext_resource type="Texture2D" uid="uid://d07o35qvj427b" path="res://Sprites/LeftFoot/LeftFootTest.png" id="4_y2ylk"]
@@ -16,7 +16,7 @@
 
 [sub_resource type="Resource" id="Resource_vh7de"]
 script = ExtResource("1_0rm3m")
-sprite = ExtResource("2_p0fef")
+sprite = ExtResource("2_yg8ph")
 description = "active listener"
 description_type = 1
 

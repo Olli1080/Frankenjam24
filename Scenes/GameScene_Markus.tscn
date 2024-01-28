@@ -1,17 +1,92 @@
-[gd_scene load_steps=8 format=3 uid="uid://dklb3tlx2hu16"]
+[gd_scene load_steps=14 format=3 uid="uid://dklb3tlx2hu16"]
 
+[ext_resource type="Texture2D" uid="uid://du3cuegugtv83" path="res://Sprites/Tools/background_v1.png" id="1_imhc6"]
 [ext_resource type="PackedScene" uid="uid://dssa7jwvsv6hk" path="res://Scenes/bodyWheel.tscn" id="1_vxjn8"]
 [ext_resource type="Texture2D" uid="uid://bb88wt5bof3ws" path="res://Sprites/Torso/TorsoTest.png" id="2_k2xs8"]
+[ext_resource type="Texture2D" uid="uid://ctgo64m74ofxj" path="res://Sprites/Tools/table2.png" id="2_k44v0"]
 [ext_resource type="Texture2D" uid="uid://ccaa1g8l5i8a1" path="res://Sprites/Tools/pinwand.png" id="2_lcdbp"]
+[ext_resource type="Texture2D" uid="uid://com0ibphq2o0d" path="res://Sprites/Tools/table1.png" id="3_160ae"]
 [ext_resource type="Script" path="res://Scripts/NoteScript.gd" id="3_dmis2"]
 [ext_resource type="PackedScene" uid="uid://cqtbg0laj4dvh" path="res://Nodes/dockNode.tscn" id="3_whbq1"]
 [ext_resource type="Script" path="res://Scenes/RecipentManager.gd" id="4_f5thq"]
+[ext_resource type="Texture2D" uid="uid://cabv3ilh814cu" path="res://Sprites/Tools/hebel_sockel.png" id="5_amuhb"]
 [ext_resource type="PackedScene" uid="uid://cnwgatlhq1wku" path="res://Scenes/vote_screen.tscn" id="5_d7ehb"]
+[ext_resource type="Texture2D" uid="uid://begpmnvmrsqfm" path="res://Sprites/Tools/hebel.png" id="6_aul2s"]
+[ext_resource type="FontFile" uid="uid://b7u6y1ir2jdfk" path="res://Fonts/Caveat-Bold.ttf" id="7_cplwx"]
 
 [node name="GameScene" type="Node2D"]
 
+[node name="background" type="TextureRect" parent="."]
+offset_left = -99.0
+offset_top = -291.0
+offset_right = 1815.0
+offset_bottom = 786.0
+scale = Vector2(0.86, 0.86)
+texture = ExtResource("1_imhc6")
+expand_mode = 1
+
+[node name="BodyTable" type="TextureRect" parent="."]
+offset_left = 50.0
+offset_top = -250.0
+offset_right = 1130.0
+offset_bottom = 1670.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_k44v0")
+
+[node name="PartnerTable" type="TextureRect" parent="."]
+offset_left = 900.0
+offset_top = -250.0
+offset_right = 1980.0
+offset_bottom = 1670.0
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_160ae")
+
 [node name="Node" parent="." instance=ExtResource("1_vxjn8")]
 position = Vector2(-176, 2)
+
+[node name="FinishButton" type="Button" parent="Node"]
+clip_contents = true
+custom_minimum_size = Vector2(200, 100)
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1519.0
+offset_top = 533.0
+offset_right = 1719.0
+offset_bottom = 633.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Finisch"
+
+[node name="HebelBase" type="TextureRect" parent="Node/Button" index="0"]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_amuhb")
+
+[node name="TextureRect" type="TextureRect" parent="Node/Button/HebelBase"]
+layout_mode = 0
+offset_left = 710.0
+offset_top = -220.0
+offset_right = 1243.0
+offset_bottom = 678.0
+texture = ExtResource("6_aul2s")
+
+[node name="Label" type="Label" parent="Node/Button/HebelBase"]
+layout_mode = 0
+offset_left = 440.0
+offset_top = 820.0
+offset_right = 1510.0
+offset_bottom = 1130.0
+theme_override_fonts/font = ExtResource("7_cplwx")
+theme_override_font_sizes/font_size = 150
+text = "Next body
+"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body" index="0"]
 offset_top = 250.0
@@ -34,6 +109,7 @@ offset_top = -20.0
 offset_right = 452.0
 offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 100
 text = "Notes: "
 horizontal_alignment = 1
@@ -54,6 +130,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -80,6 +157,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -106,6 +184,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -132,6 +211,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -158,6 +238,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -184,6 +265,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -210,6 +292,7 @@ offset_bottom = 300.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -236,6 +319,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -262,6 +346,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -289,6 +374,7 @@ offset_bottom = 900.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 120
 text = "Hallo"
 horizontal_alignment = 1
@@ -368,6 +454,7 @@ offset_top = -20.0
 offset_right = 452.0
 offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 100
 text = "Notes: "
 horizontal_alignment = 1
@@ -388,6 +475,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -414,6 +502,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -440,6 +529,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -466,6 +556,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -492,6 +583,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -518,6 +610,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -544,6 +637,7 @@ offset_bottom = 300.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -570,6 +664,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -596,6 +691,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -623,6 +719,7 @@ offset_bottom = 900.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 120
 text = "Hallo"
 horizontal_alignment = 1
@@ -702,6 +799,7 @@ offset_top = -20.0
 offset_right = 452.0
 offset_bottom = 136.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 100
 text = "Notes: "
 horizontal_alignment = 1
@@ -722,6 +820,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -748,6 +847,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -774,6 +874,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -800,6 +901,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -826,6 +928,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -852,6 +955,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -878,6 +982,7 @@ offset_bottom = 300.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -904,6 +1009,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -930,6 +1036,7 @@ offset_bottom = 280.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 40
 text = "Hallo"
 horizontal_alignment = 1
@@ -957,6 +1064,7 @@ offset_bottom = 900.0
 mouse_filter = 1
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/font = ExtResource("7_cplwx")
 theme_override_font_sizes/font_size = 120
 text = "Hallo"
 horizontal_alignment = 1
@@ -1052,22 +1160,7 @@ max_angle = 0.5
 position = Vector2(-3, -88)
 rotation = 3.08585
 
-[node name="Button" type="Button" parent="."]
-clip_contents = true
-custom_minimum_size = Vector2(200, 100)
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1343.0
-offset_top = 535.0
-offset_right = 1543.0
-offset_bottom = 635.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "Finisch"
-
+[connection signal="pressed" from="Node/FinishButton" to="Recipent" method="store_body_to_morgue"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect2/LH" to="Node/Body/TextureRect/ColorRect2/LH" method="_on_mouse_entered"]
@@ -1128,7 +1221,6 @@ text = "Finisch"
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect10/RF" to="Node/Body3/TextureRect/ColorRect10/RF" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_exited"]
-[connection signal="pressed" from="Button" to="Recipent" method="store_body_to_morgue"]
 
 [editable path="Node"]
 [editable path="Node/Body"]
