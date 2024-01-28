@@ -50,14 +50,12 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_8sdb3")
 theme_override_font_sizes/font_size = 20
-text = "* #01
-* #02
-* #03
-* #04
-* #05
-* #06
-* #07
-* #08
-* #09"
+
+[node name="bodyPosition" type="Node2D" parent="."]
+position = Vector2(379, 318)
+
+[node name="attachPoint" type="Node2D" parent="."]
+position = Vector2(379, 316)
+scale = Vector2(0.7, 0.7)
 
 [connection signal="clicked" from="cloud_collider" to="." method="_on_cloud_collider_clicked"]

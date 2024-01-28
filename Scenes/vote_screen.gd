@@ -22,13 +22,13 @@ func store_body_to_morgue():
 	var node : Node2D = $PlayerSpot.get_child(0)
 	var morgue : TheMorgue = $"/root/TheMorgue"
 	
-	morgue.player_body = PackedScene.new()
-	var arr = []
-	arr.append_array(get_children())
-	for c in get_children():
-		c.owner = self
-		arr.append_array(c.get_children())
-	morgue.player_body.pack(node)
+	#morgue.player_body = PackedScene.new()
+	#var arr = []
+	#arr.append_array(get_children())
+	#for c in get_children():
+		#c.owner = node
+		#arr.append_array(c.get_children())
+	#morgue.player_body.pack(node)
 	
 	get_tree().change_scene_to_packed(next_scene)
 

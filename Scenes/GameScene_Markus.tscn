@@ -47,120 +47,7 @@ texture = ExtResource("3_160ae")
 [node name="Node" parent="." instance=ExtResource("1_vxjn8")]
 position = Vector2(-176, 2)
 
-[node name="NextButton" type="Node2D" parent="Node"]
-position = Vector2(-26, 0)
-
-[node name="HebelBase" type="TextureRect" parent="Node/NextButton"]
-offset_left = 723.0
-offset_top = 207.0
-offset_right = 2643.0
-offset_bottom = 1287.0
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_amuhb")
-
-[node name="TextureRect" type="TextureRect" parent="Node/NextButton/HebelBase"]
-layout_mode = 0
-offset_left = 230.0
-offset_top = 30.0
-offset_right = 763.0
-offset_bottom = 928.0
-rotation = -0.523599
-texture = ExtResource("6_aul2s")
-
-[node name="Cloud" type="TextureRect" parent="Node/NextButton"]
-offset_left = 794.0
-offset_top = 216.0
-offset_right = 2714.0
-offset_bottom = 1296.0
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("7_gg78o")
-
-[node name="Label" type="Label" parent="Node/NextButton/Cloud"]
-layout_mode = 0
-offset_left = 430.0
-offset_top = 430.0
-offset_right = 1500.0
-offset_bottom = 740.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_cplwx")
-theme_override_font_sizes/font_size = 150
-text = "Next body
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button2" type="Button" parent="Node/NextButton" node_paths=PackedStringArray("body1", "body2", "body3")]
-modulate = Color(1, 1, 1, 0)
-offset_left = 761.0
-offset_top = 211.0
-offset_right = 923.0
-offset_bottom = 315.0
-text = "Weiter"
-script = ExtResource("9_f134h")
-body1 = NodePath("../../Body")
-body2 = NodePath("../../Body2")
-body3 = NodePath("../../Body3")
-
-[node name="FinishButton2" type="Node2D" parent="Node"]
-position = Vector2(793, 0)
-
-[node name="HebelBase" type="TextureRect" parent="Node/FinishButton2"]
-offset_left = 723.0
-offset_top = 207.0
-offset_right = 2643.0
-offset_bottom = 1287.0
-scale = Vector2(0.1, 0.1)
-texture = ExtResource("5_amuhb")
-
-[node name="TextureRect" type="TextureRect" parent="Node/FinishButton2/HebelBase"]
-layout_mode = 0
-offset_left = 230.0
-offset_top = 30.0
-offset_right = 763.0
-offset_bottom = 928.0
-rotation = -0.523599
-texture = ExtResource("6_aul2s")
-
-[node name="Cloud" type="TextureRect" parent="Node/FinishButton2"]
-offset_left = 794.0
-offset_top = 216.0
-offset_right = 2714.0
-offset_bottom = 1296.0
-scale = Vector2(0.075, 0.075)
-texture = ExtResource("7_gg78o")
-
-[node name="Label" type="Label" parent="Node/FinishButton2/Cloud"]
-layout_mode = 0
-offset_left = 430.0
-offset_top = 430.0
-offset_right = 1500.0
-offset_bottom = 740.0
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = ExtResource("7_cplwx")
-theme_override_font_sizes/font_size = 150
-text = "Next body
-"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="FinishButton" type="Button" parent="Node/FinishButton2"]
-modulate = Color(1, 1, 1, 0)
-clip_contents = true
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 759.0
-offset_top = 210.0
-offset_right = 924.0
-offset_bottom = 316.0
-grow_horizontal = 0
-grow_vertical = 0
-text = "
-"
-
-[node name="Button" parent="Node" index="2"]
+[node name="Button" parent="Node" index="0"]
 visible = false
 modulate = Color(1, 1, 1, 0)
 offset_left = 761.0
@@ -516,7 +403,7 @@ notesLabel = NodePath("../../TextureRect/ColorRect10/RF")
 notesCharacteristicsText = "uncommunicative"
 bigTextRect = NodePath("../../TextureRect/ColorRect11")
 
-[node name="Body2" parent="Node" index="4"]
+[node name="Body2" parent="Node" index="2"]
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body2" index="0"]
@@ -867,7 +754,7 @@ notesLabel = NodePath("../../TextureRect/ColorRect10/RF")
 notesCharacteristicsText = "empathetic"
 bigTextRect = NodePath("../../TextureRect/ColorRect11")
 
-[node name="Body3" parent="Node" index="5"]
+[node name="Body3" parent="Node" index="3"]
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="Node/Body3" index="0"]
@@ -1218,6 +1105,119 @@ notesLabel = NodePath("../../TextureRect/ColorRect10/RF")
 notesCharacteristicsText = "doesn´t clean their hair out of the shower drain"
 bigTextRect = NodePath("../../TextureRect/ColorRect11")
 
+[node name="NextButton" type="Node2D" parent="Node"]
+position = Vector2(-26, 0)
+
+[node name="HebelBase" type="TextureRect" parent="Node/NextButton"]
+offset_left = 723.0
+offset_top = 207.0
+offset_right = 2643.0
+offset_bottom = 1287.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_amuhb")
+
+[node name="TextureRect" type="TextureRect" parent="Node/NextButton/HebelBase"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 30.0
+offset_right = 763.0
+offset_bottom = 928.0
+rotation = -0.523599
+texture = ExtResource("6_aul2s")
+
+[node name="Cloud" type="TextureRect" parent="Node/NextButton"]
+offset_left = 794.0
+offset_top = 216.0
+offset_right = 2714.0
+offset_bottom = 1296.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("7_gg78o")
+
+[node name="Label" type="Label" parent="Node/NextButton/Cloud"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 430.0
+offset_right = 1500.0
+offset_bottom = 740.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cplwx")
+theme_override_font_sizes/font_size = 150
+text = "Next body
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button2" type="Button" parent="Node/NextButton" node_paths=PackedStringArray("body1", "body2", "body3")]
+modulate = Color(1, 1, 1, 0)
+offset_left = 761.0
+offset_top = 211.0
+offset_right = 923.0
+offset_bottom = 315.0
+text = "Weiter"
+script = ExtResource("9_f134h")
+body1 = NodePath("../../Body")
+body2 = NodePath("../../Body2")
+body3 = NodePath("../../Body3")
+
+[node name="FinishButton2" type="Node2D" parent="Node"]
+position = Vector2(793, 0)
+
+[node name="HebelBase" type="TextureRect" parent="Node/FinishButton2"]
+offset_left = 723.0
+offset_top = 207.0
+offset_right = 2643.0
+offset_bottom = 1287.0
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("5_amuhb")
+
+[node name="TextureRect" type="TextureRect" parent="Node/FinishButton2/HebelBase"]
+layout_mode = 0
+offset_left = 230.0
+offset_top = 30.0
+offset_right = 763.0
+offset_bottom = 928.0
+rotation = -0.523599
+texture = ExtResource("6_aul2s")
+
+[node name="Cloud" type="TextureRect" parent="Node/FinishButton2"]
+offset_left = 794.0
+offset_top = 216.0
+offset_right = 2714.0
+offset_bottom = 1296.0
+scale = Vector2(0.075, 0.075)
+texture = ExtResource("7_gg78o")
+
+[node name="Label" type="Label" parent="Node/FinishButton2/Cloud"]
+layout_mode = 0
+offset_left = 430.0
+offset_top = 430.0
+offset_right = 1500.0
+offset_bottom = 740.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("7_cplwx")
+theme_override_font_sizes/font_size = 150
+text = "Next body
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinishButton" type="Button" parent="Node/FinishButton2"]
+modulate = Color(1, 1, 1, 0)
+clip_contents = true
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 759.0
+offset_top = 210.0
+offset_right = 924.0
+offset_bottom = 316.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "
+"
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(724, 172)
 zoom = Vector2(0.7, 0.7)
@@ -1259,8 +1259,6 @@ max_angle = 0.5
 position = Vector2(-2, -94)
 rotation = 3.08585
 
-[connection signal="pressed" from="Node/NextButton/Button2" to="Node/NextButton/Button2" method="_on_pressed"]
-[connection signal="pressed" from="Node/FinishButton2/FinishButton" to="Recipent" method="store_body_to_morgue"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body/TextureRect/ColorRect/head" to="Node/Body/TextureRect/ColorRect/head" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body/TextureRect/ColorRect2/LH" to="Node/Body/TextureRect/ColorRect2/LH" method="_on_mouse_entered"]
@@ -1321,6 +1319,8 @@ rotation = 3.08585
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect10/RF" to="Node/Body3/TextureRect/ColorRect10/RF" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Node/Body3/TextureRect/ColorRect11/BigText" to="Node/Body3/TextureRect/ColorRect11/BigText" method="_on_mouse_exited"]
+[connection signal="pressed" from="Node/NextButton/Button2" to="Node/NextButton/Button2" method="_on_pressed"]
+[connection signal="pressed" from="Node/FinishButton2/FinishButton" to="Recipent" method="store_body_to_morgue"]
 
 [editable path="Node"]
 [editable path="Node/Body"]
