@@ -46,3 +46,7 @@ func _on_cloud_collider_middle_clicked():
 
 func _on_cloud_collider_right_clicked():
 	pass # Replace with function body.
+
+
+func _on_timer_timeout():
+	store_body_to_morgue()
