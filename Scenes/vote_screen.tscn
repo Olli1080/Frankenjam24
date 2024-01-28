@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://b5jnbgh8qrach" path="res://Sprites/BackgroundImages/GGJ 2024 - Vote Screen_new.jpg" id="1_pgak8"]
 [ext_resource type="PackedScene" uid="uid://cjmsgu5nvesn8" path="res://Scenes/start_menu.tscn" id="2_cd8bs"]
 [ext_resource type="PackedScene" uid="uid://b8j586ho4bfhf" path="res://Nodes/cloud_collider.tscn" id="2_lr8wl"]
-[ext_resource type="PackedScene" uid="uid://di7lftmsq0ymx" path="res://Scenes/pureBody.tscn" id="4_nyovl"]
+[ext_resource type="PackedScene" path="res://Scenes/pureBody.tscn" id="4_nyovl"]
 
 [node name="VoteScreen" type="Control"]
 layout_mode = 3
