@@ -1804,7 +1804,7 @@ script = ExtResource("4_f5thq")
 next_scene = ExtResource("5_d7ehb")
 
 [node name="TorsoTest" type="Sprite2D" parent="Recipent"]
-position = Vector2(4, 34)
+position = Vector2(-3, -5)
 scale = Vector2(0.14, 0.14)
 texture = ExtResource("15_ypua4")
 
