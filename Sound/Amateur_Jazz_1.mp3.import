@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://38v8axq7v7kv"
-path="res://.godot/imported/Amateur_Jazz_1.mp3-0be42f793046b40bbc87742177377c5f.mp3str"
+path="res://.godot/imported/amateur_jazz_1.mp3-4fb1bda4a33b312724496ea3b58a2cfa.mp3str"
 
 [deps]
 
-source_file="res://Sound/Amateur_Jazz_1.mp3"
-dest_files=["res://.godot/imported/Amateur_Jazz_1.mp3-0be42f793046b40bbc87742177377c5f.mp3str"]
+source_file="res://Sound/amateur_jazz_1.mp3"
+dest_files=["res://.godot/imported/amateur_jazz_1.mp3-4fb1bda4a33b312724496ea3b58a2cfa.mp3str"]
 
 [params]
 

@@ -6,9 +6,9 @@ var offsets: Array[float] = [2.4, 2.4, 2.4]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stream = AudioStreamPlayer2D.new()
-	sounds.append(preload("res://Sound/Amateur_Jazz_1.mp3"))
-	sounds.append(preload("res://Sound/Amateur_Jazz_2.mp3"))
-	sounds.append(preload("res://Sound/Amateur_Jazz_3.mp3"))
+	sounds.append(preload("res://Sound/amateur_jazz_1.mp3"))
+	sounds.append(preload("res://Sound/amateur_jazz_2.mp3"))
+	sounds.append(preload("res://Sound/amateur_jazz_3.mp3"))
 	
 	stream.volume_db = 12
 	stream.finished.connect(play_music)

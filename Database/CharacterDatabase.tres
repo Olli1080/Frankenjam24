@@ -14,7 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://bb4h44punqo53" path="res://Sprites/ChracterSprites/Purple Suit Guy/PSG right leg.png" id="10_ilqvu"]
 [ext_resource type="Texture2D" uid="uid://b4ij4gsu4g2iy" path="res://Sprites/ChracterSprites/Purple Suit Guy/PSG torso.png" id="12_m1vdi"]
 [ext_resource type="Texture2D" uid="uid://dpg7tv7d6r8ty" path="res://Sprites/ChracterSprites/E-Boy/eboi parts/eboi head.png" id="13_3vpsr"]
-[ext_resource type="Texture2D" uid="uid://kje1fjwfv2ak" path="res://Sprites/ChracterSprites/E-Boy/eboi parts/eboi arm left.png" id="14_c4in4"]
+[ext_resource type="Texture2D" uid="uid://b6mqch06hh2sb" path="res://Sprites/ChracterSprites/E-Boy/eboi parts/eboi arm left.png" id="14_c4in4"]
 [ext_resource type="Texture2D" uid="uid://ccil5hr8q1ikq" path="res://Sprites/ChracterSprites/E-Boy/eboi parts/eboi foot left.png" id="15_wa1lp"]
 [ext_resource type="Texture2D" uid="uid://c346i2aang84o" path="res://Sprites/ChracterSprites/E-Boy/eboi parts/eboi hand left.png" id="16_t30in"]
 [ext_resource type="Texture2D" uid="uid://b2cmpyhjua1x1" path="res://Sprites/ChracterSprites/E-Boy/eboi parts/eboi leg left.png" id="17_ceotw"]
